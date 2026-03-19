@@ -8,6 +8,7 @@ import GlowCard from '../components/GlowCard';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import SEO from '../components/SEO';
 
 const MotionBox = motion.create(Box);
 
@@ -48,6 +49,10 @@ const faqs = [
 export default function PricingPage() {
   return (
     <Box>
+      <SEO
+        title="Pricing"
+        description="Simple, transparent pricing for ManageCare's AI-powered healthcare platform. Choose the plan that fits your practice size and needs."
+      />
       {/* Hero */}
       <Box sx={{ pt: { xs: 12, md: 16 }, pb: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #065A62 0%, #097C87 50%, #044048 100%)' }}>
         <Container maxWidth="lg">
@@ -56,9 +61,9 @@ export default function PricingPage() {
               label="Enterprise Pricing"
               sx={{
                 mb: 2,
-                background: 'rgba(255,248,232,0.15)',
-                border: '1px solid rgba(255,248,232,0.3)',
-                color: '#FFF8E8',
+                background: 'rgba(248,250,251,0.15)',
+                border: '1px solid rgba(248,250,251,0.3)',
+                color: '#F8FAFB',
                 fontWeight: 500,
                 py: 2,
                 px: 1,
@@ -78,7 +83,7 @@ export default function PricingPage() {
       <Container maxWidth="md" sx={{ mt: -4, mb: 8, position: 'relative', zIndex: 1 }}>
         <Box
           sx={{
-            background: '#FFFCF2',
+            background: '#FFFFFF',
             borderRadius: 3,
             border: '2px solid #097C87',
             p: { xs: 4, md: 6 },
@@ -95,7 +100,7 @@ export default function PricingPage() {
               left: '50%',
               transform: 'translateX(-50%)',
               background: '#097C87',
-              color: '#FFF8E8',
+              color: '#F8FAFB',
               fontWeight: 600,
               px: 2,
             }}
@@ -130,7 +135,7 @@ export default function PricingPage() {
               endIcon={<ArrowForwardIcon />}
               sx={{
                 background: '#097C87',
-                color: '#FFF8E8',
+                color: '#F8FAFB',
                 px: 6,
                 py: 1.8,
                 fontWeight: 600,
@@ -148,7 +153,7 @@ export default function PricingPage() {
         overline="Why ManageCare"
         title="Priced Based on Value"
         subtitle="Our pricing model aligns with the value we deliver to your organization."
-        sx={{ background: '#FFF8E8' }}
+        sx={{ background: '#F8FAFB' }}
       >
         <Grid container spacing={3}>
           {valueProps.map((prop, i) => (
@@ -167,7 +172,7 @@ export default function PricingPage() {
       </SectionWrapper>
 
       {/* Change Management */}
-      <Box sx={{ background: '#FFFCF2', py: { xs: 10, md: 16 } }}>
+      <Box sx={{ background: '#FFFFFF', py: { xs: 10, md: 16 } }}>
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center', mb: 6 }}>
             <Typography variant="overline" sx={{ color: '#097C87', display: 'block', mb: 2 }}>
@@ -233,7 +238,7 @@ export default function PricingPage() {
       </Box>
 
       {/* FAQs */}
-      <Box sx={{ background: '#FFF8E8', py: { xs: 10, md: 16 } }}>
+      <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 16 } }}>
         <Container maxWidth="md">
           <Box sx={{ textAlign: 'center', mb: 6 }}>
             <Typography variant="overline" sx={{ color: '#097C87', display: 'block', mb: 2 }}>
@@ -251,7 +256,7 @@ export default function PricingPage() {
               key={i}
               defaultExpanded={i === 0}
               sx={{
-                background: '#FFFCF2',
+                background: '#FFFFFF',
                 boxShadow: 'none',
                 border: '1px solid rgba(9,124,135,0.1)',
                 borderRadius: '8px !important',
@@ -278,10 +283,10 @@ export default function PricingPage() {
       {/* CTA */}
       <Box sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(135deg, #065A62 0%, #097C87 50%, #044048 100%)' }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
-          <Typography variant="h2" style={{ color: '#FFF8E8' }} sx={{ mb: 2 }}>
+          <Typography variant="h2" style={{ color: '#F8FAFB' }} sx={{ mb: 2 }}>
             Ready to Transform Your Healthcare Operations?
           </Typography>
-          <Typography variant="body1" style={{ color: 'rgba(255,248,232,0.85)' }} sx={{ mb: 4, maxWidth: 600, mx: 'auto' }}>
+          <Typography variant="body1" style={{ color: 'rgba(248,250,251,0.85)' }} sx={{ mb: 4, maxWidth: 600, mx: 'auto' }}>
             Let's discuss how ManageCare.ai can deliver value to your organization with a pricing model that works for you.
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -291,12 +296,12 @@ export default function PricingPage() {
               component={Link}
               to="/demo"
               sx={{
-                background: '#FFF8E8',
+                background: '#F8FAFB',
                 color: '#065A62',
                 px: 5,
                 py: 1.8,
                 fontWeight: 600,
-                '&:hover': { background: '#FFFCF2' },
+                '&:hover': { background: '#FFFFFF' },
               }}
             >
               Schedule Consultation
@@ -310,9 +315,9 @@ export default function PricingPage() {
               sx={{
                 py: 1.5,
                 px: 4,
-                color: '#FFF8E8',
-                borderColor: 'rgba(255,248,232,0.4)',
-                '&:hover': { borderColor: '#FFF8E8', background: 'rgba(255,248,232,0.08)' },
+                color: '#F8FAFB',
+                borderColor: 'rgba(248,250,251,0.4)',
+                '&:hover': { borderColor: '#F8FAFB', background: 'rgba(248,250,251,0.08)' },
               }}
             >
               ROI Resources

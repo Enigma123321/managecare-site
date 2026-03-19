@@ -9,7 +9,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: #FFF8E8;
+  background: #F8FAFB;
   color: #065A62;
   font-family: 'DM Sans Variable', 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -27,7 +27,7 @@ a {
 }
 
 ::-webkit-scrollbar-track {
-  background: #FFF8E8;
+  background: #F8FAFB;
 }
 
 ::-webkit-scrollbar-thumb {

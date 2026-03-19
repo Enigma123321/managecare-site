@@ -89,7 +89,7 @@ export default function Navbar() {
               ? 'rgba(224, 240, 244, 0.8)'
               : 'transparent',
           backdropFilter: trigger || isLightHero ? 'blur(20px)' : 'none',
-          borderBottom: trigger ? '1px solid rgba(255, 248, 232, 0.1)' : isLightHero ? '1px solid rgba(9, 124, 135, 0.08)' : 'none',
+          borderBottom: trigger ? '1px solid rgba(248, 250, 251, 0.1)' : isLightHero ? '1px solid rgba(9, 124, 135, 0.08)' : 'none',
           transition: 'all 0.4s ease',
           zIndex: 1300,
         }}
@@ -111,7 +111,7 @@ export default function Navbar() {
                 sx={{
                   fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
                   fontWeight: 700,
-                  color: useDarkText ? '#065A62' : '#FFF8E8',
+                  color: useDarkText ? '#065A62' : '#F8FAFB',
                   fontSize: '2rem',
                   letterSpacing: '0.02em',
                   transition: 'color 0.4s ease',
@@ -155,7 +155,7 @@ export default function Navbar() {
                         letterSpacing: 'normal',
                         transition: 'color 0.4s ease',
                         '&:hover': {
-                          color: useDarkText ? '#065A62' : '#FFF8E8',
+                          color: useDarkText ? '#065A62' : '#F8FAFB',
                           background: 'transparent',
                         },
                       }}
@@ -260,7 +260,7 @@ export default function Navbar() {
                       letterSpacing: 'normal',
                       transition: 'color 0.4s ease',
                       '&:hover': {
-                        color: useDarkText ? '#065A62' : '#FFF8E8',
+                        color: useDarkText ? '#065A62' : '#F8FAFB',
                         background: 'transparent',
                       },
                     }}
@@ -275,12 +275,12 @@ export default function Navbar() {
                 to="/demo"
                 sx={{
                   ml: 2,
-                  background: useDarkText ? '#097C87' : '#FFF8E8',
+                  background: useDarkText ? '#097C87' : '#F8FAFB',
                   color: useDarkText ? '#FFFFFF' : '#065A62',
                   fontWeight: 600,
                   transition: 'all 0.4s ease',
                   '&:hover': {
-                    background: useDarkText ? '#065A62' : '#FFFCF2',
+                    background: useDarkText ? '#065A62' : '#FFFFFF',
                   },
                 }}
               >
@@ -289,7 +289,7 @@ export default function Navbar() {
             </Box>
 
             <IconButton
-              sx={{ display: { md: 'none' }, color: useDarkText ? '#065A62' : '#FFF8E8', transition: 'color 0.4s ease' }}
+              sx={{ display: { md: 'none' }, color: useDarkText ? '#065A62' : '#F8FAFB', transition: 'color 0.4s ease' }}
               onClick={() => setMobileOpen(true)}
             >
               <MenuIcon />
@@ -311,7 +311,7 @@ export default function Navbar() {
         }}
       >
         <Box sx={{ display: 'flex', justifyContent: 'flex-end', px: 2, mb: 4 }}>
-          <IconButton onClick={() => setMobileOpen(false)} sx={{ color: '#FFF8E8' }}>
+          <IconButton onClick={() => setMobileOpen(false)} sx={{ color: '#F8FAFB' }}>
             <CloseIcon />
           </IconButton>
         </Box>
@@ -322,7 +322,7 @@ export default function Navbar() {
                 <ListItem
                   sx={{
                     py: 2,
-                    borderBottom: '1px solid rgba(255, 248, 232, 0.1)',
+                    borderBottom: '1px solid rgba(248, 250, 251, 0.1)',
                     display: 'flex',
                     justifyContent: 'space-between',
                     cursor: 'pointer',
@@ -335,12 +335,12 @@ export default function Navbar() {
                       fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
                       fontSize: '1.8rem',
                       fontWeight: 300,
-                      color: '#FFF8E8',
+                      color: '#F8FAFB',
                     }}
                   />
                   <ExpandMoreIcon
                     sx={{
-                      color: '#FFF8E8',
+                      color: '#F8FAFB',
                       transition: 'transform 0.3s ease',
                       transform: mobileSolutionsOpen ? 'rotate(180deg)' : 'rotate(0deg)',
                     }}
@@ -374,7 +374,7 @@ export default function Navbar() {
                               primaryTypographyProps={{
                                 fontSize: '0.95rem',
                                 fontWeight: 300,
-                                color: 'rgba(255, 248, 232, 0.8)',
+                                color: 'rgba(248, 250, 251, 0.8)',
                               }}
                             />
                           </ListItem>
@@ -392,7 +392,7 @@ export default function Navbar() {
                 onClick={() => setMobileOpen(false)}
                 sx={{
                   py: 2,
-                  borderBottom: '1px solid rgba(255, 248, 232, 0.1)',
+                  borderBottom: '1px solid rgba(248, 250, 251, 0.1)',
                 }}
               >
                 <ListItemText
@@ -401,7 +401,7 @@ export default function Navbar() {
                     fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
                     fontSize: '1.8rem',
                     fontWeight: 300,
-                    color: '#FFF8E8',
+                    color: '#F8FAFB',
                   }}
                 />
               </ListItem>
@@ -416,10 +416,10 @@ export default function Navbar() {
               to="/demo"
               onClick={() => setMobileOpen(false)}
               sx={{
-                background: '#FFF8E8',
+                background: '#F8FAFB',
                 color: '#065A62',
                 fontWeight: 600,
-                '&:hover': { background: '#FFFCF2' },
+                '&:hover': { background: '#FFFFFF' },
               }}
             >
               Get Started

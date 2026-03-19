@@ -11,7 +11,7 @@ export default function GlowCard({ children, delay = 0, sx = {}, ...props }) {
       viewport={{ once: true, margin: '-50px' }}
       transition={{ duration: 0.5, delay }}
       sx={{
-        background: '#FFFCF2',
+        background: '#FFFFFF',
         border: 'none',
         borderRadius: 2,
         boxShadow: '0 1px 3px rgba(9, 124, 135, 0.06)',

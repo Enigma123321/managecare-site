@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import SectionWrapper from '../components/SectionWrapper';
 import GlowCard from '../components/GlowCard';
+import SEO from '../components/SEO';
 
 const MotionBox = motion.create(Box);
 const MotionTypography = motion.create(Typography);
@@ -36,6 +37,18 @@ const results = [
 export default function HomePage() {
   return (
     <Box>
+      <SEO
+        title="AI-Native Healthcare Platform"
+        description="ManageCare's AI employees automate scheduling, referrals, care management, and administrative tasks — giving your practice 4+ hours back per day."
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ManageCare",
+          "url": "https://managecare-site.onrender.com",
+          "description": "AI-native platform that orchestrates the entire patient journey with autonomous AI employees for healthcare operations.",
+          "sameAs": []
+        }}
+      />
       {/* HERO */}
       <Box
         sx={{
@@ -76,15 +89,15 @@ export default function HomePage() {
             <defs>
               <linearGradient id="heroGrad1" x1="0" y1="0" x2="1" y2="1">
                 <stop offset="0%" stopColor="#065A62" stopOpacity="0.25" />
-                <stop offset="100%" stopColor="#FFF8E8" stopOpacity="0.08" />
+                <stop offset="100%" stopColor="#F8FAFB" stopOpacity="0.08" />
               </linearGradient>
               <linearGradient id="heroGrad2" x1="0" y1="0" x2="0.8" y2="1">
-                <stop offset="0%" stopColor="#FFF8E8" stopOpacity="0.15" />
+                <stop offset="0%" stopColor="#F8FAFB" stopOpacity="0.15" />
                 <stop offset="100%" stopColor="#065A62" stopOpacity="0.05" />
               </linearGradient>
               <linearGradient id="heroGrad3" x1="0.2" y1="0" x2="1" y2="0.8">
                 <stop offset="0%" stopColor="#D4A08A" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="#FFF8E8" stopOpacity="0.06" />
+                <stop offset="100%" stopColor="#F8FAFB" stopOpacity="0.06" />
               </linearGradient>
             </defs>
             {/* Layered chevron shapes */}
@@ -94,11 +107,11 @@ export default function HomePage() {
             <polygon points="1050,0 1440,0 1440,350 1200,680" fill="url(#heroGrad1)" opacity="0.6" />
             <polygon points="1150,0 1440,0 1440,250 1280,580" fill="url(#heroGrad2)" opacity="0.5" />
             {/* Subtle diagonal lines */}
-            <line x1="700" y1="0" x2="1000" y2="900" stroke="rgba(255,248,232,0.06)" strokeWidth="1" />
-            <line x1="800" y1="0" x2="1100" y2="900" stroke="rgba(255,248,232,0.05)" strokeWidth="1" />
-            <line x1="900" y1="0" x2="1200" y2="900" stroke="rgba(255,248,232,0.04)" strokeWidth="1" />
-            <line x1="1000" y1="0" x2="1300" y2="900" stroke="rgba(255,248,232,0.06)" strokeWidth="1" />
-            <line x1="1100" y1="0" x2="1400" y2="900" stroke="rgba(255,248,232,0.05)" strokeWidth="1" />
+            <line x1="700" y1="0" x2="1000" y2="900" stroke="rgba(248,250,251,0.06)" strokeWidth="1" />
+            <line x1="800" y1="0" x2="1100" y2="900" stroke="rgba(248,250,251,0.05)" strokeWidth="1" />
+            <line x1="900" y1="0" x2="1200" y2="900" stroke="rgba(248,250,251,0.04)" strokeWidth="1" />
+            <line x1="1000" y1="0" x2="1300" y2="900" stroke="rgba(248,250,251,0.06)" strokeWidth="1" />
+            <line x1="1100" y1="0" x2="1400" y2="900" stroke="rgba(248,250,251,0.05)" strokeWidth="1" />
             {/* Soft radial glow */}
             <circle cx="1100" cy="350" r="300" fill="rgba(196,164,138,0.08)" />
           </svg>
@@ -143,13 +156,13 @@ export default function HomePage() {
                   component={Link}
                   to="/demo"
                   sx={{
-                    background: '#FFF8E8',
+                    background: '#F8FAFB',
                     color: '#065A62',
                     px: 5,
                     py: 1.8,
                     fontWeight: 600,
                     '&:hover': {
-                      background: '#FFFCF2',
+                      background: '#FFFFFF',
                     },
                   }}
                 >
@@ -160,9 +173,9 @@ export default function HomePage() {
             <Grid size={{ xs: 12, md: 5 }}>
               <Box
                 sx={{
-                  background: 'rgba(255,248,232,0.15)',
+                  background: 'rgba(248,250,251,0.15)',
                   backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(255,248,232,0.3)',
+                  border: '1px solid rgba(248,250,251,0.3)',
                   borderRadius: 3,
                   p: { xs: 3, md: 4 },
                 }}
@@ -201,8 +214,8 @@ export default function HomePage() {
                     <Grid size={6} key={i}>
                       <Box
                         sx={{
-                          background: 'rgba(255,248,232,0.14)',
-                          border: '1px solid rgba(255,248,232,0.25)',
+                          background: 'rgba(248,250,251,0.14)',
+                          border: '1px solid rgba(248,250,251,0.25)',
                           borderRadius: 2,
                           p: 2,
                           textAlign: 'center',
@@ -248,7 +261,7 @@ export default function HomePage() {
       </Box>
 
       {/* AT A GLANCE */}
-      <Box sx={{ background: '#FFF8E8', py: { xs: 10, md: 16 } }}>
+      <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 16 } }}>
         <Container maxWidth="lg">
           <Grid container spacing={8} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }}>
@@ -261,7 +274,7 @@ export default function HomePage() {
                 {/* Bridge Diagram — Practice → ManageCare AI → Patient */}
                 <Box
                   sx={{
-                    background: '#FFFCF2',
+                    background: '#FFFFFF',
                     borderRadius: 3,
                     overflow: 'hidden',
                     border: '1px solid rgba(9,124,135,0.1)',
@@ -347,9 +360,9 @@ export default function HomePage() {
 
                     {/* Hub circle */}
                     <circle cx="260" cy="185" r="38" fill="url(#hubFill)" filter="url(#hubGlow)" />
-                    <circle cx="260" cy="185" r="38" fill="none" stroke="rgba(255,248,232,0.3)" strokeWidth="0.8" />
-                    <text x="260" y="180" textAnchor="middle" fill="#FFF8E8" fontSize="10.5" fontWeight="700" fontFamily="Cormorant Garamond, serif">ManageCare</text>
-                    <text x="260" y="193" textAnchor="middle" fill="rgba(255,248,232,0.85)" fontSize="6.5" fontWeight="500" fontFamily="DM Sans, sans-serif">AI Engine</text>
+                    <circle cx="260" cy="185" r="38" fill="none" stroke="rgba(248,250,251,0.3)" strokeWidth="0.8" />
+                    <text x="260" y="180" textAnchor="middle" fill="#F8FAFB" fontSize="10.5" fontWeight="700" fontFamily="Cormorant Garamond, serif">ManageCare</text>
+                    <text x="260" y="193" textAnchor="middle" fill="rgba(248,250,251,0.85)" fontSize="6.5" fontWeight="500" fontFamily="DM Sans, sans-serif">AI Engine</text>
 
                     {/* Pulse ring */}
                     <circle cx="260" cy="185" r="38" fill="none" stroke="#097C87" strokeWidth="1" opacity="0">
@@ -494,7 +507,7 @@ export default function HomePage() {
       <Box sx={{ background: '#044048', py: { xs: 8, md: 12 }, overflow: 'hidden', position: 'relative' }}>
         {/* Subtle grid overlay */}
         <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.04 }}>
-          <svg width="100%" height="100%"><defs><pattern id="aeGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#FFF8E8" strokeWidth="0.5" /></pattern></defs><rect width="100%" height="100%" fill="url(#aeGrid)" /></svg>
+          <svg width="100%" height="100%"><defs><pattern id="aeGrid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#F8FAFB" strokeWidth="0.5" /></pattern></defs><rect width="100%" height="100%" fill="url(#aeGrid)" /></svg>
         </Box>
         <Container maxWidth="lg" sx={{ mb: 5 }}>
           <MotionBox
@@ -510,14 +523,14 @@ export default function HomePage() {
             <Typography
               variant="h2"
               sx={{
-                color: '#FFF8E8',
+                color: '#F8FAFB',
                 mb: 2,
                 fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
               }}
             >
               Your Autonomous Healthcare Workforce
             </Typography>
-            <Typography variant="body1" sx={{ color: 'rgba(255,248,232,0.7)', maxWidth: 600, mx: 'auto' }}>
+            <Typography variant="body1" sx={{ color: 'rgba(248,250,251,0.7)', maxWidth: 600, mx: 'auto' }}>
               AI employees that work 24/7 — each specialized for a critical part of your operations.
             </Typography>
           </MotionBox>
@@ -666,15 +679,15 @@ export default function HomePage() {
                 >
                   <Box
                     sx={{
-                      background: 'rgba(255,248,232,0.06)',
-                      border: '1px solid rgba(255,248,232,0.12)',
+                      background: 'rgba(248,250,251,0.06)',
+                      border: '1px solid rgba(248,250,251,0.12)',
                       borderRadius: 3,
                       p: 4,
                       height: '100%',
                       transition: 'all 0.3s ease',
                       '&:hover': {
-                        background: 'rgba(255,248,232,0.1)',
-                        border: '1px solid rgba(255,248,232,0.25)',
+                        background: 'rgba(248,250,251,0.1)',
+                        border: '1px solid rgba(248,250,251,0.25)',
                         transform: 'translateY(-4px)',
                         boxShadow: '0 8px 32px rgba(0,0,0,0.3)',
                       },
@@ -793,7 +806,7 @@ export default function HomePage() {
                         </svg>
                       </Box>
                       <Box>
-                        <Typography sx={{ color: '#FFF8E8', fontWeight: 700, fontSize: '1.2rem', fontFamily: '"Cormorant Garamond Variable", Georgia, serif', lineHeight: 1.2 }}>
+                        <Typography sx={{ color: '#F8FAFB', fontWeight: 700, fontSize: '1.2rem', fontFamily: '"Cormorant Garamond Variable", Georgia, serif', lineHeight: 1.2 }}>
                           {agent.title}
                         </Typography>
                         <Typography sx={{ color: 'rgba(252,164,124,0.8)', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
@@ -803,16 +816,16 @@ export default function HomePage() {
                     </Box>
 
                     {/* Description */}
-                    <Typography sx={{ color: 'rgba(255,248,232,0.65)', fontSize: '0.9rem', lineHeight: 1.7, mb: 3, minHeight: 80 }}>
+                    <Typography sx={{ color: 'rgba(248,250,251,0.65)', fontSize: '0.9rem', lineHeight: 1.7, mb: 3, minHeight: 80 }}>
                       {agent.desc}
                     </Typography>
 
                     {/* Stat */}
-                    <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1, pt: 2.5, borderTop: '1px solid rgba(255,248,232,0.08)' }}>
+                    <Box sx={{ display: 'flex', alignItems: 'baseline', gap: 1, pt: 2.5, borderTop: '1px solid rgba(248,250,251,0.08)' }}>
                       <Typography sx={{ fontFamily: '"Cormorant Garamond Variable", Georgia, serif', fontSize: '1.8rem', fontWeight: 700, color: '#FCA47C', lineHeight: 1 }}>
                         {agent.stat}
                       </Typography>
-                      <Typography sx={{ color: 'rgba(255,248,232,0.5)', fontSize: '0.8rem' }}>
+                      <Typography sx={{ color: 'rgba(248,250,251,0.5)', fontSize: '0.8rem' }}>
                         {agent.statLabel}
                       </Typography>
                     </Box>
@@ -830,12 +843,12 @@ export default function HomePage() {
             component={Link}
             to="/agents"
             sx={{
-              borderColor: 'rgba(255,248,232,0.3)',
-              color: '#FFF8E8',
+              borderColor: 'rgba(248,250,251,0.3)',
+              color: '#F8FAFB',
               px: 4,
               py: 1.2,
               fontWeight: 600,
-              '&:hover': { borderColor: '#FFF8E8', background: 'rgba(255,248,232,0.05)' },
+              '&:hover': { borderColor: '#F8FAFB', background: 'rgba(248,250,251,0.05)' },
             }}
           >
             Meet All AI Employees →
@@ -844,7 +857,7 @@ export default function HomePage() {
       </Box>
 
       {/* THE BOTTOM LINE */}
-      <Box sx={{ background: '#FFF8E8', py: { xs: 10, md: 16 }, position: 'relative', overflow: 'hidden' }}>
+      <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 16 }, position: 'relative', overflow: 'hidden' }}>
         {/* Stacked diagonal blocks - right side */}
         <Box sx={{ position: 'absolute', top: 0, right: 0, width: '40%', height: '100%', pointerEvents: 'none' }}>
           <svg viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }} preserveAspectRatio="xMaxYMid slice">
@@ -893,7 +906,7 @@ export default function HomePage() {
       </Box>
 
       {/* THREE CAPABILITIES */}
-      <Box sx={{ background: '#FFF8E8', py: { xs: 8, md: 12 } }}>
+      <Box sx={{ background: '#F8FAFB', py: { xs: 8, md: 12 } }}>
         <Container maxWidth="lg">
           <Grid container spacing={4}>
             {capabilities.map((item, i) => (
@@ -921,7 +934,7 @@ export default function HomePage() {
                         `}</style>
                         <defs>
                           <linearGradient id="docGrad1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#097C87" /><stop offset="100%" stopColor="#044048" /></linearGradient>
-                          <linearGradient id="docGrad2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#FFF8E8" /><stop offset="100%" stopColor="#FCA47C" /></linearGradient>
+                          <linearGradient id="docGrad2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#F8FAFB" /><stop offset="100%" stopColor="#FCA47C" /></linearGradient>
                         </defs>
                         <ellipse cx="90" cy="148" rx="50" ry="8" fill="rgba(9,124,135,0.1)" />
                         <g className="doc-float2">
@@ -937,7 +950,7 @@ export default function HomePage() {
                           ))}
                           <g className="doc-pulse">
                             <circle cx="108" cy="100" r="12" fill="#097C87" opacity="0.85" />
-                            <path d="M102 100 L106 104 L114 95" stroke="#FFF8E8" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M102 100 L106 104 L114 95" stroke="#F8FAFB" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                           </g>
                         </g>
                       </svg>
@@ -954,7 +967,7 @@ export default function HomePage() {
                         `}</style>
                         <defs>
                           <linearGradient id="calGrad1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#065A62" /><stop offset="100%" stopColor="#097C87" /></linearGradient>
-                          <linearGradient id="calGrad2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#FFF8E8" /><stop offset="100%" stopColor="#065A62" /></linearGradient>
+                          <linearGradient id="calGrad2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#F8FAFB" /><stop offset="100%" stopColor="#065A62" /></linearGradient>
                         </defs>
                         <ellipse cx="90" cy="148" rx="55" ry="8" fill="rgba(9,124,135,0.1)" />
                         <g className="cap-float">
@@ -968,7 +981,7 @@ export default function HomePage() {
                               className={row === 1 && col === 2 ? 'cap-glow' : undefined}
                             />
                           )))}
-                          <circle cx="82" cy="87" r="3" fill="#FFF8E8" className="cap-pulse" />
+                          <circle cx="82" cy="87" r="3" fill="#F8FAFB" className="cap-pulse" />
                         </g>
                       </svg>
                     )}
@@ -984,7 +997,7 @@ export default function HomePage() {
                         `}</style>
                         <defs>
                           <linearGradient id="careGrad1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#065A62" /><stop offset="100%" stopColor="#097C87" /></linearGradient>
-                          <linearGradient id="careGrad2" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stopColor="#FFF8E8" /><stop offset="100%" stopColor="#FCA47C" /></linearGradient>
+                          <linearGradient id="careGrad2" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stopColor="#F8FAFB" /><stop offset="100%" stopColor="#FCA47C" /></linearGradient>
                         </defs>
                         <ellipse cx="90" cy="148" rx="45" ry="7" fill="rgba(9,124,135,0.1)" />
                         <g className="care-float">
@@ -992,8 +1005,8 @@ export default function HomePage() {
                           <path d="M90 28 L122 42 L122 78 Q122 102 90 122 Q58 102 58 78 L58 42 Z" fill="url(#careGrad1)" opacity="0.2" />
                           <g className="care-beat">
                             <path d="M90 95 C73 80 56 67 56 55 C56 44 65 37 76 37 C83 37 87 42 90 46 C93 42 97 37 104 37 C115 37 124 44 124 55 C124 67 107 80 90 95Z" fill="#097C87" opacity="0.8" />
-                            <rect x="86" y="58" width="8" height="22" rx="2" fill="#FFF8E8" opacity="0.9" />
-                            <rect x="80" y="65" width="20" height="8" rx="2" fill="#FFF8E8" opacity="0.9" />
+                            <rect x="86" y="58" width="8" height="22" rx="2" fill="#F8FAFB" opacity="0.9" />
+                            <rect x="80" y="65" width="20" height="8" rx="2" fill="#F8FAFB" opacity="0.9" />
                           </g>
                           <path d="M55 105 L70 105 L76 93 L82 115 L88 98 L94 105 L125 105" stroke="#097C87" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="80" className="care-dash" opacity="0.5" />
                         </g>
@@ -1014,7 +1027,7 @@ export default function HomePage() {
       </Box>
 
       {/* OPERATIONAL EXCELLENCE */}
-      <Box sx={{ background: '#FFF8E8', py: { xs: 10, md: 16 }, position: 'relative', overflow: 'hidden' }}>
+      <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 16 }, position: 'relative', overflow: 'hidden' }}>
         {/* Stacked diagonal blocks - right side */}
         <Box sx={{ position: 'absolute', top: 0, right: 0, width: '45%', height: '100%', pointerEvents: 'none' }}>
           <svg viewBox="0 0 450 800" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }} preserveAspectRatio="xMaxYMid slice">
@@ -1064,7 +1077,7 @@ export default function HomePage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                     sx={{
-                      background: '#FFFCF2',
+                      background: '#FFFFFF',
                       borderRadius: 3,
                       p: 3,
                       height: '100%',
@@ -1105,7 +1118,7 @@ export default function HomePage() {
                           <ellipse cx="70" cy="112" rx="45" ry="6" fill="rgba(9,124,135,0.08)" />
                           <g className="jr-float0">
                             {/* Fax/document */}
-                            <rect x="30" y="15" width="55" height="75" rx="4" fill="#FFF8E8" stroke="#065A62" strokeWidth="1" />
+                            <rect x="30" y="15" width="55" height="75" rx="4" fill="#F8FAFB" stroke="#065A62" strokeWidth="1" />
                             <rect x="40" y="28" width="35" height="4" rx="2" fill="#097C87" opacity="0.2" />
                             <rect x="40" y="36" width="28" height="4" rx="2" fill="#097C87" opacity="0.15" />
                             <rect x="40" y="44" width="32" height="4" rx="2" fill="#097C87" opacity="0.2" />
@@ -1115,7 +1128,7 @@ export default function HomePage() {
                             <rect x="32" y="28" width="51" height="2" rx="1" fill="#097C87" className="jr-scan" />
                             {/* Checkmark badge */}
                             <circle cx="95" cy="30" r="14" fill="#097C87" opacity="0.85" />
-                            <path d="M88 30 L93 35 L102 25" stroke="#FFF8E8" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M88 30 L93 35 L102 25" stroke="#F8FAFB" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                           </g>
                         </svg>
                       )}
@@ -1132,13 +1145,13 @@ export default function HomePage() {
                             {/* Doctor silhouette */}
                             <circle cx="52" cy="35" r="12" fill="#065A62" opacity="0.7" />
                             <ellipse cx="52" cy="70" rx="18" ry="22" fill="#065A62" opacity="0.5" />
-                            <circle cx="52" cy="35" r="8" fill="#FFF8E8" />
+                            <circle cx="52" cy="35" r="8" fill="#F8FAFB" />
                             {/* Stethoscope hint */}
                             <circle cx="52" cy="35" r="3" fill="#097C87" opacity="0.6" />
                             {/* Patient silhouette */}
                             <circle cx="92" cy="40" r="10" fill="#FCA47C" opacity="0.7" />
                             <ellipse cx="92" cy="72" rx="15" ry="18" fill="#FCA47C" opacity="0.5" />
-                            <circle cx="92" cy="40" r="6" fill="#FFF8E8" />
+                            <circle cx="92" cy="40" r="6" fill="#F8FAFB" />
                             {/* Connection pulse */}
                             <line x1="62" y1="45" x2="82" y2="48" stroke="#097C87" strokeWidth="2" strokeDasharray="4 3" className="jc-pulse" />
                             <circle cx="72" cy="46" r="4" fill="#097C87" className="jc-pulse" opacity="0.6" />
@@ -1157,7 +1170,7 @@ export default function HomePage() {
                           <ellipse cx="70" cy="112" rx="45" ry="6" fill="rgba(9,124,135,0.08)" />
                           <g className="jp-float">
                             {/* Calendar/planner */}
-                            <rect x="25" y="20" width="90" height="70" rx="5" fill="#FFF8E8" stroke="#065A62" strokeWidth="1" />
+                            <rect x="25" y="20" width="90" height="70" rx="5" fill="#F8FAFB" stroke="#065A62" strokeWidth="1" />
                             <rect x="25" y="20" width="90" height="18" rx="5" fill="#097C87" />
                             <rect x="25" y="33" width="90" height="5" fill="#097C87" />
                             {/* Calendar dots */}
@@ -1188,7 +1201,7 @@ export default function HomePage() {
                           <ellipse cx="70" cy="112" rx="45" ry="6" fill="rgba(9,124,135,0.08)" />
                           <g className="ja-float">
                             {/* Monitor screen */}
-                            <rect x="25" y="15" width="90" height="60" rx="6" fill="#FFF8E8" stroke="#065A62" strokeWidth="1" />
+                            <rect x="25" y="15" width="90" height="60" rx="6" fill="#F8FAFB" stroke="#065A62" strokeWidth="1" />
                             {/* Heartbeat line */}
                             <path d="M35 50 L50 50 L55 35 L62 60 L68 42 L74 50 L125 50" stroke="#097C87" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="60" className="ja-dash" />
                             {/* Cross icon */}
@@ -1216,13 +1229,13 @@ export default function HomePage() {
                           <ellipse cx="70" cy="112" rx="45" ry="6" fill="rgba(9,124,135,0.08)" />
                           <g className="jpt-float">
                             {/* Clipboard */}
-                            <rect x="35" y="18" width="70" height="80" rx="5" fill="#FFF8E8" stroke="#065A62" strokeWidth="1" />
+                            <rect x="35" y="18" width="70" height="80" rx="5" fill="#F8FAFB" stroke="#065A62" strokeWidth="1" />
                             <rect x="55" y="12" width="30" height="12" rx="3" fill="#097C87" />
                             {/* Checklist items */}
                             {[0,1,2,3].map(r => (
                               <g key={r}>
                                 <rect x={46} y={38 + r * 16} width={12} height={10} rx={2} fill={r < 3 ? '#097C87' : '#065A62'} opacity={r < 3 ? 0.7 : 0.2} className={r === 2 ? 'jpt-check' : undefined} />
-                                {r < 3 && <path d={`M${49} ${43 + r * 16} l3 3 5-5`} stroke="#FFF8E8" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />}
+                                {r < 3 && <path d={`M${49} ${43 + r * 16} l3 3 5-5`} stroke="#F8FAFB" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />}
                                 <rect x={64} y={40 + r * 16} width={30} height={4} rx={2} fill="#097C87" opacity={0.12} />
                               </g>
                             ))}
@@ -1252,7 +1265,7 @@ export default function HomePage() {
                             {/* Heart */}
                             <g className="js-beat">
                               <path d="M70 82 C55 68 35 58 35 45 C35 34 44 27 55 27 C62 27 66 32 70 36 C74 32 78 27 85 27 C96 27 105 34 105 45 C105 58 85 68 70 82Z" fill="#097C87" opacity="0.75" />
-                              <path d="M60 52 L67 59 L82 44" stroke="#FFF8E8" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                              <path d="M60 52 L67 59 L82 44" stroke="#F8FAFB" strokeWidth="3" fill="none" strokeLinecap="round" strokeLinejoin="round" />
                             </g>
                             {/* Person silhouette */}
                             <circle cx="70" cy="92" r="4" fill="#065A62" opacity="0.4" />
@@ -1280,7 +1293,7 @@ export default function HomePage() {
       </Box>
 
       {/* TESTIMONIAL */}
-      <Box sx={{ background: '#FFF8E8', py: { xs: 10, md: 16 } }}>
+      <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 16 } }}>
         <Container maxWidth="lg">
           <MotionBox
             initial={{ opacity: 0, y: 20 }}
@@ -1378,7 +1391,7 @@ export default function HomePage() {
       </SectionWrapper>
 
       {/* SECURITY */}
-      <Box sx={{ background: '#FFF8E8', py: { xs: 10, md: 16 }, position: 'relative', overflow: 'hidden' }}>
+      <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 16 }, position: 'relative', overflow: 'hidden' }}>
         {/* Stacked diagonal blocks - bottom-left corner */}
         <Box sx={{ position: 'absolute', bottom: 0, left: 0, width: '35%', height: '100%', pointerEvents: 'none' }}>
           <svg viewBox="0 0 350 500" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }} preserveAspectRatio="xMinYMax slice">
@@ -1615,10 +1628,10 @@ export default function HomePage() {
               .cta-shift { animation: ctaShift 7s ease-in-out infinite; }
             `}</style>
             <g className="cta-shift">
-              <polygon points="200,0 400,0 400,100 280,150" fill="#FFF8E8" opacity="0.12" />
+              <polygon points="200,0 400,0 400,100 280,150" fill="#F8FAFB" opacity="0.12" />
               <polygon points="220,60 400,60 400,160 300,210" fill="#FCA47C" opacity="0.1" />
               <polygon points="240,120 400,120 400,220 320,270" fill="#065A62" opacity="0.08" />
-              <polygon points="180,200 400,200 400,320 280,370" fill="#FFF8E8" opacity="0.1" />
+              <polygon points="180,200 400,200 400,320 280,370" fill="#F8FAFB" opacity="0.1" />
               <polygon points="200,270 400,270 400,400 300,400" fill="#FCA47C" opacity="0.08" />
             </g>
           </svg>
@@ -1635,7 +1648,7 @@ export default function HomePage() {
                 <Typography
                   variant="h1"
                   sx={{
-                    color: '#FFF8E8',
+                    color: '#F8FAFB',
                     fontSize: { xs: '2.5rem', md: '3.5rem' },
                     mb: 3,
                   }}
@@ -1648,13 +1661,13 @@ export default function HomePage() {
                   component={Link}
                   to="/demo"
                   sx={{
-                    background: '#FFF8E8',
+                    background: '#F8FAFB',
                     color: '#065A62',
                     px: 5,
                     py: 1.8,
                     fontWeight: 600,
                     '&:hover': {
-                      background: '#FFFCF2',
+                      background: '#FFFFFF',
                     },
                   }}
                 >

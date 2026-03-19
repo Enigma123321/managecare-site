@@ -16,6 +16,7 @@ import HandshakeIcon from '@mui/icons-material/Handshake';
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import EmailIcon from '@mui/icons-material/Email';
+import SEO from '../components/SEO';
 
 const MotionBox = motion.create(Box);
 
@@ -84,13 +85,17 @@ const techRoles = [
 export default function CompanyPage() {
   return (
     <Box>
+      <SEO
+        title="About Us"
+        description="ManageCare is built by healthcare operators who understand the challenges of running a practice. 100+ years of combined healthcare experience."
+      />
       {/* HERO */}
       <Box sx={{ pt: { xs: 12, md: 16 }, pb: { xs: 8, md: 14 }, background: 'linear-gradient(135deg, #065A62 0%, #097C87 50%, #044048 100%)', position: 'relative', overflow: 'hidden' }}>
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Box sx={{ textAlign: 'center', maxWidth: 800, mx: 'auto' }}>
             <Chip
               label="Our Company"
-              sx={{ mb: 2, background: 'rgba(255,248,232,0.12)', border: '1px solid rgba(255,248,232,0.25)', color: '#FFF8E8', fontWeight: 500, py: 2, px: 1 }}
+              sx={{ mb: 2, background: 'rgba(248,250,251,0.12)', border: '1px solid rgba(248,250,251,0.25)', color: '#F8FAFB', fontWeight: 500, py: 2, px: 1 }}
             />
             <Typography variant="h1" style={{ color: '#FFFFFF' }} sx={{ mb: 2 }}>
               Leadership with Proven Healthcare Expertise
@@ -104,7 +109,7 @@ export default function CompanyPage() {
                   <Typography sx={{ fontFamily: '"Cormorant Garamond Variable", serif', fontSize: { xs: '2rem', md: '2.5rem' }, fontWeight: 400, color: '#FFFFFF' }}>
                     {s.value}
                   </Typography>
-                  <Typography sx={{ fontSize: '0.8rem', color: 'rgba(255,248,232,0.7)', fontWeight: 500, lineHeight: 1.4 }}>
+                  <Typography sx={{ fontSize: '0.8rem', color: 'rgba(248,250,251,0.7)', fontWeight: 500, lineHeight: 1.4 }}>
                     {s.label}
                   </Typography>
                 </Grid>
@@ -119,7 +124,7 @@ export default function CompanyPage() {
         overline="Core Expertise"
         title="What We Bring to the Table"
         subtitle="Three pillars of expertise that make ManageCare uniquely qualified to transform healthcare operations."
-        sx={{ background: '#FFFCF2' }}
+        sx={{ background: '#FFFFFF' }}
       >
         <Grid container spacing={4}>
           {expertiseAreas.map((area, i) => (
@@ -171,21 +176,21 @@ export default function CompanyPage() {
                         `}</style>
                       </defs>
                       {/* Central hospital cross */}
-                      <rect x="130" y="20" width="60" height="80" rx="8" fill="none" stroke="#FFF8E8" strokeWidth="1.5" opacity="0.6" />
-                      <rect x="148" y="35" width="24" height="8" rx="2" fill="#FFF8E8" className="hc-pulse" />
-                      <rect x="156" y="27" width="8" height="24" rx="2" fill="#FFF8E8" className="hc-pulse" />
+                      <rect x="130" y="20" width="60" height="80" rx="8" fill="none" stroke="#F8FAFB" strokeWidth="1.5" opacity="0.6" />
+                      <rect x="148" y="35" width="24" height="8" rx="2" fill="#F8FAFB" className="hc-pulse" />
+                      <rect x="156" y="27" width="8" height="24" rx="2" fill="#F8FAFB" className="hc-pulse" />
                       {/* EMR screens left */}
                       <rect x="20" y="30" width="50" height="35" rx="4" fill="none" stroke="#FCA47C" strokeWidth="1" opacity="0.7" />
-                      <rect x="26" y="36" width="20" height="3" rx="1" fill="#FFF8E8" opacity="0.6" />
-                      <rect x="26" y="42" width="30" height="3" rx="1" fill="#FFF8E8" opacity="0.4" />
-                      <rect x="26" y="48" width="15" height="3" rx="1" fill="#FFF8E8" opacity="0.3" />
+                      <rect x="26" y="36" width="20" height="3" rx="1" fill="#F8FAFB" opacity="0.6" />
+                      <rect x="26" y="42" width="30" height="3" rx="1" fill="#F8FAFB" opacity="0.4" />
+                      <rect x="26" y="48" width="15" height="3" rx="1" fill="#F8FAFB" opacity="0.3" />
                       {/* Connection line left */}
                       <line x1="70" y1="48" x2="130" y2="60" stroke="#FCA47C" strokeWidth="1" strokeDasharray="4 3" opacity="0.6" className="hc-slide" />
                       {/* EMR screens right */}
                       <rect x="250" y="30" width="50" height="35" rx="4" fill="none" stroke="#FCA47C" strokeWidth="1" opacity="0.7" />
-                      <rect x="256" y="36" width="20" height="3" rx="1" fill="#FFF8E8" opacity="0.6" />
-                      <rect x="256" y="42" width="30" height="3" rx="1" fill="#FFF8E8" opacity="0.4" />
-                      <rect x="256" y="48" width="15" height="3" rx="1" fill="#FFF8E8" opacity="0.3" />
+                      <rect x="256" y="36" width="20" height="3" rx="1" fill="#F8FAFB" opacity="0.6" />
+                      <rect x="256" y="42" width="30" height="3" rx="1" fill="#F8FAFB" opacity="0.4" />
+                      <rect x="256" y="48" width="15" height="3" rx="1" fill="#F8FAFB" opacity="0.3" />
                       {/* Connection line right */}
                       <line x1="250" y1="48" x2="190" y2="60" stroke="#FCA47C" strokeWidth="1" strokeDasharray="4 3" opacity="0.6" className="hc-slide" />
                       {/* Workflow nodes bottom */}
@@ -208,28 +213,28 @@ export default function CompanyPage() {
                         `}</style>
                       </defs>
                       {/* Left system nodes */}
-                      <rect x="15" y="20" width="55" height="28" rx="6" fill="none" stroke="#FFF8E8" strokeWidth="1" opacity="0.6" />
-                      <text x="42" y="38" textAnchor="middle" fill="#FFF8E8" fontSize="8" fontWeight="600" fontFamily="DM Sans Variable, sans-serif">Epic</text>
-                      <rect x="15" y="58" width="55" height="28" rx="6" fill="none" stroke="#FFF8E8" strokeWidth="1" opacity="0.6" />
-                      <text x="42" y="76" textAnchor="middle" fill="#FFF8E8" fontSize="8" fontWeight="600" fontFamily="DM Sans Variable, sans-serif">Cerner</text>
-                      <rect x="15" y="88" width="55" height="28" rx="6" fill="none" stroke="#FFF8E8" strokeWidth="1" opacity="0.5" />
-                      <text x="42" y="106" textAnchor="middle" fill="#FFF8E8" fontSize="8" fontWeight="600" fontFamily="DM Sans Variable, sans-serif">Athena</text>
+                      <rect x="15" y="20" width="55" height="28" rx="6" fill="none" stroke="#F8FAFB" strokeWidth="1" opacity="0.6" />
+                      <text x="42" y="38" textAnchor="middle" fill="#F8FAFB" fontSize="8" fontWeight="600" fontFamily="DM Sans Variable, sans-serif">Epic</text>
+                      <rect x="15" y="58" width="55" height="28" rx="6" fill="none" stroke="#F8FAFB" strokeWidth="1" opacity="0.6" />
+                      <text x="42" y="76" textAnchor="middle" fill="#F8FAFB" fontSize="8" fontWeight="600" fontFamily="DM Sans Variable, sans-serif">Cerner</text>
+                      <rect x="15" y="88" width="55" height="28" rx="6" fill="none" stroke="#F8FAFB" strokeWidth="1" opacity="0.5" />
+                      <text x="42" y="106" textAnchor="middle" fill="#F8FAFB" fontSize="8" fontWeight="600" fontFamily="DM Sans Variable, sans-serif">Athena</text>
                       {/* Center hub */}
                       <circle cx="160" cy="60" r="24" fill="#097C87" opacity="0.6" />
-                      <circle cx="160" cy="60" className="node-glow" fill="none" stroke="#FFF8E8" strokeWidth="1.5" />
-                      <text x="160" y="56" textAnchor="middle" fill="#FFF8E8" fontSize="8" fontWeight="700" fontFamily="DM Sans Variable, sans-serif">FHIR</text>
-                      <text x="160" y="67" textAnchor="middle" fill="#FFF8E8" fontSize="8" fontWeight="700" fontFamily="DM Sans Variable, sans-serif">Hub</text>
+                      <circle cx="160" cy="60" className="node-glow" fill="none" stroke="#F8FAFB" strokeWidth="1.5" />
+                      <text x="160" y="56" textAnchor="middle" fill="#F8FAFB" fontSize="8" fontWeight="700" fontFamily="DM Sans Variable, sans-serif">FHIR</text>
+                      <text x="160" y="67" textAnchor="middle" fill="#F8FAFB" fontSize="8" fontWeight="700" fontFamily="DM Sans Variable, sans-serif">Hub</text>
                       {/* Flow lines left to center */}
                       <line x1="70" y1="34" x2="136" y2="55" stroke="#FCA47C" strokeWidth="1" strokeDasharray="4 3" className="flow-line" opacity="0.7" />
                       <line x1="70" y1="72" x2="136" y2="62" stroke="#FCA47C" strokeWidth="1" strokeDasharray="4 3" className="flow-line" opacity="0.7" />
                       <line x1="70" y1="102" x2="136" y2="68" stroke="#FCA47C" strokeWidth="1" strokeDasharray="4 3" className="flow-line" opacity="0.5" />
                       {/* Right output nodes */}
-                      <rect x="250" y="20" width="55" height="28" rx="6" fill="none" stroke="#FFF8E8" strokeWidth="1" opacity="0.6" />
-                      <text x="278" y="38" textAnchor="middle" fill="#FFF8E8" fontSize="7" fontWeight="600" fontFamily="DM Sans Variable, sans-serif">Scheduling</text>
-                      <rect x="250" y="58" width="55" height="28" rx="6" fill="none" stroke="#FFF8E8" strokeWidth="1" opacity="0.6" />
-                      <text x="278" y="76" textAnchor="middle" fill="#FFF8E8" fontSize="7" fontWeight="600" fontFamily="DM Sans Variable, sans-serif">Analytics</text>
-                      <rect x="250" y="88" width="55" height="28" rx="6" fill="none" stroke="#FFF8E8" strokeWidth="1" opacity="0.5" />
-                      <text x="278" y="106" textAnchor="middle" fill="#FFF8E8" fontSize="7" fontWeight="600" fontFamily="DM Sans Variable, sans-serif">Outreach</text>
+                      <rect x="250" y="20" width="55" height="28" rx="6" fill="none" stroke="#F8FAFB" strokeWidth="1" opacity="0.6" />
+                      <text x="278" y="38" textAnchor="middle" fill="#F8FAFB" fontSize="7" fontWeight="600" fontFamily="DM Sans Variable, sans-serif">Scheduling</text>
+                      <rect x="250" y="58" width="55" height="28" rx="6" fill="none" stroke="#F8FAFB" strokeWidth="1" opacity="0.6" />
+                      <text x="278" y="76" textAnchor="middle" fill="#F8FAFB" fontSize="7" fontWeight="600" fontFamily="DM Sans Variable, sans-serif">Analytics</text>
+                      <rect x="250" y="88" width="55" height="28" rx="6" fill="none" stroke="#F8FAFB" strokeWidth="1" opacity="0.5" />
+                      <text x="278" y="106" textAnchor="middle" fill="#F8FAFB" fontSize="7" fontWeight="600" fontFamily="DM Sans Variable, sans-serif">Outreach</text>
                       {/* Flow lines center to right */}
                       <line x1="184" y1="55" x2="250" y2="34" stroke="#FCA47C" strokeWidth="1" strokeDasharray="4 3" className="flow-line" opacity="0.7" />
                       <line x1="184" y1="62" x2="250" y2="72" stroke="#FCA47C" strokeWidth="1" strokeDasharray="4 3" className="flow-line" opacity="0.7" />
@@ -266,24 +271,24 @@ export default function CompanyPage() {
                       <circle cx="280" cy="45" r="12" fill="#097C87" opacity="0.8" className="n4" />
                       <circle cx="280" cy="80" r="12" fill="#097C87" opacity="0.8" className="n5" />
                       {/* Synapse connections input->h1 */}
-                      <line x1="48" y1="25" x2="110" y2="35" stroke="#FFF8E8" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.5" />
-                      <line x1="48" y1="60" x2="110" y2="35" stroke="#FFF8E8" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.4" />
-                      <line x1="48" y1="60" x2="110" y2="85" stroke="#FFF8E8" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.5" />
-                      <line x1="48" y1="95" x2="110" y2="85" stroke="#FFF8E8" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.4" />
+                      <line x1="48" y1="25" x2="110" y2="35" stroke="#F8FAFB" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.5" />
+                      <line x1="48" y1="60" x2="110" y2="35" stroke="#F8FAFB" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.4" />
+                      <line x1="48" y1="60" x2="110" y2="85" stroke="#F8FAFB" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.5" />
+                      <line x1="48" y1="95" x2="110" y2="85" stroke="#F8FAFB" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.4" />
                       {/* h1->h2 */}
-                      <line x1="130" y1="35" x2="190" y2="30" stroke="#FFF8E8" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.5" />
-                      <line x1="130" y1="35" x2="190" y2="60" stroke="#FFF8E8" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.4" />
-                      <line x1="130" y1="85" x2="190" y2="60" stroke="#FFF8E8" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.5" />
-                      <line x1="130" y1="85" x2="190" y2="90" stroke="#FFF8E8" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.4" />
+                      <line x1="130" y1="35" x2="190" y2="30" stroke="#F8FAFB" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.5" />
+                      <line x1="130" y1="35" x2="190" y2="60" stroke="#F8FAFB" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.4" />
+                      <line x1="130" y1="85" x2="190" y2="60" stroke="#F8FAFB" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.5" />
+                      <line x1="130" y1="85" x2="190" y2="90" stroke="#F8FAFB" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.4" />
                       {/* h2->output */}
-                      <line x1="210" y1="30" x2="268" y2="45" stroke="#FFF8E8" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.5" />
-                      <line x1="210" y1="60" x2="268" y2="45" stroke="#FFF8E8" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.4" />
-                      <line x1="210" y1="60" x2="268" y2="80" stroke="#FFF8E8" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.5" />
-                      <line x1="210" y1="90" x2="268" y2="80" stroke="#FFF8E8" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.4" />
+                      <line x1="210" y1="30" x2="268" y2="45" stroke="#F8FAFB" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.5" />
+                      <line x1="210" y1="60" x2="268" y2="45" stroke="#F8FAFB" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.4" />
+                      <line x1="210" y1="60" x2="268" y2="80" stroke="#F8FAFB" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.5" />
+                      <line x1="210" y1="90" x2="268" y2="80" stroke="#F8FAFB" strokeWidth="0.8" strokeDasharray="3 3" className="syn" opacity="0.4" />
                       {/* Labels */}
-                      <text x="40" y="115" textAnchor="middle" fill="#FFF8E8" fontSize="7" fontWeight="600" fontFamily="DM Sans Variable, sans-serif" opacity="0.7">Input</text>
-                      <text x="160" y="115" textAnchor="middle" fill="#FFF8E8" fontSize="7" fontWeight="600" fontFamily="DM Sans Variable, sans-serif" opacity="0.7">Processing</text>
-                      <text x="280" y="115" textAnchor="middle" fill="#FFF8E8" fontSize="7" fontWeight="600" fontFamily="DM Sans Variable, sans-serif" opacity="0.7">Output</text>
+                      <text x="40" y="115" textAnchor="middle" fill="#F8FAFB" fontSize="7" fontWeight="600" fontFamily="DM Sans Variable, sans-serif" opacity="0.7">Input</text>
+                      <text x="160" y="115" textAnchor="middle" fill="#F8FAFB" fontSize="7" fontWeight="600" fontFamily="DM Sans Variable, sans-serif" opacity="0.7">Processing</text>
+                      <text x="280" y="115" textAnchor="middle" fill="#F8FAFB" fontSize="7" fontWeight="600" fontFamily="DM Sans Variable, sans-serif" opacity="0.7">Output</text>
                     </svg>
                   )}
                 </Box>
@@ -333,7 +338,7 @@ export default function CompanyPage() {
       </SectionWrapper>
 
       {/* TRUSTED LEADERSHIP */}
-      <Box sx={{ background: '#FFF8E8', py: { xs: 10, md: 16 } }}>
+      <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 16 } }}>
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center', mb: 6 }}>
             <Typography variant="overline" sx={{ color: '#097C87', display: 'block', mb: 2 }}>
@@ -413,7 +418,7 @@ export default function CompanyPage() {
       </SectionWrapper>
 
       {/* CAREERS */}
-      <Box sx={{ background: '#FFFCF2', py: { xs: 10, md: 16 } }}>
+      <Box sx={{ background: '#FFFFFF', py: { xs: 10, md: 16 } }}>
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }}>
@@ -476,10 +481,10 @@ export default function CompanyPage() {
       {/* CTA */}
       <Box sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(135deg, #065A62 0%, #097C87 50%, #044048 100%)' }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
-          <Typography variant="h2" style={{ color: '#FFF8E8' }} sx={{ mb: 2 }}>
+          <Typography variant="h2" style={{ color: '#F8FAFB' }} sx={{ mb: 2 }}>
             Work with a Team That Truly Understands Healthcare
           </Typography>
-          <Typography variant="body1" style={{ color: 'rgba(255,248,232,0.85)' }} sx={{ mb: 4, maxWidth: 600, mx: 'auto' }}>
+          <Typography variant="body1" style={{ color: 'rgba(248,250,251,0.85)' }} sx={{ mb: 4, maxWidth: 600, mx: 'auto' }}>
             Let's transform your operations together. Our team of healthcare veterans and technology innovators is ready to help.
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -489,12 +494,12 @@ export default function CompanyPage() {
               component={Link}
               to="/demo"
               sx={{
-                background: '#FFF8E8',
+                background: '#F8FAFB',
                 color: '#065A62',
                 px: 5,
                 py: 1.8,
                 fontWeight: 600,
-                '&:hover': { background: '#FFFCF2' },
+                '&:hover': { background: '#FFFFFF' },
               }}
             >
               Get in Touch
@@ -508,9 +513,9 @@ export default function CompanyPage() {
               sx={{
                 py: 1.5,
                 px: 4,
-                color: '#FFF8E8',
-                borderColor: 'rgba(255,248,232,0.4)',
-                '&:hover': { borderColor: '#FFF8E8', background: 'rgba(255,248,232,0.08)' },
+                color: '#F8FAFB',
+                borderColor: 'rgba(248,250,251,0.4)',
+                '&:hover': { borderColor: '#F8FAFB', background: 'rgba(248,250,251,0.08)' },
               }}
             >
               Explore Our Platform

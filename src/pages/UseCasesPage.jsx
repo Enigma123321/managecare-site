@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import SearchIcon from '@mui/icons-material/Search';
 import specialties from '../data/specialties';
+import SEO from '../components/SEO';
 
 const MotionBox = motion.create(Box);
 
@@ -25,6 +26,10 @@ export default function UseCasesPage() {
 
   return (
     <Box>
+      <SEO
+        title="Use Cases by Specialty"
+        description="See how ManageCare transforms operations for 112+ medical specialties — from oncology to primary care, cardiology, orthopedics, and beyond."
+      />
       {/* Hero Section */}
       <Box sx={{ pt: { xs: 12, md: 14 }, pb: { xs: 6, md: 10 }, background: '#097C87', position: 'relative' }}>
         <Container maxWidth="lg">
@@ -34,14 +39,14 @@ export default function UseCasesPage() {
             transition={{ duration: 0.8 }}
             sx={{ textAlign: 'center', maxWidth: 900, mx: 'auto' }}
           >
-            <Chip label="By Specialty" sx={{ mb: 2, background: 'rgba(255,248,232,0.15)', border: '1px solid rgba(255,248,232,0.3)', color: '#FFF8E8', fontWeight: 600, py: 2, px: 1 }} />
-            <Typography variant="h1" sx={{ color: '#FFF8E8', mb: 2 }}>
+            <Chip label="By Specialty" sx={{ mb: 2, background: 'rgba(248,250,251,0.15)', border: '1px solid rgba(248,250,251,0.3)', color: '#F8FAFB', fontWeight: 600, py: 2, px: 1 }} />
+            <Typography variant="h1" sx={{ color: '#F8FAFB', mb: 2 }}>
               Built for Your{' '}
               <Box component="span" sx={{ color: '#FFFFFF' }}>
                 Specialty
               </Box>
             </Typography>
-            <Typography variant="body1" sx={{ fontSize: '1.1rem', maxWidth: 700, mx: 'auto', color: 'rgba(255,248,232,0.8)', mb: 4 }}>
+            <Typography variant="body1" sx={{ fontSize: '1.1rem', maxWidth: 700, mx: 'auto', color: 'rgba(248,250,251,0.8)', mb: 4 }}>
               ManageCare adapts to the unique workflows, protocols, and challenges of your specialty. See how practices like yours are transforming their operations.
             </Typography>
 
@@ -63,7 +68,7 @@ export default function UseCasesPage() {
                 }}
                 sx={{
                   '& .MuiOutlinedInput-root': {
-                    background: '#FFF8E8',
+                    background: '#F8FAFB',
                     borderRadius: '14px',
                     fontSize: '1rem',
                     '& fieldset': { border: 'none' },
@@ -112,7 +117,7 @@ export default function UseCasesPage() {
                     px: 4,
                     fontSize: '0.95rem',
                     background: '#097C87',
-                    color: '#FFF8E8',
+                    color: '#F8FAFB',
                     '&:hover': { background: '#065A62' },
                   }}
                 >
@@ -252,7 +257,7 @@ export default function UseCasesPage() {
       </Box>
 
       {/* CTA Section */}
-      <Box sx={{ py: { xs: 6, md: 10 }, background: '#FFF8E8' }}>
+      <Box sx={{ py: { xs: 6, md: 10 }, background: '#F8FAFB' }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
           <Typography variant="h2" sx={{ color: '#065A62', mb: 2 }}>Don't See Your Specialty?</Typography>
           <Typography variant="body1" sx={{ mb: 3, fontSize: '1rem', maxWidth: 600, mx: 'auto', color: '#065A62' }}>
@@ -269,7 +274,7 @@ export default function UseCasesPage() {
               px: 4,
               fontSize: '0.95rem',
               background: '#097C87',
-              color: '#FFF8E8',
+              color: '#F8FAFB',
               '&:hover': { background: '#065A62' },
             }}
           >

@@ -36,7 +36,7 @@ const outcomes = [
 
 export default function IntegrationHub() {
   return (
-    <Box sx={{ py: { xs: 6, md: 10 }, background: '#FFF8E8', overflow: 'hidden' }}>
+    <Box sx={{ py: { xs: 6, md: 10 }, background: '#F8FAFB', overflow: 'hidden' }}>
       <Container maxWidth="lg">
         <MotionBox
           initial={{ opacity: 0, y: 30 }}
@@ -99,7 +99,7 @@ export default function IntegrationHub() {
                 }}
               >
                 <StorageIcon sx={{ fontSize: 18, color: '#FCA47C' }} />
-                <Typography sx={{ fontWeight: 700, color: '#FFF8E8', fontSize: '0.9rem' }}>
+                <Typography sx={{ fontWeight: 700, color: '#F8FAFB', fontSize: '0.9rem' }}>
                   EMR Systems (20+)
                 </Typography>
               </Box>
@@ -197,7 +197,7 @@ export default function IntegrationHub() {
                     mb: 2,
                   }}
                 >
-                  <Typography sx={{ color: '#FFF8E8', fontSize: '0.8rem', fontWeight: 600 }}>
+                  <Typography sx={{ color: '#F8FAFB', fontSize: '0.8rem', fontWeight: 600 }}>
                     Unified Patient Database • HL7/FHIR • AI Engine
                   </Typography>
                 </Box>
@@ -227,7 +227,7 @@ export default function IntegrationHub() {
                 </Box>
                 <Typography
                   sx={{
-                    color: 'rgba(255,248,232,0.6)',
+                    color: 'rgba(248,250,251,0.6)',
                     fontSize: '0.75rem',
                     fontWeight: 600,
                     mt: 2,
@@ -280,7 +280,7 @@ export default function IntegrationHub() {
                   textAlign: 'center',
                 }}
               >
-                <Typography sx={{ fontWeight: 700, color: '#FFF8E8', fontSize: '0.9rem' }}>
+                <Typography sx={{ fontWeight: 700, color: '#F8FAFB', fontSize: '0.9rem' }}>
                   Outcomes
                 </Typography>
               </Box>

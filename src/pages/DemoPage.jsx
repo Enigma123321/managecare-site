@@ -5,12 +5,17 @@ import { motion } from 'framer-motion';
 import GlowCard from '../components/GlowCard';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+import SEO from '../components/SEO';
 
 const MotionBox = motion.create(Box);
 
 export default function DemoPage() {
   return (
-    <Box sx={{ pt: { xs: 12, md: 14 }, pb: { xs: 6, md: 10 }, background: '#FFF8E8' }}>
+    <Box sx={{ pt: { xs: 12, md: 14 }, pb: { xs: 6, md: 10 }, background: '#F8FAFB' }}>
+      <SEO
+        title="Request a Demo"
+        description="See ManageCare in action. Book a personalized demo to learn how AI employees can transform your practice operations."
+      />
       <Container maxWidth="lg">
         <Grid container spacing={5} alignItems="center">
           <Grid size={{ xs: 12, md: 6 }}>
@@ -59,7 +64,7 @@ export default function DemoPage() {
                   mt: 3,
                   p: 2.5,
                   borderRadius: 3,
-                  background: '#FFFCF2',
+                  background: '#FFFFFF',
                   border: '1px solid rgba(9,124,135,0.15)',
                 }}
               >
@@ -194,7 +199,7 @@ export default function DemoPage() {
 
 const inputSx = {
   '& .MuiOutlinedInput-root': {
-    background: '#FFFCF2',
+    background: '#FFFFFF',
     borderRadius: 2,
     '& fieldset': {
       borderColor: 'rgba(9,124,135,0.2)',

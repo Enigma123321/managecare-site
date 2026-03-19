@@ -20,6 +20,7 @@ import PsychologyIcon from '@mui/icons-material/Psychology';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
+import SEO from '../components/SEO';
 
 const MotionBox = motion.create(Box);
 
@@ -260,6 +261,10 @@ const solutions = [
 export default function SolutionsPage() {
   return (
     <Box>
+      <SEO
+        title="Solutions"
+        description="Explore how ManageCare solves healthcare operations challenges — from intelligent scheduling to automated care management and referral coordination."
+      />
       {/* HERO */}
       <Box
         sx={{
@@ -279,14 +284,14 @@ export default function SolutionsPage() {
             <Typography
               variant="h1"
               sx={{
-                color: '#FFF8E8',
+                color: '#F8FAFB',
                 mb: 2,
                 fontFamily: '"Cormorant Garamond Variable", serif',
                 fontWeight: 300,
               }}
             >
               Solutions for Every{' '}
-              <Box component="span" sx={{ color: '#FFF8E8', fontWeight: 400 }}>
+              <Box component="span" sx={{ color: '#F8FAFB', fontWeight: 400 }}>
                 Healthcare Workflow
               </Box>
             </Typography>
@@ -296,7 +301,7 @@ export default function SolutionsPage() {
                 fontSize: '1.1rem',
                 maxWidth: 700,
                 mx: 'auto',
-                color: 'rgba(255,248,232,0.8)',
+                color: 'rgba(248,250,251,0.8)',
                 fontFamily: '"DM Sans Variable", sans-serif',
                 fontWeight: 300,
               }}
@@ -471,7 +476,7 @@ export default function SolutionsPage() {
       ))}
 
       {/* CTA */}
-      <Box sx={{ py: { xs: 7, md: 10 }, background: '#FFF8E8', position: 'relative' }}>
+      <Box sx={{ py: { xs: 7, md: 10 }, background: '#F8FAFB', position: 'relative' }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
           <MotionBox
             initial={{ opacity: 0, y: 30 }}
@@ -517,7 +522,7 @@ export default function SolutionsPage() {
                 fontFamily: '"DM Sans Variable", sans-serif',
                 fontWeight: 500,
                 background: '#097C87',
-                color: '#FFF8E8',
+                color: '#F8FAFB',
                 borderRadius: '4px',
                 textTransform: 'none',
                 boxShadow: 'none',

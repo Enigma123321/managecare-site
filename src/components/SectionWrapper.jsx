@@ -21,7 +21,7 @@ export default function SectionWrapper({
         py: { xs: 8, md: 12 },
         position: 'relative',
         overflow: 'hidden',
-        background: dark ? '#FFFCF2' : 'transparent',
+        background: dark ? '#FFFFFF' : 'transparent',
         ...sx,
       }}
     >

@@ -10,7 +10,7 @@ const theme = createTheme({
       main: '#097C87',
       light: '#065A62',
       dark: '#065A62',
-      contrastText: '#FFF8E8',
+      contrastText: '#F8FAFB',
     },
     secondary: {
       main: '#065A62',
@@ -18,8 +18,8 @@ const theme = createTheme({
       dark: '#065A62',
     },
     background: {
-      default: '#FFF8E8',
-      paper: '#FFFCF2',
+      default: '#F8FAFB',
+      paper: '#FFFFFF',
     },
     text: {
       primary: '#065A62',
@@ -115,7 +115,7 @@ const theme = createTheme({
         },
         containedPrimary: {
           background: '#097C87',
-          color: '#FFF8E8',
+          color: '#F8FAFB',
           boxShadow: 'none',
           '&:hover': {
             background: '#23CED9',
@@ -137,7 +137,7 @@ const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          background: '#FFFCF2',
+          background: '#FFFFFF',
           border: 'none',
           boxShadow: '0 1px 3px rgba(9, 124, 135, 0.06)',
           borderRadius: 8,

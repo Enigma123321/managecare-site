@@ -8,6 +8,7 @@ import GlowCard from '../components/GlowCard';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import SEO from '../components/SEO';
 
 const MotionBox = motion.create(Box);
 
@@ -35,9 +36,9 @@ const nodeIcons = {
   'Dynamic Templates': (x, y, s, i) => (
     <g className={`node-float node-float-${i % 3}`}>
       <rect x={x-s*0.28} y={y-s*0.3} width={s*0.56} height={s*0.6} rx="2" fill="none" stroke="#097C87" strokeWidth="1.2" />
-      <rect x={x-s*0.18} y={y-s*0.18} width={s*0.2} height={s*0.12} rx="1" fill="#FFF8E8" stroke="#097C87" strokeWidth="0.6" className="template-shift" />
-      <rect x={x+s*0.05} y={y-s*0.18} width={s*0.14} height={s*0.12} rx="1" fill="#FFF8E8" stroke="#065A62" strokeWidth="0.6" />
-      <rect x={x-s*0.18} y={y+s*0.02} width={s*0.36} height={s*0.1} rx="1" fill="#FFF8E8" stroke="#065A62" strokeWidth="0.6" />
+      <rect x={x-s*0.18} y={y-s*0.18} width={s*0.2} height={s*0.12} rx="1" fill="#F8FAFB" stroke="#097C87" strokeWidth="0.6" className="template-shift" />
+      <rect x={x+s*0.05} y={y-s*0.18} width={s*0.14} height={s*0.12} rx="1" fill="#F8FAFB" stroke="#065A62" strokeWidth="0.6" />
+      <rect x={x-s*0.18} y={y+s*0.02} width={s*0.36} height={s*0.1} rx="1" fill="#F8FAFB" stroke="#065A62" strokeWidth="0.6" />
     </g>
   ),
   'Automated Waitlist': (x, y, s, i) => (
@@ -57,7 +58,7 @@ const nodeIcons = {
       <line x1={x-s*0.3} y1={y-s*0.14} x2={x+s*0.3} y2={y-s*0.14} stroke="#065A62" strokeWidth="0.6" />
       {[0, 1, 2].map(col => [0, 1].map(row => (
         <rect key={`${col}-${row}`} x={x-s*0.24+col*s*0.18} y={y-s*0.08+row*s*0.14} width={s*0.14} height={s*0.1} rx="1"
-          fill={col === 1 && row === 0 ? '#097C87' : '#FFF8E8'} stroke={col === 1 && row === 0 ? '#097C87' : '#065A62'} strokeWidth="0.5"
+          fill={col === 1 && row === 0 ? '#097C87' : '#F8FAFB'} stroke={col === 1 && row === 0 ? '#097C87' : '#065A62'} strokeWidth="0.5"
           className={col === 1 && row === 0 ? 'slot-glow' : ''} />
       )))}
     </g>
@@ -110,7 +111,7 @@ const nodeIcons = {
       <path d={`M${x-s*0.25} ${y} h${s*0.5}`} fill="none" stroke="#065A62" strokeWidth="1" />
       {[-1, 0, 1].map(j => (
         <g key={j}>
-          <circle cx={x+j*s*0.18} cy={y} r={s*0.05} fill={j <= 0 ? '#097C87' : '#FFF8E8'} stroke="#097C87" strokeWidth="1" className={j === 0 ? 'lifecycle-fill' : ''} />
+          <circle cx={x+j*s*0.18} cy={y} r={s*0.05} fill={j <= 0 ? '#097C87' : '#F8FAFB'} stroke="#097C87" strokeWidth="1" className={j === 0 ? 'lifecycle-fill' : ''} />
         </g>
       ))}
       <path d={`M${x-s*0.18} ${y-s*0.15} l${s*0.05} ${s*0.08} M${x} ${y-s*0.15} l${s*0.05} ${s*0.08}`} fill="none" stroke="#065A62" strokeWidth="0.7" />
@@ -139,13 +140,13 @@ const nodeIcons = {
       <line x1={x-s*0.1} y1={y-s*0.02} x2={x+s*0.12} y2={y-s*0.02} stroke="#065A62" strokeWidth="0.8" />
       <line x1={x-s*0.1} y1={y+s*0.1} x2={x+s*0.06} y2={y+s*0.1} stroke="#065A62" strokeWidth="0.8" />
       <circle cx={x} cy={y+s*0.22} r={s*0.04} fill="#097C87" className="slot-glow" />
-      <path d={`M${x-s*0.03} ${y+s*0.22} h${s*0.06} M${x} ${y+s*0.19} v${s*0.06}`} stroke="#FFF8E8" strokeWidth="0.8" />
+      <path d={`M${x-s*0.03} ${y+s*0.22} h${s*0.06} M${x} ${y+s*0.19} v${s*0.06}`} stroke="#F8FAFB" strokeWidth="0.8" />
     </g>
   ),
   'Staff Review Queue': (x, y, s, i) => (
     <g className={`node-float node-float-${i % 3}`}>
       {[0, 1, 2].map(j => (
-        <rect key={j} x={x-s*0.22+j*2} y={y-s*0.2+j*3} width={s*0.44} height={s*0.14} rx="2" fill={j === 0 ? '#FFF8E8' : 'none'} stroke={j === 0 ? '#097C87' : '#065A62'} strokeWidth={j === 0 ? '1.2' : '0.8'}
+        <rect key={j} x={x-s*0.22+j*2} y={y-s*0.2+j*3} width={s*0.44} height={s*0.14} rx="2" fill={j === 0 ? '#F8FAFB' : 'none'} stroke={j === 0 ? '#097C87' : '#065A62'} strokeWidth={j === 0 ? '1.2' : '0.8'}
           className={j === 0 ? 'queue-slide' : ''} />
       ))}
     </g>
@@ -167,7 +168,7 @@ const nodeIcons = {
   ),
   'Program Compliance': (x, y, s, i) => (
     <g className={`node-float node-float-${i % 3}`}>
-      <path d={`M${x} ${y-s*0.28} l${s*0.2} ${s*0.08} v${s*0.18} c0 ${s*0.14} -${s*0.2} ${s*0.2} -${s*0.2} ${s*0.2} c0 0 -${s*0.2} -${s*0.06} -${s*0.2} -${s*0.2} v-${s*0.18} z`} fill="#FFF8E8" stroke="#097C87" strokeWidth="1.2" />
+      <path d={`M${x} ${y-s*0.28} l${s*0.2} ${s*0.08} v${s*0.18} c0 ${s*0.14} -${s*0.2} ${s*0.2} -${s*0.2} ${s*0.2} c0 0 -${s*0.2} -${s*0.06} -${s*0.2} -${s*0.2} v-${s*0.18} z`} fill="#F8FAFB" stroke="#097C87" strokeWidth="1.2" />
       <path d={`M${x-s*0.06} ${y-s*0.04} l${s*0.04} ${s*0.04} l${s*0.1} -${s*0.1}`} fill="none" stroke="#097C87" strokeWidth="1.5" className="check-draw" />
     </g>
   ),
@@ -199,7 +200,7 @@ const nodeIcons = {
   ),
   'Survivorship': (x, y, s, i) => (
     <g className={`node-float node-float-${i % 3}`}>
-      <path d={`M${x} ${y-s*0.08} c-${s*0.12} -${s*0.18} -${s*0.28} ${s*0.02} 0 ${s*0.2} c${s*0.28} -${s*0.18} ${s*0.12} -${s*0.38} 0 -${s*0.2}`} fill="#FFF8E8" stroke="#097C87" strokeWidth="1.2" className="heart-beat" />
+      <path d={`M${x} ${y-s*0.08} c-${s*0.12} -${s*0.18} -${s*0.28} ${s*0.02} 0 ${s*0.2} c${s*0.28} -${s*0.18} ${s*0.12} -${s*0.38} 0 -${s*0.2}`} fill="#F8FAFB" stroke="#097C87" strokeWidth="1.2" className="heart-beat" />
     </g>
   ),
   'SDOH Screening': (x, y, s, i) => (
@@ -221,7 +222,7 @@ const nodeIcons = {
     <g className={`node-float node-float-${i % 3}`}>
       <rect x={x-s*0.14} y={y-s*0.28} width={s*0.28} height={s*0.36} rx="1" fill="none" stroke="#065A62" strokeWidth="0.8" />
       <rect x={x-s*0.2} y={y-s*0.22} width={s*0.28} height={s*0.36} rx="1" fill="none" stroke="#097C87" strokeWidth="1" />
-      <rect x={x-s*0.26} y={y-s*0.16} width={s*0.28} height={s*0.36} rx="1" fill="#FFF8E8" stroke="#097C87" strokeWidth="1.2" />
+      <rect x={x-s*0.26} y={y-s*0.16} width={s*0.28} height={s*0.36} rx="1" fill="#F8FAFB" stroke="#097C87" strokeWidth="1.2" />
       <line x1={x-s*0.18} y1={y-s*0.02} x2={x-s*0.04} y2={y-s*0.02} stroke="#065A62" strokeWidth="0.6" />
       <line x1={x-s*0.18} y1={y+s*0.08} x2={x-s*0.08} y2={y+s*0.08} stroke="#065A62" strokeWidth="0.6" />
     </g>
@@ -235,7 +236,7 @@ const nodeIcons = {
   ),
   'Pre-Visit Briefs': (x, y, s, i) => (
     <g className={`node-float node-float-${i % 3}`}>
-      <rect x={x-s*0.2} y={y-s*0.25} width={s*0.4} height={s*0.5} rx="2" fill="#FFF8E8" stroke="#097C87" strokeWidth="1.2" />
+      <rect x={x-s*0.2} y={y-s*0.25} width={s*0.4} height={s*0.5} rx="2" fill="#F8FAFB" stroke="#097C87" strokeWidth="1.2" />
       <circle cx={x} cy={y-s*0.1} r={s*0.06} fill="#097C87" />
       <line x1={x-s*0.1} y1={y+s*0.04} x2={x+s*0.1} y2={y+s*0.04} stroke="#097C87" strokeWidth="0.7" />
       <line x1={x-s*0.08} y1={y+s*0.12} x2={x+s*0.08} y2={y+s*0.12} stroke="#065A62" strokeWidth="0.6" />
@@ -341,8 +342,8 @@ function HubDiagram({ title, subtitle, nodes, size = 320 }) {
           <g key={i}>
             <line x1={cx} y1={cy} x2={nx} y2={ny} stroke="rgba(9,124,135,0.15)" strokeWidth="1.5" strokeDasharray="6 4" className="spoke-line" />
             {/* Node background */}
-            <circle cx={nx} cy={ny} r={nodeR + 4} fill="rgba(255,248,232,0.3)" />
-            <circle cx={nx} cy={ny} r={nodeR} fill="#FFFCF2" stroke="#097C87" strokeWidth="1.2" />
+            <circle cx={nx} cy={ny} r={nodeR + 4} fill="rgba(248,250,251,0.3)" />
+            <circle cx={nx} cy={ny} r={nodeR} fill="#FFFFFF" stroke="#097C87" strokeWidth="1.2" />
             {/* Animated icon */}
             {iconFn ? iconFn(nx, ny, nodeR * 2, i) : (
               <circle cx={nx} cy={ny} r={nodeR * 0.4} fill="#097C87" />
@@ -363,10 +364,10 @@ function HubDiagram({ title, subtitle, nodes, size = 320 }) {
       <circle cx={cx} cy={cy} r={hubR + 8} fill="rgba(9,124,135,0.06)" />
       <circle cx={cx} cy={cy} r={hubR + 3} fill="rgba(9,124,135,0.1)" />
       <circle cx={cx} cy={cy} r={hubR} fill="#097C87" className={`hub-center-${uid}`} />
-      <text x={cx} y={cy - 6} textAnchor="middle" fill="#FFF8E8" fontSize={size * 0.045} fontWeight="700" fontFamily="DM Sans Variable, sans-serif">
+      <text x={cx} y={cy - 6} textAnchor="middle" fill="#F8FAFB" fontSize={size * 0.045} fontWeight="700" fontFamily="DM Sans Variable, sans-serif">
         AI
       </text>
-      <text x={cx} y={cy + 10} textAnchor="middle" fill="#FFF8E8" fontSize={size * 0.025} fontWeight="500" fontFamily="DM Sans Variable, sans-serif" letterSpacing="2">
+      <text x={cx} y={cy + 10} textAnchor="middle" fill="#F8FAFB" fontSize={size * 0.025} fontWeight="500" fontFamily="DM Sans Variable, sans-serif" letterSpacing="2">
         {subtitle}
       </text>
     </svg>
@@ -741,13 +742,17 @@ const additionalEmployees = [
 export default function AgentsPage() {
   return (
     <Box>
+      <SEO
+        title="AI Employees"
+        description="Meet ManageCare's 14 AI Employees and 30+ specialized agents that automate scheduling, care management, referral coordination, and more."
+      />
       {/* HERO */}
       <Box sx={{ pt: { xs: 12, md: 16 }, pb: { xs: 8, md: 14 }, background: 'linear-gradient(135deg, #065A62 0%, #097C87 50%, #044048 100%)', position: 'relative', overflow: 'hidden' }}>
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Box sx={{ textAlign: 'center', maxWidth: 900, mx: 'auto' }}>
             <Chip
               label="AI Employees"
-              sx={{ mb: 2, background: 'rgba(255,248,232,0.12)', border: '1px solid rgba(255,248,232,0.25)', color: '#FFF8E8', fontWeight: 500, py: 2, px: 1 }}
+              sx={{ mb: 2, background: 'rgba(248,250,251,0.12)', border: '1px solid rgba(248,250,251,0.25)', color: '#F8FAFB', fontWeight: 500, py: 2, px: 1 }}
             />
             <Typography variant="h1" style={{ color: '#FFFFFF' }} sx={{ mb: 2 }}>
               Meet Your AI Employees
@@ -765,7 +770,7 @@ export default function AgentsPage() {
                   <Typography sx={{ fontFamily: '"Cormorant Garamond Variable", serif', fontSize: { xs: '2rem', md: '2.8rem' }, fontWeight: 400, color: '#FFFFFF' }}>
                     {s.value}
                   </Typography>
-                  <Typography sx={{ fontSize: '0.85rem', color: 'rgba(255,248,232,0.7)', fontWeight: 500 }}>
+                  <Typography sx={{ fontSize: '0.85rem', color: 'rgba(248,250,251,0.7)', fontWeight: 500 }}>
                     {s.label}
                   </Typography>
                 </Grid>
@@ -776,7 +781,7 @@ export default function AgentsPage() {
       </Box>
 
       {/* WHAT IS AN AI EMPLOYEE */}
-      <Box sx={{ background: '#FFFCF2', py: { xs: 8, md: 12 } }}>
+      <Box sx={{ background: '#FFFFFF', py: { xs: 8, md: 12 } }}>
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
             <Grid size={{ xs: 12, md: 5 }}>
@@ -806,17 +811,17 @@ export default function AgentsPage() {
               <MotionBox initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
                 {/* Architecture diagram */}
                 <Box sx={{ background: '#065A62', borderRadius: 3, p: { xs: 3, md: 4 }, boxShadow: '0 12px 40px rgba(6,90,98,0.2)' }}>
-                  <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(255,248,232,0.4)', mb: 2 }}>
+                  <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(248,250,251,0.4)', mb: 2 }}>
                     ai-employee-architecture
                   </Typography>
                   <Box sx={{ textAlign: 'center', mb: 3 }}>
                     <Typography sx={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#065A62', mb: 2 }}>
                       ┌─────────────────────────────────────────┐
                     </Typography>
-                    <Typography sx={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#FFF8E8', mb: 0.5 }}>
+                    <Typography sx={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#F8FAFB', mb: 0.5 }}>
                       {'  '}AI Employee = Domain Expert + Decision Engine
                     </Typography>
-                    <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(255,248,232,0.5)', mb: 2 }}>
+                    <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(248,250,251,0.5)', mb: 2 }}>
                       {'  '}Supported by specialized AI agents
                     </Typography>
                     <Typography sx={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#065A62', mb: 2 }}>
@@ -831,17 +836,17 @@ export default function AgentsPage() {
                   ].map((row, i) => (
                     <Box key={i} sx={{ display: 'flex', gap: 2, mb: 1.5, alignItems: 'center' }}>
                       <Box sx={{ background: '#097C87', borderRadius: 1, px: 1.5, py: 0.5, minWidth: 120 }}>
-                        <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#FFF8E8', fontWeight: 600, whiteSpace: 'nowrap' }}>
+                        <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#F8FAFB', fontWeight: 600, whiteSpace: 'nowrap' }}>
                           {row.emp}
                         </Typography>
                       </Box>
-                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(255,248,232,0.5)' }}>→</Typography>
-                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(255,248,232,0.6)' }}>
+                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(248,250,251,0.5)' }}>→</Typography>
+                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(248,250,251,0.6)' }}>
                         {row.agents}
                       </Typography>
                     </Box>
                   ))}
-                  <Box sx={{ mt: 3, pt: 2, borderTop: '1px solid rgba(255,248,232,0.1)' }}>
+                  <Box sx={{ mt: 3, pt: 2, borderTop: '1px solid rgba(248,250,251,0.1)' }}>
                     <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: '#2ecc71' }}>
                       ✓ Each employee coordinates autonomously with others
                     </Typography>
@@ -860,7 +865,7 @@ export default function AgentsPage() {
       </Box>
 
       {/* FEATURED: AI SCHEDULER */}
-      <Box sx={{ background: '#FFF8E8', py: { xs: 10, md: 16 } }}>
+      <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 16 } }}>
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center', mb: 6 }}>
             <Typography variant="overline" sx={{ color: '#097C87', display: 'block', mb: 2 }}>Featured AI Employee</Typography>
@@ -890,7 +895,7 @@ export default function AgentsPage() {
                 <Grid container spacing={2} sx={{ mt: 3 }}>
                   {aiEmployees[0].metrics.map((m, i) => (
                     <Grid size={4} key={i}>
-                      <Box sx={{ textAlign: 'center', background: '#FFFCF2', borderRadius: 2, p: 2, border: '1px solid rgba(9,124,135,0.1)' }}>
+                      <Box sx={{ textAlign: 'center', background: '#FFFFFF', borderRadius: 2, p: 2, border: '1px solid rgba(9,124,135,0.1)' }}>
                         <Typography sx={{ fontFamily: '"Cormorant Garamond Variable", serif', fontSize: '1.5rem', fontWeight: 500, color: '#097C87' }}>{m.value}</Typography>
                         <Typography sx={{ fontSize: '0.75rem', color: '#065A62' }}>{m.label}</Typography>
                       </Box>
@@ -904,7 +909,7 @@ export default function AgentsPage() {
           <Grid container spacing={2} sx={{ mt: 4 }}>
             {aiEmployees[0].stats.map((s, i) => (
               <Grid size={{ xs: 12, md: 4 }} key={i}>
-                <Box sx={{ display: 'flex', gap: 1.5, alignItems: 'center', background: '#FFFCF2', borderRadius: 2, p: 2, border: '1px solid rgba(9,124,135,0.1)' }}>
+                <Box sx={{ display: 'flex', gap: 1.5, alignItems: 'center', background: '#FFFFFF', borderRadius: 2, p: 2, border: '1px solid rgba(9,124,135,0.1)' }}>
                   <Box sx={{ width: 32, height: 32, borderRadius: '50%', background: i === 1 ? '#f39c12' : '#097C87', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Typography sx={{ color: '#FFFFFF', fontSize: '0.85rem', fontWeight: 700 }}>{s.icon}</Typography>
                   </Box>
@@ -918,7 +923,7 @@ export default function AgentsPage() {
 
       {/* OTHER AI EMPLOYEES */}
       {aiEmployees.slice(1).map((emp, idx) => (
-        <Box key={emp.title} sx={{ background: idx % 2 === 0 ? '#FFFCF2' : '#FFF8E8', py: { xs: 10, md: 14 } }}>
+        <Box key={emp.title} sx={{ background: idx % 2 === 0 ? '#FFFFFF' : '#F8FAFB', py: { xs: 10, md: 14 } }}>
           <Container maxWidth="lg">
             <Grid container spacing={6} alignItems="center" direction={idx % 2 === 0 ? 'row' : 'row-reverse'}>
               <Grid size={{ xs: 12, md: 5 }}>
@@ -961,7 +966,7 @@ export default function AgentsPage() {
       ))}
 
       {/* SPECIALIZED AI EMPLOYEES GRID */}
-      <Box sx={{ background: '#FFF8E8', py: { xs: 10, md: 14 } }}>
+      <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 14 } }}>
         <Container maxWidth="lg">
           <Box sx={{ textAlign: 'center', mb: 6 }}>
             <Typography variant="overline" sx={{ color: '#097C87', display: 'block', mb: 2 }}>Specialized AI Employees</Typography>
@@ -1043,7 +1048,7 @@ export default function AgentsPage() {
         title="AI Employees Don't Work in Silos"
         subtitle="When one AI Employee detects a change, every dependent employee adapts instantly. That's an intelligent operating system for your practice."
       >
-        <Box sx={{ maxWidth: 800, mx: 'auto', p: 3, background: '#FFFCF2', border: '1px solid rgba(107,163,176,0.25)', borderRadius: 4 }}>
+        <Box sx={{ maxWidth: 800, mx: 'auto', p: 3, background: '#FFFFFF', border: '1px solid rgba(107,163,176,0.25)', borderRadius: 4 }}>
           {[
             { trigger: 'Patient cancels infusion appointment', actions: ['AI Scheduler adjusts chair template and finds replacement', 'AI Patient Companion contacts matched waitlist patient', 'AI Waitlist Manager scores and fills the open slot', 'AI Care Manager updates care timeline'] },
             { trigger: 'New referral arrives via fax', actions: ['AI Data Analyst extracts all clinical data', 'AI Referral Coordinator matches patient and verifies insurance', 'AI Scheduler finds optimal first appointment', 'AI Patient Companion sends welcome and prep instructions'] },
@@ -1068,17 +1073,17 @@ export default function AgentsPage() {
       {/* CTA */}
       <Box sx={{ py: { xs: 8, md: 12 }, background: 'linear-gradient(135deg, #065A62 0%, #097C87 50%, #044048 100%)' }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
-          <Typography variant="h2" style={{ color: '#FFF8E8' }} sx={{ mb: 2 }}>
+          <Typography variant="h2" style={{ color: '#F8FAFB' }} sx={{ mb: 2 }}>
             Ready to Deploy Your AI Workforce?
           </Typography>
-          <Typography variant="body1" style={{ color: 'rgba(255,248,232,0.85)' }} sx={{ mb: 4, maxWidth: 600, mx: 'auto' }}>
+          <Typography variant="body1" style={{ color: 'rgba(248,250,251,0.85)' }} sx={{ mb: 4, maxWidth: 600, mx: 'auto' }}>
             See how 14 AI Employees and 30+ specialized agents can transform your practice operations in a personalized demo.
           </Typography>
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Button variant="contained" size="large" component={Link} to="/demo" sx={{ background: '#FFF8E8', color: '#065A62', px: 5, py: 1.8, fontWeight: 600, '&:hover': { background: '#FFFCF2' } }}>
+            <Button variant="contained" size="large" component={Link} to="/demo" sx={{ background: '#F8FAFB', color: '#065A62', px: 5, py: 1.8, fontWeight: 600, '&:hover': { background: '#FFFFFF' } }}>
               Book a Demo
             </Button>
-            <Button variant="outlined" size="large" endIcon={<ArrowForwardIcon />} component={Link} to="/demo" sx={{ py: 1.5, px: 4, color: '#FFF8E8', borderColor: 'rgba(255,248,232,0.4)', '&:hover': { borderColor: '#FFF8E8', background: 'rgba(255,248,232,0.08)' } }}>
+            <Button variant="outlined" size="large" endIcon={<ArrowForwardIcon />} component={Link} to="/demo" sx={{ py: 1.5, px: 4, color: '#F8FAFB', borderColor: 'rgba(248,250,251,0.4)', '&:hover': { borderColor: '#F8FAFB', background: 'rgba(248,250,251,0.08)' } }}>
               See AI in Action
             </Button>
           </Box>

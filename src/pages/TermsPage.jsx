@@ -1,6 +1,7 @@
 import { Box, Container, Typography, Divider } from '@mui/material';
 import { motion } from 'framer-motion';
 import SectionWrapper from '../components/SectionWrapper';
+import SEO from '../components/SEO';
 
 const MotionBox = motion.create(Box);
 
@@ -161,6 +162,10 @@ const sections = [
 export default function TermsPage() {
   return (
     <>
+      <SEO
+        title="Terms of Service"
+        description="ManageCare terms of service. Read our terms for using the AI-powered healthcare operations platform."
+      />
       {/* Hero */}
       <Box
         sx={{
@@ -202,7 +207,7 @@ export default function TermsPage() {
               sx={{
                 fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
                 fontWeight: 600,
-                color: '#FFF8E8',
+                color: '#F8FAFB',
                 fontSize: { xs: '2.5rem', md: '3.5rem' },
                 lineHeight: 1.2,
                 mb: 3,
@@ -212,7 +217,7 @@ export default function TermsPage() {
             </Typography>
             <Typography
               sx={{
-                color: 'rgba(255, 248, 232, 0.8)',
+                color: 'rgba(248, 250, 251, 0.8)',
                 fontSize: '1.15rem',
                 maxWidth: 600,
                 mx: 'auto',
@@ -223,7 +228,7 @@ export default function TermsPage() {
             </Typography>
             <Typography
               sx={{
-                color: 'rgba(255, 248, 232, 0.5)',
+                color: 'rgba(248, 250, 251, 0.5)',
                 fontSize: '0.9rem',
                 mt: 3,
               }}

@@ -11,6 +11,7 @@ import WarningAmberIcon from '@mui/icons-material/WarningAmber';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import specialties from '../data/specialties';
 import IntegrationHub from '../components/IntegrationHub';
+import SEO from '../components/SEO';
 
 const MotionBox = motion.create(Box);
 
@@ -24,6 +25,10 @@ export default function SpecialtyPage() {
 
   return (
     <Box>
+      <SEO
+        title={`${data.specialty} — AI Healthcare Solutions`}
+        description={data.tagline}
+      />
       {/* Hero Section */}
       <Box
         sx={{
@@ -57,15 +62,15 @@ export default function SpecialtyPage() {
               label="Use Case"
               sx={{
                 mb: 2,
-                background: 'rgba(255,248,232,0.15)',
-                border: '1px solid rgba(255,248,232,0.3)',
-                color: '#FFF8E8',
+                background: 'rgba(248,250,251,0.15)',
+                border: '1px solid rgba(248,250,251,0.3)',
+                color: '#F8FAFB',
                 fontWeight: 600,
                 py: 2,
                 px: 1,
               }}
             />
-            <Typography variant="h1" sx={{ color: '#FFF8E8', mb: 2 }}>
+            <Typography variant="h1" sx={{ color: '#F8FAFB', mb: 2 }}>
               ManageCare for{' '}
               <Box component="span" sx={{ color: '#FFFFFF' }}>
                 {data.specialty}
@@ -73,7 +78,7 @@ export default function SpecialtyPage() {
             </Typography>
             <Typography
               variant="body1"
-              sx={{ fontSize: '1.15rem', color: 'rgba(255,248,232,0.85)', mb: 3, maxWidth: 650 }}
+              sx={{ fontSize: '1.15rem', color: 'rgba(248,250,251,0.85)', mb: 3, maxWidth: 650 }}
             >
               {data.heroDescription}
             </Typography>
@@ -103,8 +108,8 @@ export default function SpecialtyPage() {
                     sx={{
                       p: 2,
                       borderRadius: 2,
-                      background: 'rgba(255,248,232,0.08)',
-                      border: '1px solid rgba(255,248,232,0.15)',
+                      background: 'rgba(248,250,251,0.08)',
+                      border: '1px solid rgba(248,250,251,0.15)',
                       textAlign: 'center',
                       height: '100%',
                       display: 'flex',
@@ -124,7 +129,7 @@ export default function SpecialtyPage() {
                     >
                       {r.value}
                     </Typography>
-                    <Typography variant="body2" sx={{ color: 'rgba(255,248,232,0.7)', fontSize: '0.8rem', mt: 0.5 }}>
+                    <Typography variant="body2" sx={{ color: 'rgba(248,250,251,0.7)', fontSize: '0.8rem', mt: 0.5 }}>
                       {r.label}
                     </Typography>
                   </Box>
@@ -155,7 +160,7 @@ export default function SpecialtyPage() {
                 sx={{
                   p: 3,
                   borderRadius: 2,
-                  background: '#FFFCF2',
+                  background: '#FFFFFF',
                   border: '1px solid rgba(9,124,135,0.1)',
                   height: '100%',
                   display: 'flex',
@@ -265,14 +270,14 @@ export default function SpecialtyPage() {
             <Typography
               variant="h2"
               sx={{
-                color: '#FFF8E8',
+                color: '#F8FAFB',
                 mb: 2,
                 fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
               }}
             >
               Ready to Transform Your {data.specialty} Practice?
             </Typography>
-            <Typography variant="body1" sx={{ color: 'rgba(255,248,232,0.8)', mb: 4, maxWidth: 550, mx: 'auto' }}>
+            <Typography variant="body1" sx={{ color: 'rgba(248,250,251,0.8)', mb: 4, maxWidth: 550, mx: 'auto' }}>
               See how ManageCare's AI employees can automate your most time-consuming workflows and unlock new revenue.
             </Typography>
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
@@ -286,10 +291,10 @@ export default function SpecialtyPage() {
                   py: 1.5,
                   px: 4,
                   fontSize: '0.95rem',
-                  background: '#FFF8E8',
+                  background: '#F8FAFB',
                   color: '#065A62',
                   fontWeight: 600,
-                  '&:hover': { background: '#FFFCF2' },
+                  '&:hover': { background: '#FFFFFF' },
                 }}
               >
                 Book a Demo
@@ -303,9 +308,9 @@ export default function SpecialtyPage() {
                   py: 1.5,
                   px: 4,
                   fontSize: '0.95rem',
-                  borderColor: 'rgba(255,248,232,0.3)',
-                  color: '#FFF8E8',
-                  '&:hover': { borderColor: '#FFF8E8', background: 'rgba(255,248,232,0.05)' },
+                  borderColor: 'rgba(248,250,251,0.3)',
+                  color: '#F8FAFB',
+                  '&:hover': { borderColor: '#F8FAFB', background: 'rgba(248,250,251,0.05)' },
                 }}
               >
                 All Use Cases

@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import SectionWrapper from '../components/SectionWrapper';
 import GlowCard from '../components/GlowCard';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import SEO from '../components/SEO';
 
 const MotionBox = motion.create(Box);
 
@@ -67,6 +68,10 @@ const conversationFeatures = [
 export default function PlatformPage() {
   return (
     <Box>
+      <SEO
+        title="Platform"
+        description="See how ManageCare's AI-native platform integrates with your EMR, automates workflows, and orchestrates the entire patient journey with enterprise-grade security."
+      />
       {/* Hero */}
       <Box sx={{ pt: { xs: 12, md: 16 }, pb: { xs: 6, md: 10 }, position: 'relative', overflow: 'hidden', background: '#097C87' }}>
         {/* Floating code snippets background */}
@@ -87,7 +92,7 @@ export default function PlatformPage() {
                 right: s.right,
                 fontFamily: 'monospace',
                 fontSize: { xs: '0.65rem', md: '0.75rem' },
-                color: 'rgba(255,248,232,0.12)',
+                color: 'rgba(248,250,251,0.12)',
                 whiteSpace: 'nowrap',
                 animation: `codeFloat ${6 + i}s ease-in-out ${s.delay}s infinite`,
                 '@keyframes codeFloat': {
@@ -112,15 +117,15 @@ export default function PlatformPage() {
               label="Agentic AI Platform"
               sx={{
                 mb: 2,
-                background: 'rgba(255,248,232,0.15)',
-                border: '1px solid rgba(255,248,232,0.3)',
-                color: '#FFF8E8',
+                background: 'rgba(248,250,251,0.15)',
+                border: '1px solid rgba(248,250,251,0.3)',
+                color: '#F8FAFB',
                 fontWeight: 500,
                 py: 2,
                 px: 1,
               }}
             />
-            <Typography variant="h1" sx={{ color: '#FFF8E8', mb: 2 }}>
+            <Typography variant="h1" sx={{ color: '#F8FAFB', mb: 2 }}>
               The Future of Healthcare AI
             </Typography>
             <Typography
@@ -129,7 +134,7 @@ export default function PlatformPage() {
                 fontSize: '1.15rem',
                 maxWidth: 720,
                 mx: 'auto',
-                color: 'rgba(255,248,232,0.8)',
+                color: 'rgba(248,250,251,0.8)',
                 fontWeight: 300,
               }}
             >
@@ -140,7 +145,7 @@ export default function PlatformPage() {
       </Box>
 
       {/* Intelligent Architecture — Concentric Layer Diagram */}
-      <Box sx={{ py: { xs: 8, md: 14 }, background: '#FFF8E8', overflow: 'hidden' }}>
+      <Box sx={{ py: { xs: 8, md: 14 }, background: '#F8FAFB', overflow: 'hidden' }}>
         <Container maxWidth="lg">
           <MotionBox
             initial={{ opacity: 0, y: 30 }}
@@ -170,7 +175,7 @@ export default function PlatformPage() {
               display: { xs: 'none', md: 'flex' },
               justifyContent: 'center',
               mb: 6,
-              background: 'linear-gradient(145deg, #EAF4F7 0%, #FFF8E8 40%, #E8F3F6 100%)',
+              background: 'linear-gradient(145deg, #EAF4F7 0%, #F8FAFB 40%, #E8F3F6 100%)',
               borderRadius: 4,
               border: '1px solid rgba(9,124,135,0.12)',
               boxShadow: '0 8px 32px rgba(9,124,135,0.1)',
@@ -191,7 +196,7 @@ export default function PlatformPage() {
                 <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
                   <stop offset="0%" stopColor="#097C87" stopOpacity="0.12" />
                   <stop offset="70%" stopColor="#065A62" stopOpacity="0.04" />
-                  <stop offset="100%" stopColor="#FFF8E8" stopOpacity="0" />
+                  <stop offset="100%" stopColor="#F8FAFB" stopOpacity="0" />
                 </radialGradient>
               </defs>
 
@@ -498,7 +503,7 @@ export default function PlatformPage() {
                     <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: '#e74c3c' }} />
                     <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: '#f39c12' }} />
                     <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: '#2ecc71' }} />
-                    <Typography sx={{ ml: 1, fontSize: '0.7rem', color: 'rgba(255,248,232,0.5)', fontFamily: 'monospace' }}>
+                    <Typography sx={{ ml: 1, fontSize: '0.7rem', color: 'rgba(248,250,251,0.5)', fontFamily: 'monospace' }}>
                       protocol-scheduler
                     </Typography>
                   </Box>
@@ -527,7 +532,7 @@ export default function PlatformPage() {
                           <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: '#FCA47C', minWidth: 45 }}>
                             {item.day}
                           </Typography>
-                          <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(255,248,232,0.8)' }}>
+                          <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(248,250,251,0.8)' }}>
                             {item.task}
                           </Typography>
                         </Box>
@@ -536,7 +541,7 @@ export default function PlatformPage() {
                         </Typography>
                       </MotionBox>
                     ))}
-                    <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid rgba(255,248,232,0.1)' }}>
+                    <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid rgba(248,250,251,0.1)' }}>
                       <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: '#065A62', mb: 0.5 }}>
                         Infusion Suite Status:
                       </Typography>
@@ -548,8 +553,8 @@ export default function PlatformPage() {
                           { label: 'Conflicts', value: '0' },
                         ].map((s) => (
                           <Box key={s.label}>
-                            <Typography sx={{ fontFamily: 'monospace', fontSize: '0.6rem', color: 'rgba(255,248,232,0.4)' }}>{s.label}</Typography>
-                            <Typography sx={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#FFF8E8', fontWeight: 600 }}>{s.value}</Typography>
+                            <Typography sx={{ fontFamily: 'monospace', fontSize: '0.6rem', color: 'rgba(248,250,251,0.4)' }}>{s.label}</Typography>
+                            <Typography sx={{ fontFamily: 'monospace', fontSize: '0.8rem', color: '#F8FAFB', fontWeight: 600 }}>{s.value}</Typography>
                           </Box>
                         ))}
                       </Box>
@@ -563,7 +568,7 @@ export default function PlatformPage() {
       </Box>
 
       {/* Agentic AI */}
-      <Box sx={{ background: '#FFFCF2', py: { xs: 10, md: 16 } }}>
+      <Box sx={{ background: '#FFFFFF', py: { xs: 10, md: 16 } }}>
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }}>
@@ -595,7 +600,7 @@ export default function PlatformPage() {
                     <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: '#e74c3c' }} />
                     <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: '#f39c12' }} />
                     <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: '#2ecc71' }} />
-                    <Typography sx={{ ml: 1, fontSize: '0.7rem', color: 'rgba(255,248,232,0.5)', fontFamily: 'monospace' }}>
+                    <Typography sx={{ ml: 1, fontSize: '0.7rem', color: 'rgba(248,250,251,0.5)', fontFamily: 'monospace' }}>
                       agentic-ai-demo
                     </Typography>
                   </Box>
@@ -617,11 +622,11 @@ export default function PlatformPage() {
                         sx={{ display: 'flex', gap: 1, mb: 1 }}
                       >
                         <Typography sx={{ fontFamily: 'monospace', fontSize: '0.8rem', color: line.color }}>{line.prefix}</Typography>
-                        <Typography sx={{ fontFamily: 'monospace', fontSize: '0.8rem', color: 'rgba(255,248,232,0.8)' }}>{line.text}</Typography>
+                        <Typography sx={{ fontFamily: 'monospace', fontSize: '0.8rem', color: 'rgba(248,250,251,0.8)' }}>{line.text}</Typography>
                       </MotionBox>
                     ))}
 
-                    <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid rgba(255,248,232,0.1)' }}>
+                    <Box sx={{ mt: 2, pt: 2, borderTop: '1px solid rgba(248,250,251,0.1)' }}>
                       <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#065A62', mb: 1 }}>
                         Autonomous Resolution:
                       </Typography>
@@ -635,7 +640,7 @@ export default function PlatformPage() {
                           ✓ {r}
                         </Typography>
                       ))}
-                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(255,248,232,0.4)', mt: 1 }}>
+                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(248,250,251,0.4)', mt: 1 }}>
                         Execution time: 1.2 seconds
                       </Typography>
                     </Box>
@@ -648,7 +653,7 @@ export default function PlatformPage() {
       </Box>
 
       {/* Task Management */}
-      <Box sx={{ background: '#FFF8E8', py: { xs: 10, md: 16 } }}>
+      <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 16 } }}>
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }} sx={{ order: { xs: 2, md: 1 } }}>
@@ -659,7 +664,7 @@ export default function PlatformPage() {
                     <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: '#e74c3c' }} />
                     <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: '#f39c12' }} />
                     <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: '#2ecc71' }} />
-                    <Typography sx={{ ml: 1, fontSize: '0.7rem', color: 'rgba(255,248,232,0.5)', fontFamily: 'monospace' }}>
+                    <Typography sx={{ ml: 1, fontSize: '0.7rem', color: 'rgba(248,250,251,0.5)', fontFamily: 'monospace' }}>
                       task-engine
                     </Typography>
                   </Box>
@@ -676,20 +681,20 @@ export default function PlatformPage() {
                         { label: 'Avg Completion', value: '0.8s' },
                       ].map((s) => (
                         <Box key={s.label}>
-                          <Typography sx={{ fontFamily: 'monospace', fontSize: '0.65rem', color: 'rgba(255,248,232,0.4)' }}>{s.label}</Typography>
-                          <Typography sx={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#FFF8E8', fontWeight: 600 }}>{s.value}</Typography>
+                          <Typography sx={{ fontFamily: 'monospace', fontSize: '0.65rem', color: 'rgba(248,250,251,0.4)' }}>{s.label}</Typography>
+                          <Typography sx={{ fontFamily: 'monospace', fontSize: '0.85rem', color: '#F8FAFB', fontWeight: 600 }}>{s.value}</Typography>
                         </Box>
                       ))}
                     </Box>
-                    <Box sx={{ borderTop: '1px solid rgba(255,248,232,0.1)', pt: 2 }}>
-                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(255,248,232,0.4)', mb: 1 }}>Priority Queue:</Typography>
+                    <Box sx={{ borderTop: '1px solid rgba(248,250,251,0.1)', pt: 2 }}>
+                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(248,250,251,0.4)', mb: 1 }}>Priority Queue:</Typography>
                       {[
                         { task: 'Schedule Emergency Slot', status: 'EXECUTING', color: '#f39c12' },
                         { task: 'Patient Critical Alert', status: 'COMPLETED', color: '#2ecc71' },
                         { task: 'Provider Schedule Conflict', status: 'QUEUED', color: '#065A62' },
                       ].map((t) => (
                         <Box key={t.task} sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
-                          <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(255,248,232,0.7)' }}>{t.task}</Typography>
+                          <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(248,250,251,0.7)' }}>{t.task}</Typography>
                           <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: t.color }}>{t.status}</Typography>
                         </Box>
                       ))}
@@ -724,7 +729,7 @@ export default function PlatformPage() {
       </Box>
 
       {/* Smart on FHIR */}
-      <Box sx={{ background: '#FFFCF2', py: { xs: 10, md: 16 } }}>
+      <Box sx={{ background: '#FFFFFF', py: { xs: 10, md: 16 } }}>
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }}>
@@ -756,25 +761,25 @@ export default function PlatformPage() {
                     <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: '#e74c3c' }} />
                     <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: '#f39c12' }} />
                     <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: '#2ecc71' }} />
-                    <Typography sx={{ ml: 1, fontSize: '0.7rem', color: 'rgba(255,248,232,0.5)', fontFamily: 'monospace' }}>
+                    <Typography sx={{ ml: 1, fontSize: '0.7rem', color: 'rgba(248,250,251,0.5)', fontFamily: 'monospace' }}>
                       fhir-integration
                     </Typography>
                   </Box>
                   <Box sx={{ p: 3 }}>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1.5 }}>
-                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(255,248,232,0.5)' }}>FHIR Server:</Typography>
+                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(248,250,251,0.5)' }}>FHIR Server:</Typography>
                       <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#2ecc71' }}>Connected (R4.0.1)</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1.5 }}>
-                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(255,248,232,0.5)' }}>EHR Systems:</Typography>
-                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#FFF8E8' }}>Epic, Cerner, Allscripts</Typography>
+                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(248,250,251,0.5)' }}>EHR Systems:</Typography>
+                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#F8FAFB' }}>Epic, Cerner, Allscripts</Typography>
                     </Box>
                     <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 2 }}>
-                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(255,248,232,0.5)' }}>Active Connections:</Typography>
-                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#FFF8E8' }}>127</Typography>
+                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(248,250,251,0.5)' }}>Active Connections:</Typography>
+                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#F8FAFB' }}>127</Typography>
                     </Box>
-                    <Box sx={{ borderTop: '1px solid rgba(255,248,232,0.1)', pt: 2 }}>
-                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(255,248,232,0.4)', mb: 1 }}>Resource Types:</Typography>
+                    <Box sx={{ borderTop: '1px solid rgba(248,250,251,0.1)', pt: 2 }}>
+                      <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(248,250,251,0.4)', mb: 1 }}>Resource Types:</Typography>
                       {[
                         { type: 'Patient', value: '12,847 records' },
                         { type: 'Appointment', value: '5,692 active' },
@@ -783,17 +788,17 @@ export default function PlatformPage() {
                       ].map((r) => (
                         <Box key={r.type} sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
                           <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#065A62' }}>{r.type}</Typography>
-                          <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(255,248,232,0.7)' }}>{r.value}</Typography>
+                          <Typography sx={{ fontFamily: 'monospace', fontSize: '0.75rem', color: 'rgba(248,250,251,0.7)' }}>{r.value}</Typography>
                         </Box>
                       ))}
                     </Box>
-                    <Box sx={{ mt: 2, pt: 1.5, borderTop: '1px solid rgba(255,248,232,0.1)', display: 'flex', flexDirection: 'column', gap: 0.5 }}>
+                    <Box sx={{ mt: 2, pt: 1.5, borderTop: '1px solid rgba(248,250,251,0.1)', display: 'flex', flexDirection: 'column', gap: 0.5 }}>
                       <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(255,248,232,0.4)' }}>Sync Latency:</Typography>
+                        <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(248,250,251,0.4)' }}>Sync Latency:</Typography>
                         <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: '#2ecc71' }}>&lt;100ms average</Typography>
                       </Box>
                       <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(255,248,232,0.4)' }}>Compliance:</Typography>
+                        <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(248,250,251,0.4)' }}>Compliance:</Typography>
                         <Typography sx={{ fontFamily: 'monospace', fontSize: '0.7rem', color: '#2ecc71' }}>FHIR R4.0.1 certified</Typography>
                       </Box>
                     </Box>
@@ -806,13 +811,13 @@ export default function PlatformPage() {
       </Box>
 
       {/* Conversational AI */}
-      <Box sx={{ background: '#FFF8E8', py: { xs: 10, md: 16 } }}>
+      <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 16 } }}>
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
             <Grid size={{ xs: 12, md: 6 }} sx={{ order: { xs: 2, md: 1 } }}>
               <MotionBox initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.2 }}>
                 {/* Conversation Demo */}
-                <Box sx={{ background: '#FFFCF2', borderRadius: 3, overflow: 'hidden', boxShadow: '0 12px 40px rgba(9,124,135,0.1)', border: '1px solid rgba(9,124,135,0.08)' }}>
+                <Box sx={{ background: '#FFFFFF', borderRadius: 3, overflow: 'hidden', boxShadow: '0 12px 40px rgba(9,124,135,0.1)', border: '1px solid rgba(9,124,135,0.08)' }}>
                   <Box sx={{ px: 3, py: 2, borderBottom: '1px solid rgba(9,124,135,0.08)', display: 'flex', alignItems: 'center', gap: 1.5 }}>
                     <Box sx={{ width: 8, height: 8, borderRadius: '50%', background: '#2ecc71' }} />
                     <Typography sx={{ fontSize: '0.8rem', color: '#065A62', fontWeight: 500 }}>ManageCare AI Assistant</Typography>
@@ -821,7 +826,7 @@ export default function PlatformPage() {
                     {/* User message */}
                     <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
                       <Box sx={{ background: '#097C87', borderRadius: '12px 12px 2px 12px', px: 2.5, py: 1.5, maxWidth: '80%' }}>
-                        <Typography sx={{ fontSize: '0.85rem', color: '#FFF8E8' }}>
+                        <Typography sx={{ fontSize: '0.85rem', color: '#F8FAFB' }}>
                           Reschedule Mrs. Johnson&apos;s chemo for next week
                         </Typography>
                       </Box>
@@ -890,12 +895,12 @@ export default function PlatformPage() {
       {/* CTA */}
       <Box sx={{ py: { xs: 8, md: 12 }, background: '#097C87' }}>
         <Container maxWidth="md" sx={{ textAlign: 'center' }}>
-          <Typography variant="h2" sx={{ color: '#FFF8E8', mb: 2 }}>
+          <Typography variant="h2" sx={{ color: '#F8FAFB', mb: 2 }}>
             Experience the Future of Healthcare AI
           </Typography>
           <Typography
             variant="body1"
-            sx={{ mb: 4, fontSize: '1.05rem', maxWidth: 600, mx: 'auto', color: 'rgba(255,248,232,0.8)', fontWeight: 300 }}
+            sx={{ mb: 4, fontSize: '1.05rem', maxWidth: 600, mx: 'auto', color: 'rgba(248,250,251,0.8)', fontWeight: 300 }}
           >
             See how our agentic AI platform can transform your healthcare operations with intelligent automation and seamless integration.
           </Typography>
@@ -906,12 +911,12 @@ export default function PlatformPage() {
               component={Link}
               to="/demo"
               sx={{
-                background: '#FFF8E8',
+                background: '#F8FAFB',
                 color: '#065A62',
                 px: 5,
                 py: 1.8,
                 fontWeight: 600,
-                '&:hover': { background: '#FFFCF2' },
+                '&:hover': { background: '#FFFFFF' },
               }}
             >
               Book Platform Demo
@@ -925,9 +930,9 @@ export default function PlatformPage() {
               sx={{
                 py: 1.5,
                 px: 4,
-                color: '#FFF8E8',
-                borderColor: 'rgba(255,248,232,0.4)',
-                '&:hover': { borderColor: '#FFF8E8', background: 'rgba(255,248,232,0.08)' },
+                color: '#F8FAFB',
+                borderColor: 'rgba(248,250,251,0.4)',
+                '&:hover': { borderColor: '#F8FAFB', background: 'rgba(248,250,251,0.08)' },
               }}
             >
               Start Free Trial

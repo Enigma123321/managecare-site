@@ -60,14 +60,14 @@ export default function Footer() {
                 sx={{
                   fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
                   fontWeight: 400,
-                  color: '#FFF8E8',
+                  color: '#F8FAFB',
                   fontSize: '1.4rem',
                 }}
               >
                 ManageCare
               </Typography>
             </Box>
-            <Typography variant="body2" sx={{ color: 'rgba(255,248,232,0.7)', maxWidth: 300, mb: 3, lineHeight: 1.7 }}>
+            <Typography variant="body2" sx={{ color: 'rgba(248,250,251,0.7)', maxWidth: 300, mb: 3, lineHeight: 1.7 }}>
               AI-native platform that orchestrates the entire patient journey. From referral to survivorship.
             </Typography>
             <Button
@@ -75,10 +75,10 @@ export default function Footer() {
               component={Link}
               to="/demo"
               sx={{
-                background: '#FFF8E8',
+                background: '#F8FAFB',
                 color: '#065A62',
                 fontWeight: 600,
-                '&:hover': { background: '#FFFCF2' },
+                '&:hover': { background: '#FFFFFF' },
               }}
             >
               Get Started
@@ -90,7 +90,7 @@ export default function Footer() {
               <Typography
                 variant="overline"
                 sx={{
-                  color: 'rgba(255,248,232,0.6)',
+                  color: 'rgba(248,250,251,0.6)',
                   fontSize: '0.7rem',
                   fontWeight: 500,
                   letterSpacing: '0.15em',
@@ -107,12 +107,12 @@ export default function Footer() {
                   to={link.path}
                   sx={{
                     display: 'block',
-                    color: 'rgba(255,248,232,0.7)',
+                    color: 'rgba(248,250,251,0.7)',
                     textDecoration: 'none',
                     fontSize: '0.95rem',
                     fontWeight: 300,
                     py: 0.5,
-                    '&:hover': { color: '#FFF8E8' },
+                    '&:hover': { color: '#F8FAFB' },
                     transition: 'color 0.2s',
                   }}
                 >
@@ -123,10 +123,10 @@ export default function Footer() {
           ))}
         </Grid>
 
-        <Divider sx={{ borderColor: 'rgba(255,248,232,0.08)', my: 5 }} />
+        <Divider sx={{ borderColor: 'rgba(248,250,251,0.08)', my: 5 }} />
 
         <Box sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: 2 }}>
-          <Typography variant="body2" sx={{ color: 'rgba(255,248,232,0.5)', fontSize: '0.85rem' }}>
+          <Typography variant="body2" sx={{ color: 'rgba(248,250,251,0.5)', fontSize: '0.85rem' }}>
             &copy; {new Date().getFullYear()} ManageCare. All rights reserved.
           </Typography>
           <Box sx={{ display: 'flex', gap: 3 }}>
@@ -141,11 +141,11 @@ export default function Footer() {
                 component={Link}
                 to={item.path}
                 sx={{
-                  color: 'rgba(255,248,232,0.5)',
+                  color: 'rgba(248,250,251,0.5)',
                   textDecoration: 'none',
                   fontSize: '0.85rem',
                   fontWeight: 300,
-                  '&:hover': { color: 'rgba(255,248,232,0.6)' },
+                  '&:hover': { color: 'rgba(248,250,251,0.6)' },
                 }}
               >
                 {item.label}

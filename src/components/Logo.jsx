@@ -1,8 +1,8 @@
 import { Box } from '@mui/material';
 
 const Logo = ({ size = 40, light = true }) => {
-  const bg = light ? '#FFF8E8' : '#097C87';
-  const primary = light ? '#097C87' : '#FFF8E8';
+  const bg = light ? '#F8FAFB' : '#097C87';
+  const primary = light ? '#097C87' : '#F8FAFB';
   const accent = light ? '#FCA47C' : '#FCA47C';
 
   return (
