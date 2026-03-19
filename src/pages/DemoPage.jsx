@@ -13,8 +13,9 @@ export default function DemoPage() {
   return (
     <Box sx={{ pt: { xs: 12, md: 14 }, pb: { xs: 6, md: 10 }, background: '#F8FAFB' }}>
       <SEO
-        title="Request a Demo"
-        description="See ManageCare in action. Book a personalized demo to learn how AI employees can transform your practice operations."
+        title="Request a Demo — See AI Healthcare Automation"
+        description="Book a 30-minute personalized demo of ManageCare. See AI employees automate scheduling, referrals, and care management for your specialty. Custom ROI analysis included."
+        keywords="healthcare AI demo, ManageCare demo, medical practice automation demo, AI scheduling demo, healthcare technology demo"
       />
       <Container maxWidth="lg">
         <Grid container spacing={5} alignItems="center">
@@ -37,7 +38,7 @@ export default function DemoPage() {
                   px: 1,
                 }}
               />
-              <Typography variant="h2" sx={{ color: '#065A62', mb: 2 }}>
+              <Typography variant="h1" component="h1" sx={{ color: '#065A62', mb: 2 }}>
                 See ManageCare in Action
               </Typography>
               <Typography variant="body1" sx={{ mb: 3, fontSize: '1rem', color: '#065A62' }}>

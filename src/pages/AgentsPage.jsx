@@ -743,8 +743,9 @@ export default function AgentsPage() {
   return (
     <Box>
       <SEO
-        title="AI Employees"
-        description="Meet ManageCare's 14 AI Employees and 30+ specialized agents that automate scheduling, care management, referral coordination, and more."
+        title="AI Employees — Healthcare Virtual Assistants"
+        description="Meet ManageCare's 14 AI employees and 30+ agents automating healthcare scheduling, care management, referral coordination, prior authorization, and patient outreach."
+        keywords="healthcare AI employees, virtual healthcare assistants, AI scheduling agent, AI care manager, automated referral coordinator, healthcare automation"
       />
       {/* HERO */}
       <Box sx={{ pt: { xs: 12, md: 16 }, pb: { xs: 8, md: 14 }, background: 'linear-gradient(135deg, #065A62 0%, #097C87 50%, #044048 100%)', position: 'relative', overflow: 'hidden' }}>

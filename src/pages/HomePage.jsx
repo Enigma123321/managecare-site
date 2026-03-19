@@ -1,6 +1,8 @@
 import {
   Box, Container, Typography, Button, Grid, Stack, Divider,
+  Accordion, AccordionSummary, AccordionDetails,
 } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import SectionWrapper from '../components/SectionWrapper';
@@ -10,11 +12,6 @@ import SEO from '../components/SEO';
 const MotionBox = motion.create(Box);
 const MotionTypography = motion.create(Typography);
 
-const capabilities = [
-  { title: 'Referral Management', desc: 'OCR extraction, patient matching, insurance verification in 3 minutes. Zero referrals lost. Complete tracking from intake to first appointment.' },
-  { title: 'Intelligent Scheduling', desc: 'AI-powered multi-resource orchestration across labs, physicians, infusion chairs, pharmacy, and nursing. Protocol-aware sequencing that learns your patterns.' },
-  { title: 'Complex Care Management', desc: 'AI-powered CCM & PCM programs. Automated symptom check-ins, CTCAE scoring, PRO questionnaires — all CMS-compliant.' },
-];
 
 const journeySteps = [
   { label: 'Referral\nIntake', icon: 'referral', desc: 'AI reads faxes, extracts data, matches patients, and verifies insurance in minutes.' },
@@ -34,12 +31,39 @@ const results = [
   { value: '3 min', label: 'Referral processing time' },
 ];
 
+function HeroStageIcon({ iconId }) {
+  const faceMap = {
+    referral: '/faces/referral.jpg',
+    scheduling: '/faces/scheduling.jpg',
+    care: '/faces/care.jpg',
+    outreach: '/faces/outreach.jpg',
+    gaps: '/faces/gaps.jpg',
+    survivorship: '/faces/survivorship.jpg',
+  };
+  return (
+    <Box
+      component="img"
+      src={faceMap[iconId]}
+      alt={iconId}
+      sx={{
+        width: 56,
+        height: 56,
+        borderRadius: '50%',
+        objectFit: 'cover',
+        border: '2px solid rgba(252,164,124,0.5)',
+        boxShadow: '0 2px 12px rgba(0,0,0,0.3)',
+      }}
+    />
+  );
+}
+
 export default function HomePage() {
   return (
     <Box>
       <SEO
-        title="AI-Native Healthcare Platform"
-        description="ManageCare's AI employees automate scheduling, referrals, care management, and administrative tasks — giving your practice 4+ hours back per day."
+        title="AI-Powered Healthcare Automation Platform"
+        description="ManageCare's AI employees automate healthcare scheduling, referral management, care coordination, and administrative tasks — saving practices 4+ hours daily per staff member."
+        keywords="healthcare automation, AI healthcare platform, medical scheduling software, referral management, care coordination, healthcare AI, practice management"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Organization",
@@ -54,209 +78,291 @@ export default function HomePage() {
         sx={{
           position: 'relative',
           overflow: 'hidden',
-          background: 'linear-gradient(135deg, #065A62 0%, #097C87 50%, #044048 100%)',
+          background: 'linear-gradient(160deg, #021E22 0%, #043D43 25%, #065A62 50%, #097C87 75%, #0A8F9A 100%)',
           color: '#FFFFFF',
-          pt: { xs: 18, md: 24 },
-          pb: { xs: 10, md: 16 },
-          minHeight: '100vh',
-          display: 'flex',
-          alignItems: 'flex-end',
+          pt: { xs: 14, md: 18 },
+          pb: { xs: 8, md: 12 },
         }}
       >
-        {/* Abstract geometric background */}
-        <Box
-          sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            pointerEvents: 'none',
-            overflow: 'hidden',
-          }}
-        >
-          <svg
-            viewBox="0 0 1440 900"
-            preserveAspectRatio="xMaxYMid slice"
-            style={{
-              position: 'absolute',
-              top: 0,
-              right: '-10%',
-              width: '110%',
-              height: '100%',
-            }}
-          >
-            <defs>
-              <linearGradient id="heroGrad1" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stopColor="#065A62" stopOpacity="0.25" />
-                <stop offset="100%" stopColor="#F8FAFB" stopOpacity="0.08" />
-              </linearGradient>
-              <linearGradient id="heroGrad2" x1="0" y1="0" x2="0.8" y2="1">
-                <stop offset="0%" stopColor="#F8FAFB" stopOpacity="0.15" />
-                <stop offset="100%" stopColor="#065A62" stopOpacity="0.05" />
-              </linearGradient>
-              <linearGradient id="heroGrad3" x1="0.2" y1="0" x2="1" y2="0.8">
-                <stop offset="0%" stopColor="#D4A08A" stopOpacity="0.2" />
-                <stop offset="100%" stopColor="#F8FAFB" stopOpacity="0.06" />
-              </linearGradient>
-            </defs>
-            {/* Layered chevron shapes */}
-            <polygon points="750,0 1440,0 1440,650 950,900" fill="url(#heroGrad1)" />
-            <polygon points="850,0 1440,0 1440,550 1050,850" fill="url(#heroGrad2)" />
-            <polygon points="950,0 1440,0 1440,450 1100,750" fill="url(#heroGrad3)" />
-            <polygon points="1050,0 1440,0 1440,350 1200,680" fill="url(#heroGrad1)" opacity="0.6" />
-            <polygon points="1150,0 1440,0 1440,250 1280,580" fill="url(#heroGrad2)" opacity="0.5" />
-            {/* Subtle diagonal lines */}
-            <line x1="700" y1="0" x2="1000" y2="900" stroke="rgba(248,250,251,0.06)" strokeWidth="1" />
-            <line x1="800" y1="0" x2="1100" y2="900" stroke="rgba(248,250,251,0.05)" strokeWidth="1" />
-            <line x1="900" y1="0" x2="1200" y2="900" stroke="rgba(248,250,251,0.04)" strokeWidth="1" />
-            <line x1="1000" y1="0" x2="1300" y2="900" stroke="rgba(248,250,251,0.06)" strokeWidth="1" />
-            <line x1="1100" y1="0" x2="1400" y2="900" stroke="rgba(248,250,251,0.05)" strokeWidth="1" />
-            {/* Soft radial glow */}
-            <circle cx="1100" cy="350" r="300" fill="rgba(196,164,138,0.08)" />
+        {/* Animated background orbs */}
+        <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'hidden' }}>
+          <style>{`
+            @keyframes heroIconFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+            @keyframes heroIconPulse { 0%,100% { opacity: 0.7; } 50% { opacity: 1; } }
+            @keyframes heroIconBeat { 0%,100% { transform: scale(1); } 50% { transform: scale(1.1); } }
+            .hero-icon-float { animation: heroIconFloat 3s ease-in-out infinite; }
+            .hero-icon-pulse { animation: heroIconPulse 2s ease-in-out infinite; }
+            .hero-icon-beat { animation: heroIconBeat 2s ease-in-out infinite; transform-origin: center; }
+            @keyframes orbFloat1 { 0% { transform: translate(0, 0) scale(1); } 25% { transform: translate(80px, -60px) scale(1.2); } 50% { transform: translate(20px, 40px) scale(0.9); } 75% { transform: translate(-50px, -20px) scale(1.1); } 100% { transform: translate(0, 0) scale(1); } }
+            @keyframes orbFloat2 { 0% { transform: translate(0, 0) scale(1); } 25% { transform: translate(-70px, 60px) scale(1.15); } 50% { transform: translate(50px, -30px) scale(0.85); } 75% { transform: translate(-30px, -40px) scale(1.05); } 100% { transform: translate(0, 0) scale(1); } }
+            @keyframes orbFloat3 { 0% { transform: translate(0, 0) scale(1); } 25% { transform: translate(40px, 80px) scale(1.25); } 50% { transform: translate(-80px, -40px) scale(0.8); } 75% { transform: translate(60px, -60px) scale(1.1); } 100% { transform: translate(0, 0) scale(1); } }
+            @keyframes orbFloat4 { 0% { transform: translate(0, 0) scale(1); } 33% { transform: translate(-60px, -70px) scale(1.15); } 66% { transform: translate(50px, 30px) scale(0.9); } 100% { transform: translate(0, 0) scale(1); } }
+            @keyframes orbFloat5 { 0% { transform: translate(0, 0) scale(1); } 20% { transform: translate(90px, 30px) scale(1.1); } 40% { transform: translate(-40px, 70px) scale(0.95); } 60% { transform: translate(-70px, -50px) scale(1.2); } 80% { transform: translate(30px, -40px) scale(0.9); } 100% { transform: translate(0, 0) scale(1); } }
+            @keyframes shimmerSweep { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+            @keyframes pulseGlow { 0%,100% { opacity: 0.15; transform: scale(1); } 50% { opacity: 0.35; transform: scale(1.05); } }
+            @keyframes particleRise { 0% { transform: translateY(0) translateX(0); opacity: 0; } 15% { opacity: 0.8; } 85% { opacity: 0.8; } 100% { transform: translateY(-250px) translateX(50px); opacity: 0; } }
+          `}</style>
+          {/* Large floating gradient orbs — more vivid and dynamic */}
+          <Box sx={{
+            position: 'absolute', width: '700px', height: '700px', borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(252,164,124,0.22) 0%, rgba(252,164,124,0.05) 50%, transparent 70%)',
+            top: '-15%', right: '-8%', animation: 'orbFloat1 12s ease-in-out infinite',
+          }} />
+          <Box sx={{
+            position: 'absolute', width: '600px', height: '600px', borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(35,206,217,0.25) 0%, rgba(35,206,217,0.06) 50%, transparent 70%)',
+            top: '20%', left: '-10%', animation: 'orbFloat2 15s ease-in-out infinite',
+          }} />
+          <Box sx={{
+            position: 'absolute', width: '550px', height: '550px', borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(9,124,135,0.3) 0%, rgba(9,124,135,0.06) 50%, transparent 70%)',
+            bottom: '-10%', right: '15%', animation: 'orbFloat3 10s ease-in-out infinite',
+          }} />
+          <Box sx={{
+            position: 'absolute', width: '400px', height: '400px', borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(252,164,124,0.15) 0%, transparent 60%)',
+            top: '55%', left: '25%', animation: 'orbFloat4 13s ease-in-out infinite',
+          }} />
+          <Box sx={{
+            position: 'absolute', width: '500px', height: '500px', borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(35,206,217,0.12) 0%, transparent 60%)',
+            top: '-5%', left: '50%', animation: 'orbFloat5 16s ease-in-out infinite',
+          }} />
+          <Box sx={{
+            position: 'absolute', width: '350px', height: '350px', borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(252,164,124,0.18) 0%, transparent 60%)',
+            bottom: '5%', left: '-5%', animation: 'orbFloat1 18s ease-in-out infinite',
+          }} />
+          {/* Pulsing glow center */}
+          <Box sx={{
+            position: 'absolute', width: '800px', height: '800px', borderRadius: '50%',
+            background: 'radial-gradient(circle, rgba(9,124,135,0.12) 0%, transparent 60%)',
+            top: '50%', left: '50%', marginLeft: '-400px', marginTop: '-400px',
+            animation: 'pulseGlow 4s ease-in-out infinite',
+          }} />
+          {/* Floating particles — more and brighter */}
+          <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}>
+            {[
+              { cx: '8%', cy: '25%', r: 2.5, delay: '0s', dur: '6s', fill: '#FCA47C' },
+              { cx: '22%', cy: '55%', r: 1.5, delay: '1s', dur: '7s', fill: '#F8FAFB' },
+              { cx: '38%', cy: '20%', r: 3, delay: '0.5s', dur: '5s', fill: '#23CED9' },
+              { cx: '52%', cy: '65%', r: 2, delay: '2s', dur: '6s', fill: '#FCA47C' },
+              { cx: '68%', cy: '12%', r: 1.5, delay: '3s', dur: '8s', fill: '#F8FAFB' },
+              { cx: '82%', cy: '45%', r: 2.5, delay: '0.5s', dur: '5.5s', fill: '#23CED9' },
+              { cx: '12%', cy: '78%', r: 2, delay: '4s', dur: '7s', fill: '#F8FAFB' },
+              { cx: '58%', cy: '38%', r: 3, delay: '1.5s', dur: '6s', fill: '#FCA47C' },
+              { cx: '75%', cy: '72%', r: 1.5, delay: '2.5s', dur: '7s', fill: '#23CED9' },
+              { cx: '32%', cy: '82%', r: 2, delay: '3s', dur: '5s', fill: '#F8FAFB' },
+              { cx: '88%', cy: '22%', r: 2.5, delay: '5s', dur: '6s', fill: '#FCA47C' },
+              { cx: '48%', cy: '8%', r: 2, delay: '3.5s', dur: '5.5s', fill: '#23CED9' },
+              { cx: '5%', cy: '48%', r: 1.5, delay: '1.5s', dur: '8s', fill: '#F8FAFB' },
+              { cx: '92%', cy: '60%', r: 2, delay: '4.5s', dur: '6s', fill: '#FCA47C' },
+              { cx: '42%', cy: '90%', r: 2.5, delay: '0s', dur: '7s', fill: '#23CED9' },
+              { cx: '18%', cy: '35%', r: 1.5, delay: '2s', dur: '5s', fill: '#FCA47C' },
+              { cx: '65%', cy: '88%', r: 2, delay: '3.5s', dur: '6.5s', fill: '#F8FAFB' },
+              { cx: '78%', cy: '32%', r: 3, delay: '1s', dur: '5s', fill: '#23CED9' },
+            ].map((p, i) => (
+              <circle key={i} cx={p.cx} cy={p.cy} r={p.r} fill={p.fill} opacity="0">
+                <animate attributeName="opacity" values="0;0.7;0.4;0.8;0" dur={p.dur} begin={p.delay} repeatCount="indefinite" />
+                <animate attributeName="cy" values={`${p.cy};${parseFloat(p.cy) - 20}%`} dur={p.dur} begin={p.delay} repeatCount="indefinite" />
+                <animate attributeName="cx" values={`${p.cx};${parseFloat(p.cx) + (i % 2 === 0 ? 3 : -3)}%`} dur={p.dur} begin={p.delay} repeatCount="indefinite" />
+              </circle>
+            ))}
           </svg>
+          {/* Light sweep effect */}
+          <Box sx={{
+            position: 'absolute', inset: 0, overflow: 'hidden',
+          }}>
+            <Box sx={{
+              position: 'absolute', top: 0, left: 0, width: '50%', height: '100%',
+              background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent)',
+              animation: 'shimmerSweep 6s ease-in-out infinite',
+            }} />
+          </Box>
         </Box>
-        <Container maxWidth="lg">
-          <Grid container spacing={6} alignItems="center">
-            <Grid size={{ xs: 12, md: 7 }}>
-              <Box>
-                <Typography
-                  variant="overline"
-                  style={{ color: '#FFFFFF' }}
-                  sx={{ fontWeight: 600, mb: 3, display: 'block', letterSpacing: '0.2em' }}
-                >
-                  AI-Native Healthcare Platform
-                </Typography>
-                <Typography
-                  variant="h1"
-                  style={{ color: '#FFFFFF' }}
-                  sx={{
-                    mb: 3,
-                    maxWidth: 650,
-                  }}
-                >
-                  Finally, More Time for Patient Care, Less Time on Administration
-                </Typography>
-                <Typography
-                  variant="body1"
-                  style={{ color: 'rgba(255,255,255,0.95)' }}
-                  sx={{
-                    mb: 5,
-                    maxWidth: 520,
-                    fontSize: '1.125rem',
-                    lineHeight: 1.7,
-                    fontWeight: 300,
-                  }}
-                >
-                  Your practice exists to heal patients, not to battle phone systems and paperwork. ManageCare.ai handles the administrative burden so your entire team can focus on what matters most: caring for patients.
-                </Typography>
-                <Button
-                  variant="contained"
-                  size="large"
-                  component={Link}
-                  to="/demo"
-                  sx={{
-                    background: '#F8FAFB',
-                    color: '#065A62',
-                    px: 5,
-                    py: 1.8,
-                    fontWeight: 600,
-                    '&:hover': {
-                      background: '#FFFFFF',
-                    },
-                  }}
-                >
-                  See How It Works
-                </Button>
-              </Box>
-            </Grid>
-            <Grid size={{ xs: 12, md: 5 }}>
-              <Box
+
+        {/* Dark overlay behind text for contrast */}
+        <Box sx={{ position: 'absolute', inset: 0, background: 'radial-gradient(ellipse at 50% 35%, rgba(3,20,24,0.45) 0%, transparent 65%)', pointerEvents: 'none', zIndex: 1 }} />
+
+        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2 }}>
+          {/* Centered headline */}
+          <MotionBox
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            sx={{ textAlign: 'center', mb: { xs: 6, md: 8 } }}
+          >
+            <Typography
+              variant="overline"
+              sx={{ fontWeight: 700, mb: 2, display: 'block', letterSpacing: '0.2em', color: '#FCA47C', fontSize: '0.85rem' }}
+            >
+              AI-Native Patient Journey Platform
+            </Typography>
+            <Typography
+              variant="h1"
+              component="h1"
+              sx={{
+                color: '#FFFFFF',
+                fontWeight: 700,
+                mb: 3,
+                maxWidth: 850,
+                mx: 'auto',
+                fontSize: { xs: '2.5rem', md: '3.75rem' },
+                textShadow: '0 2px 30px rgba(0,0,0,0.3)',
+              }}
+            >
+              One Platform to Orchestrate Every Step of the Patient Journey
+            </Typography>
+            <Typography
+              variant="body1"
+              sx={{
+                color: '#FFFFFF',
+                mb: 5,
+                maxWidth: 620,
+                mx: 'auto',
+                fontSize: '1.15rem',
+                lineHeight: 1.7,
+                fontWeight: 500,
+                textShadow: '0 1px 10px rgba(0,0,0,0.15)',
+              }}
+            >
+              The only platform with voice-powered AI agents and a scheduler built on clinical context and resource optimization — orchestrating the entire patient journey from referral to survivorship. ManageCare doesn't just automate. It thinks like a human.
+            </Typography>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
+              <Button
+                variant="contained"
+                size="large"
+                component={Link}
+                to="/demo"
                 sx={{
-                  background: 'rgba(248,250,251,0.15)',
-                  backdropFilter: 'blur(20px)',
-                  border: '1px solid rgba(248,250,251,0.3)',
-                  borderRadius: 3,
-                  p: { xs: 3, md: 4 },
+                  background: '#F8FAFB',
+                  color: '#065A62',
+                  px: 5,
+                  py: 1.8,
+                  fontWeight: 600,
+                  '&:hover': { background: '#FFFFFF' },
                 }}
               >
-                <Typography
-                  sx={{
-                    fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
-                    fontSize: { xs: '2.5rem', md: '3.25rem' },
-                    fontWeight: 600,
-                    color: '#FFFFFF',
-                    textAlign: 'center',
-                    lineHeight: 1.1,
-                  }}
-                >
-                  4+ Hours
-                </Typography>
-                <Typography
-                  sx={{
-                    fontFamily: '"DM Sans Variable", sans-serif',
-                    fontSize: '0.95rem',
-                    fontWeight: 500,
-                    color: 'rgba(255,255,255,0.85)',
-                    textAlign: 'center',
-                    mb: 3,
-                  }}
-                >
-                  Saved Daily on Administrative Tasks
-                </Typography>
-                <Grid container spacing={1.5}>
-                  {[
-                    { value: '100%', label: 'Referral Tracking' },
-                    { value: '100%', label: 'Automated Scheduling' },
-                    { value: '3x', label: 'Patient Engagement' },
-                    { value: '95%', label: 'Care Gap Closure' },
-                  ].map((stat, i) => (
-                    <Grid size={6} key={i}>
-                      <Box
-                        sx={{
-                          background: 'rgba(248,250,251,0.14)',
-                          border: '1px solid rgba(248,250,251,0.25)',
-                          borderRadius: 2,
-                          p: 2,
-                          textAlign: 'center',
-                          height: '100%',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          minHeight: { xs: 100, md: 90 },
-                        }}
-                      >
-                        <Typography
-                          sx={{
-                            fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
-                            fontSize: '1.75rem',
-                            fontWeight: 700,
-                            color: '#FFFFFF',
-                            lineHeight: 1.2,
-                          }}
-                        >
-                          {stat.value}
-                        </Typography>
-                        <Typography
-                          sx={{
-                            fontFamily: '"DM Sans Variable", sans-serif',
-                            fontSize: { xs: '0.7rem', md: '0.8rem' },
-                            fontWeight: 500,
-                            color: 'rgba(255,255,255,0.9)',
-                            mt: 0.5,
-                            whiteSpace: 'nowrap',
-                          }}
-                        >
-                          {stat.label}
-                        </Typography>
-                      </Box>
-                    </Grid>
-                  ))}
-                </Grid>
+                Book a Demo
+              </Button>
+              <Button
+                variant="outlined"
+                size="large"
+                component={Link}
+                to="/platform"
+                sx={{
+                  borderColor: 'rgba(248,250,251,0.4)',
+                  color: '#F8FAFB',
+                  px: 5,
+                  py: 1.8,
+                  fontWeight: 600,
+                  '&:hover': { borderColor: '#F8FAFB', background: 'rgba(248,250,251,0.05)' },
+                }}
+              >
+                Explore Platform
+              </Button>
+            </Stack>
+          </MotionBox>
+
+          {/* Platform visualization — Journey flow cards */}
+          <MotionBox
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            <Box
+              sx={{
+                background: 'rgba(0,0,0,0.25)',
+                backdropFilter: 'blur(20px)',
+                border: '1px solid rgba(255,255,255,0.15)',
+                borderRadius: 4,
+                p: { xs: 2.5, md: 4 },
+              }}
+            >
+              {/* Top bar — simulated platform UI */}
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 3 }}>
+                <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: '#FCA47C' }} />
+                <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: 'rgba(248,250,251,0.5)' }} />
+                <Box sx={{ width: 10, height: 10, borderRadius: '50%', background: 'rgba(248,250,251,0.5)' }} />
+                <Box sx={{ flex: 1, height: 28, borderRadius: 2, background: 'rgba(255,255,255,0.08)', ml: 2, display: 'flex', alignItems: 'center', px: 2 }}>
+                  <Typography sx={{ fontSize: '0.7rem', color: 'rgba(248,250,251,0.8)', fontFamily: 'monospace' }}>
+                    managecare.ai / dashboard / patient-journey
+                  </Typography>
+                </Box>
               </Box>
-            </Grid>
-          </Grid>
+
+              {/* Journey stages */}
+              <Grid container spacing={1.5}>
+                {[
+                  { stage: 'Referral Intake', metric: '3 min', metricLabel: 'processing', iconId: 'referral' },
+                  { stage: 'Smart Scheduling', metric: '100%', metricLabel: 'automated', iconId: 'scheduling' },
+                  { stage: 'Active Care', metric: '24/7', metricLabel: 'monitoring', iconId: 'care' },
+                  { stage: 'Patient Outreach', metric: '3x', metricLabel: 'engagement', iconId: 'outreach' },
+                  { stage: 'Care Gaps', metric: '95%', metricLabel: 'closure rate', iconId: 'gaps' },
+                  { stage: 'Survivorship', metric: '100%', metricLabel: 'follow-up', iconId: 'survivorship' },
+                ].map((item, i) => (
+                  <Grid size={{ xs: 6, sm: 4, md: 2 }} key={i}>
+                    <MotionBox
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0.5 + i * 0.1 }}
+                      sx={{
+                        background: 'rgba(255,255,255,0.08)',
+                        border: '1px solid rgba(255,255,255,0.2)',
+                        borderRadius: 2.5,
+                        p: 2,
+                        textAlign: 'center',
+                        position: 'relative',
+                        overflow: 'hidden',
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        minHeight: { xs: 165, md: 'auto' },
+                        '&:hover': {
+                          background: 'rgba(255,255,255,0.15)',
+                          borderColor: '#FCA47C',
+                          transform: 'translateY(-2px)',
+                        },
+                        transition: 'all 0.3s ease',
+                      }}
+                    >
+                      <Box sx={{ mb: 0.5, display: 'flex', justifyContent: 'center' }}>
+                        <HeroStageIcon iconId={item.iconId} />
+                      </Box>
+                      <Typography sx={{ fontSize: '0.75rem', fontWeight: 700, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.1em', mb: 0.5, textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}>
+                        {item.stage}
+                      </Typography>
+                      <Typography sx={{ fontFamily: '"Cormorant Garamond Variable", serif', fontSize: '1.8rem', fontWeight: 700, color: '#FCA47C', lineHeight: 1.1, textShadow: '0 1px 8px rgba(252,164,124,0.3)' }}>
+                        {item.metric}
+                      </Typography>
+                      <Typography sx={{ fontSize: '0.65rem', color: 'rgba(255,255,255,0.9)', mt: 0.3, fontWeight: 500 }}>
+                        {item.metricLabel}
+                      </Typography>
+                    </MotionBox>
+                  </Grid>
+                ))}
+              </Grid>
+
+              {/* Bottom status bar */}
+              <Box sx={{ mt: 2.5, display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 1 }}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <Box sx={{ width: 8, height: 8, borderRadius: '50%', background: '#4ADE80', boxShadow: '0 0 8px rgba(74,222,128,0.5)' }} />
+                  <Typography sx={{ fontSize: '0.7rem', color: 'rgba(248,250,251,0.8)' }}>
+                    All systems operational
+                  </Typography>
+                </Box>
+                <Box sx={{ display: 'flex', gap: 2 }}>
+                  {['Epic', 'Cerner', 'Athena', 'FHIR R4'].map(emr => (
+                    <Typography key={emr} sx={{ fontSize: '0.65rem', color: 'rgba(248,250,251,0.7)', fontFamily: 'monospace', background: 'rgba(255,255,255,0.1)', px: 1.2, py: 0.4, borderRadius: 1, border: '1px solid rgba(255,255,255,0.1)' }}>
+                      {emr}
+                    </Typography>
+                  ))}
+                </Box>
+              </Box>
+            </Box>
+          </MotionBox>
         </Container>
       </Box>
 
@@ -530,7 +636,7 @@ export default function HomePage() {
             >
               Your Autonomous Healthcare Workforce
             </Typography>
-            <Typography variant="body1" sx={{ color: 'rgba(248,250,251,0.7)', maxWidth: 600, mx: 'auto' }}>
+            <Typography variant="body1" sx={{ color: 'rgba(248,250,251,0.85)', maxWidth: 600, mx: 'auto', fontWeight: 500 }}>
               AI employees that work 24/7 — each specialized for a critical part of your operations.
             </Typography>
           </MotionBox>
@@ -696,127 +802,31 @@ export default function HomePage() {
                     {/* Header row */}
                     <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 2.5 }}>
                       <Box
+                        component="img"
+                        src={`/faces/${agent.iconId}.jpg`}
+                        alt={agent.title}
                         sx={{
                           width: 52,
                           height: 52,
-                          borderRadius: '14px',
-                          background: 'rgba(9,124,135,0.15)',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
+                          borderRadius: '50%',
+                          objectFit: 'cover',
+                          border: '2px solid rgba(252,164,124,0.5)',
+                          boxShadow: '0 2px 12px rgba(0,0,0,0.3)',
                           flexShrink: 0,
                         }}
-                      >
-                        <svg viewBox="0 0 28 28" width="32" height="32">
-                          <style>{`
-                            @keyframes aeP1 { 0%,100% { opacity: 0.4; } 50% { opacity: 1; } }
-                            @keyframes aeP2 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-1px); } }
-                            .ae-p { animation: aeP1 2s ease-in-out infinite; }
-                            .ae-b { animation: aeP2 3s ease-in-out infinite; }
-                          `}</style>
-                          {agent.iconId === 'scheduler' && (<g>
-                            <rect x="5" y="4" width="18" height="20" rx="2" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <line x1="5" y1="10" x2="23" y2="10" stroke="#FCA47C" strokeWidth="1" />
-                            <line x1="10" y1="4" x2="10" y2="7" stroke="#FCA47C" strokeWidth="1.2" strokeLinecap="round" />
-                            <line x1="18" y1="4" x2="18" y2="7" stroke="#FCA47C" strokeWidth="1.2" strokeLinecap="round" />
-                            <rect x="9" y="13" width="3" height="3" rx="0.5" fill="#097C87" className="ae-p" />
-                            <rect x="16" y="13" width="3" height="3" rx="0.5" fill="#097C87" opacity="0.5" />
-                            <rect x="9" y="18" width="3" height="3" rx="0.5" fill="#097C87" opacity="0.5" />
-                            <rect x="16" y="18" width="3" height="3" rx="0.5" fill="#097C87" opacity="0.3" />
-                          </g>)}
-                          {agent.iconId === 'referral' && (<g>
-                            <rect x="4" y="5" width="13" height="18" rx="1.5" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <line x1="7" y1="10" x2="14" y2="10" stroke="#FCA47C" strokeWidth="0.8" />
-                            <line x1="7" y1="13" x2="14" y2="13" stroke="#FCA47C" strokeWidth="0.8" />
-                            <line x1="7" y1="16" x2="11" y2="16" stroke="#FCA47C" strokeWidth="0.8" />
-                            <path d="M18 10 L23 14 L18 18" fill="none" stroke="#097C87" strokeWidth="1.5" strokeLinecap="round" className="ae-p" />
-                          </g>)}
-                          {agent.iconId === 'resource' && (<g>
-                            <rect x="3" y="8" width="9" height="14" rx="1" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <rect x="16" y="4" width="9" height="18" rx="1" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <rect x="5" y="11" width="2" height="2" rx="0.5" fill="#097C87" />
-                            <rect x="5" y="15" width="2" height="2" rx="0.5" fill="#097C87" className="ae-p" />
-                            <rect x="18" y="7" width="2" height="2" rx="0.5" fill="#097C87" />
-                            <rect x="18" y="11" width="2" height="2" rx="0.5" fill="#097C87" className="ae-p" />
-                            <rect x="18" y="15" width="2" height="2" rx="0.5" fill="#097C87" />
-                            <path d="M12 15 L16 15" stroke="#097C87" strokeWidth="1" strokeDasharray="2 1" className="ae-p" />
-                          </g>)}
-                          {agent.iconId === 'infusion' && (<g>
-                            <path d="M14 3 L14 8" stroke="#FCA47C" strokeWidth="1.2" strokeLinecap="round" />
-                            <rect x="10" y="8" width="8" height="12" rx="2" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <line x1="10" y1="12" x2="18" y2="12" stroke="#FCA47C" strokeWidth="0.8" />
-                            <circle cx="14" cy="16" r="1.5" fill="#097C87" className="ae-p" />
-                            <path d="M14 20 L14 25" stroke="#097C87" strokeWidth="1" strokeDasharray="1.5 1" className="ae-p" />
-                            <circle cx="7" cy="6" r="2.5" fill="none" stroke="#097C87" strokeWidth="0.8" opacity="0.5" />
-                            <circle cx="21" cy="6" r="2.5" fill="none" stroke="#097C87" strokeWidth="0.8" opacity="0.5" />
-                          </g>)}
-                          {agent.iconId === 'care' && (<g>
-                            <path d="M14 22 C10 18 5 15 5 11 C5 8 7.5 6 10 6 C11.5 6 13 7 14 8.5 C15 7 16.5 6 18 6 C20.5 6 23 8 23 11 C23 15 18 18 14 22Z" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <path d="M8 14 L11 14 L13 10 L15 18 L17 14 L20 14" fill="none" stroke="#097C87" strokeWidth="1.2" strokeLinecap="round" className="ae-p" />
-                          </g>)}
-                          {agent.iconId === 'companion' && (<g>
-                            <path d="M4 6 h16 a2 2 0 0 1 2 2 v8 a2 2 0 0 1-2 2 h-10 l-4 4 v-4 h-2 a2 2 0 0 1-2-2 v-8 a2 2 0 0 1 2-2z" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <circle cx="9" cy="12" r="1.2" fill="#097C87" className="ae-p" style={{animationDelay:'0s'}} />
-                            <circle cx="14" cy="12" r="1.2" fill="#097C87" className="ae-p" style={{animationDelay:'0.3s'}} />
-                            <circle cx="19" cy="12" r="1.2" fill="#097C87" className="ae-p" style={{animationDelay:'0.6s'}} />
-                          </g>)}
-                          {agent.iconId === 'auth' && (<g>
-                            <rect x="5" y="4" width="18" height="20" rx="2" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <path d="M10 13 L13 16 L19 10" fill="none" stroke="#097C87" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="ae-p" />
-                            <line x1="9" y1="20" x2="19" y2="20" stroke="#FCA47C" strokeWidth="0.8" />
-                          </g>)}
-                          {agent.iconId === 'sdoh' && (<g>
-                            <circle cx="14" cy="8" r="4" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <path d="M6 22 Q6 16 14 16 Q22 16 22 22" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <path d="M10 13 L7 17" stroke="#097C87" strokeWidth="1" strokeLinecap="round" className="ae-p" />
-                            <path d="M18 13 L21 17" stroke="#097C87" strokeWidth="1" strokeLinecap="round" className="ae-p" />
-                            <circle cx="5" cy="19" r="2" fill="none" stroke="#097C87" strokeWidth="0.8" />
-                            <circle cx="23" cy="19" r="2" fill="none" stroke="#097C87" strokeWidth="0.8" />
-                          </g>)}
-                          {agent.iconId === 'triage' && (<g>
-                            <path d="M6 14 L10 14 L12 8 L16 20 L18 14 L22 14" fill="none" stroke="#097C87" strokeWidth="1.5" strokeLinecap="round" className="ae-p" />
-                            <circle cx="14" cy="14" r="11" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                          </g>)}
-                          {agent.iconId === 'waitlist' && (<g>
-                            <rect x="5" y="5" width="18" height="18" rx="2" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <line x1="8" y1="10" x2="20" y2="10" stroke="#FCA47C" strokeWidth="0.8" />
-                            <circle cx="9" cy="15" r="1.5" fill="#097C87" className="ae-p" />
-                            <line x1="13" y1="15" x2="19" y2="15" stroke="#097C87" strokeWidth="1" />
-                            <circle cx="9" cy="19" r="1.5" fill="#097C87" opacity="0.4" />
-                            <line x1="13" y1="19" x2="19" y2="19" stroke="#097C87" strokeWidth="1" opacity="0.4" />
-                            <path d="M16 5 L22 5 L22 3 L25 7 L22 11 L22 9 L16 9" fill="none" stroke="#097C87" strokeWidth="1" className="ae-p" />
-                          </g>)}
-                          {agent.iconId === 'survivorship' && (<g>
-                            <path d="M14 4 L14 10 M10 7 L14 4 L18 7" fill="none" stroke="#FCA47C" strokeWidth="1.2" strokeLinecap="round" />
-                            <path d="M6 14 Q6 24 14 24 Q22 24 22 14" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <path d="M10 16 L13 19 L18 13" fill="none" stroke="#097C87" strokeWidth="1.5" strokeLinecap="round" className="ae-p" />
-                          </g>)}
-                          {agent.iconId === 'staff' && (<g>
-                            <circle cx="10" cy="8" r="3" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <path d="M4 18 Q4 14 10 14 Q16 14 16 18" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <circle cx="19" cy="10" r="2.5" fill="none" stroke="#097C87" strokeWidth="1" className="ae-p" />
-                            <path d="M14 20 Q14 16 19 16 Q24 16 24 20" fill="none" stroke="#097C87" strokeWidth="1" className="ae-p" />
-                          </g>)}
-                          {agent.iconId === 'insurance' && (<g>
-                            <rect x="4" y="7" width="20" height="14" rx="2" fill="none" stroke="#FCA47C" strokeWidth="1.2" />
-                            <line x1="4" y1="12" x2="24" y2="12" stroke="#FCA47C" strokeWidth="1" />
-                            <rect x="7" y="15" width="6" height="3" rx="0.5" fill="#097C87" opacity="0.4" />
-                            <circle cx="20" cy="17" r="2" fill="none" stroke="#097C87" strokeWidth="1" className="ae-p" />
-                          </g>)}
-                        </svg>
-                      </Box>
+                      />
                       <Box>
                         <Typography sx={{ color: '#F8FAFB', fontWeight: 700, fontSize: '1.2rem', fontFamily: '"Cormorant Garamond Variable", Georgia, serif', lineHeight: 1.2 }}>
                           {agent.title}
                         </Typography>
-                        <Typography sx={{ color: 'rgba(252,164,124,0.8)', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                        <Typography sx={{ color: '#FCA47C', fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                           {agent.subtitle}
                         </Typography>
                       </Box>
                     </Box>
 
                     {/* Description */}
-                    <Typography sx={{ color: 'rgba(248,250,251,0.65)', fontSize: '0.9rem', lineHeight: 1.7, mb: 3, minHeight: 80 }}>
+                    <Typography sx={{ color: 'rgba(248,250,251,0.8)', fontSize: '0.9rem', lineHeight: 1.7, mb: 3, minHeight: 80, fontWeight: 500 }}>
                       {agent.desc}
                     </Typography>
 
@@ -825,7 +835,7 @@ export default function HomePage() {
                       <Typography sx={{ fontFamily: '"Cormorant Garamond Variable", Georgia, serif', fontSize: '1.8rem', fontWeight: 700, color: '#FCA47C', lineHeight: 1 }}>
                         {agent.stat}
                       </Typography>
-                      <Typography sx={{ color: 'rgba(248,250,251,0.5)', fontSize: '0.8rem' }}>
+                      <Typography sx={{ color: 'rgba(248,250,251,0.7)', fontSize: '0.8rem', fontWeight: 500 }}>
                         {agent.statLabel}
                       </Typography>
                     </Box>
@@ -856,177 +866,7 @@ export default function HomePage() {
         </Container>
       </Box>
 
-      {/* THE BOTTOM LINE */}
-      <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 16 }, position: 'relative', overflow: 'hidden' }}>
-        {/* Stacked diagonal blocks - right side */}
-        <Box sx={{ position: 'absolute', top: 0, right: 0, width: '40%', height: '100%', pointerEvents: 'none' }}>
-          <svg viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%' }} preserveAspectRatio="xMaxYMid slice">
-            <style>{`
-              @keyframes blkShift1 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
-              .blk-shift { animation: blkShift1 8s ease-in-out infinite; }
-            `}</style>
-            <g className="blk-shift">
-              {/* Stacked parallelogram blocks like tennr */}
-              <polygon points="200,0 400,0 400,120 280,180" fill="#065A62" opacity="0.2" />
-              <polygon points="220,60 400,60 400,180 300,240" fill="#4D8D9C" opacity="0.18" />
-              <polygon points="240,120 400,120 400,240 320,300" fill="#097C87" opacity="0.12" />
-              <polygon points="180,180 400,180 400,330 280,400" fill="#065A62" opacity="0.15" />
-              <polygon points="200,270 400,270 400,400 300,460" fill="#4D8D9C" opacity="0.13" />
-              <polygon points="220,340 400,340 400,470 320,530" fill="#097C87" opacity="0.1" />
-              <polygon points="180,420 400,420 400,560 280,600" fill="#FCA47C" opacity="0.14" />
-            </g>
-          </svg>
-        </Box>
-        <Container maxWidth="md">
-          <MotionBox
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            sx={{ textAlign: 'center' }}
-          >
-            <Typography variant="overline" sx={{ mb: 2, display: 'block', color: '#097C87' }}>
-              Real Results, Real Impact
-            </Typography>
-            <Typography
-              variant="h2"
-              sx={{
-                color: '#065A62',
-                fontSize: { xs: '2.25rem', md: '3.5rem' },
-                mb: 3,
-              }}
-            >
-              No delays.{'\n'}Fewer gaps.{'\n'}Everyone&apos;s connected.
-            </Typography>
-            <Typography variant="body1" sx={{ maxWidth: 560, mx: 'auto' }}>
-              ManageCare orchestrates the entire patient journey so you can run a high-performance practice and focus on what matters most.
-            </Typography>
-          </MotionBox>
-        </Container>
-      </Box>
-
-      {/* THREE CAPABILITIES */}
-      <Box sx={{ background: '#F8FAFB', py: { xs: 8, md: 12 } }}>
-        <Container maxWidth="lg">
-          <Grid container spacing={4}>
-            {capabilities.map((item, i) => (
-              <Grid size={{ xs: 12, md: 4 }} key={i}>
-                <MotionBox
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  sx={{ textAlign: 'center' }}
-                >
-                  {/* Animated isometric illustration */}
-                  <Box sx={{ width: 180, height: 160, mx: 'auto', mb: 3 }}>
-                    {i === 0 && (
-                      <svg viewBox="0 0 180 160" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', overflow: 'visible' }}>
-                        <style>{`
-                          @keyframes docFloat0 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-                          @keyframes docFloat1 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
-                          @keyframes docFloat2 { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
-                          @keyframes docPulse { 0%,100% { opacity: 0.6; transform: scale(0.95); } 50% { opacity: 1; transform: scale(1.05); } }
-                          .doc-float0 { animation: docFloat0 3.5s ease-in-out 0.3s infinite; }
-                          .doc-float1 { animation: docFloat1 3.5s ease-in-out 0.15s infinite; }
-                          .doc-float2 { animation: docFloat2 3.5s ease-in-out infinite; }
-                          .doc-pulse { animation: docPulse 2.5s ease-in-out infinite; transform-origin: 108px 100px; }
-                        `}</style>
-                        <defs>
-                          <linearGradient id="docGrad1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#097C87" /><stop offset="100%" stopColor="#044048" /></linearGradient>
-                          <linearGradient id="docGrad2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#F8FAFB" /><stop offset="100%" stopColor="#FCA47C" /></linearGradient>
-                        </defs>
-                        <ellipse cx="90" cy="148" rx="50" ry="8" fill="rgba(9,124,135,0.1)" />
-                        <g className="doc-float2">
-                          <rect x="65" y="30" width="65" height="90" rx="4" fill="#065A62" opacity="0.5" transform="rotate(-5 97 75)" />
-                        </g>
-                        <g className="doc-float1">
-                          <rect x="58" y="28" width="65" height="90" rx="4" fill="url(#docGrad1)" opacity="0.7" transform="rotate(3 90 73)" />
-                        </g>
-                        <g className="doc-float0">
-                          <rect x="55" y="25" width="70" height="95" rx="4" fill="url(#docGrad2)" />
-                          {[0, 1, 2, 3, 4].map(l => (
-                            <rect key={l} x="66" y={45 + l * 14} width={l === 0 ? 32 : l === 4 ? 27 : 48} height="5" rx="2" fill="#097C87" opacity={0.2} />
-                          ))}
-                          <g className="doc-pulse">
-                            <circle cx="108" cy="100" r="12" fill="#097C87" opacity="0.85" />
-                            <path d="M102 100 L106 104 L114 95" stroke="#F8FAFB" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
-                          </g>
-                        </g>
-                      </svg>
-                    )}
-                    {i === 1 && (
-                      <svg viewBox="0 0 180 160" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', overflow: 'visible' }}>
-                        <style>{`
-                          @keyframes capFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-                          @keyframes capPulse { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
-                          @keyframes capGlow { 0%,100% { opacity: 0.5; } 50% { opacity: 1; } }
-                          .cap-float { animation: capFloat 3s ease-in-out infinite; }
-                          .cap-glow { animation: capGlow 2s ease-in-out infinite; }
-                          .cap-pulse { animation: capPulse 2s ease-in-out infinite; }
-                        `}</style>
-                        <defs>
-                          <linearGradient id="calGrad1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#065A62" /><stop offset="100%" stopColor="#097C87" /></linearGradient>
-                          <linearGradient id="calGrad2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#F8FAFB" /><stop offset="100%" stopColor="#065A62" /></linearGradient>
-                        </defs>
-                        <ellipse cx="90" cy="148" rx="55" ry="8" fill="rgba(9,124,135,0.1)" />
-                        <g className="cap-float">
-                          <polygon points="45,50 135,50 145,60 145,125 55,125 45,115" fill="url(#calGrad2)" opacity="0.9" />
-                          <polygon points="135,50 145,60 145,125 135,115" fill="#097C87" opacity="0.3" />
-                          <polygon points="45,115 55,125 145,125 135,115" fill="#097C87" opacity="0.2" />
-                          <rect x="45" y="45" width="90" height="20" rx="3" fill="url(#calGrad1)" />
-                          {[0, 1, 2].map(row => [0, 1, 2, 3].map(col => (
-                            <rect key={`${row}-${col}`} x={53 + col * 21} y={72 + row * 15} width={17} height={11} rx={2}
-                              fill={row === 1 && col === 2 ? '#097C87' : '#065A62'} opacity={row === 1 && col === 2 ? 0.8 : 0.25}
-                              className={row === 1 && col === 2 ? 'cap-glow' : undefined}
-                            />
-                          )))}
-                          <circle cx="82" cy="87" r="3" fill="#F8FAFB" className="cap-pulse" />
-                        </g>
-                      </svg>
-                    )}
-                    {i === 2 && (
-                      <svg viewBox="0 0 180 160" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '100%', height: '100%', overflow: 'visible' }}>
-                        <style>{`
-                          @keyframes careFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
-                          @keyframes careBeat { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
-                          @keyframes careDash { 0% { stroke-dashoffset: 80; } 100% { stroke-dashoffset: -80; } }
-                          .care-float { animation: careFloat 4s ease-in-out infinite; }
-                          .care-beat { animation: careBeat 1.5s ease-in-out infinite; transform-origin: 90px 68px; }
-                          .care-dash { animation: careDash 3s linear infinite; }
-                        `}</style>
-                        <defs>
-                          <linearGradient id="careGrad1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stopColor="#065A62" /><stop offset="100%" stopColor="#097C87" /></linearGradient>
-                          <linearGradient id="careGrad2" x1="0.5" y1="0" x2="0.5" y2="1"><stop offset="0%" stopColor="#F8FAFB" /><stop offset="100%" stopColor="#FCA47C" /></linearGradient>
-                        </defs>
-                        <ellipse cx="90" cy="148" rx="45" ry="7" fill="rgba(9,124,135,0.1)" />
-                        <g className="care-float">
-                          <path d="M90 18 L130 35 L130 80 Q130 108 90 130 Q50 108 50 80 L50 35 Z" fill="url(#careGrad2)" stroke="#065A62" strokeWidth="1.5" />
-                          <path d="M90 28 L122 42 L122 78 Q122 102 90 122 Q58 102 58 78 L58 42 Z" fill="url(#careGrad1)" opacity="0.2" />
-                          <g className="care-beat">
-                            <path d="M90 95 C73 80 56 67 56 55 C56 44 65 37 76 37 C83 37 87 42 90 46 C93 42 97 37 104 37 C115 37 124 44 124 55 C124 67 107 80 90 95Z" fill="#097C87" opacity="0.8" />
-                            <rect x="86" y="58" width="8" height="22" rx="2" fill="#F8FAFB" opacity="0.9" />
-                            <rect x="80" y="65" width="20" height="8" rx="2" fill="#F8FAFB" opacity="0.9" />
-                          </g>
-                          <path d="M55 105 L70 105 L76 93 L82 115 L88 98 L94 105 L125 105" stroke="#097C87" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeDasharray="80" className="care-dash" opacity="0.5" />
-                        </g>
-                      </svg>
-                    )}
-                  </Box>
-                  <Typography variant="h3" sx={{ mb: 2, fontSize: '1.75rem' }}>
-                    {item.title}
-                  </Typography>
-                  <Typography variant="body1" sx={{ maxWidth: 340, mx: 'auto' }}>
-                    {item.desc}
-                  </Typography>
-                </MotionBox>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
-
-      {/* OPERATIONAL EXCELLENCE */}
+      {/* END-TO-END PATIENT JOURNEY */}
       <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 16 }, position: 'relative', overflow: 'hidden' }}>
         {/* Stacked diagonal blocks - right side */}
         <Box sx={{ position: 'absolute', top: 0, right: 0, width: '45%', height: '100%', pointerEvents: 'none' }}>
@@ -1055,14 +895,23 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             sx={{ mb: { xs: 5, md: 8 }, textAlign: 'center' }}
           >
-            <Typography variant="overline" sx={{ mb: 2, display: 'block' }}>
+            <Typography variant="overline" sx={{ mb: 2, display: 'block', color: '#097C87' }}>
               End-to-End Coverage
             </Typography>
-            <Typography variant="h2" sx={{ mb: 2, mx: 'auto', maxWidth: 700 }}>
-              We manage the entire patient journey
+            <Typography
+              variant="h2"
+              sx={{
+                color: '#065A62',
+                fontSize: { xs: '2.25rem', md: '3.5rem' },
+                mb: 2,
+                mx: 'auto',
+                maxWidth: 700,
+              }}
+            >
+              No delays. Fewer gaps. Everyone&apos;s connected.
             </Typography>
-            <Typography variant="body1" sx={{ mb: 4, mx: 'auto', maxWidth: 560 }}>
-              From the first referral to long-term survivorship, ManageCare AI agents orchestrate every step — so nothing falls through the cracks.
+            <Typography variant="body1" sx={{ mb: 4, mx: 'auto', maxWidth: 600 }}>
+              From the first referral to long-term survivorship, ManageCare AI agents orchestrate every step of the patient journey — so nothing falls through the cracks and your team can focus on what matters most.
             </Typography>
           </MotionBox>
 
@@ -1316,7 +1165,7 @@ export default function HomePage() {
             {[
               {
                 quote: 'ManageCare transformed how our entire practice operates. We went from drowning in admin work to actually having time for patients.',
-                name: 'Dr. Sarah Rodriguez',
+                name: 'Dr. Emily Thornton',
                 title: 'Medical Director, Multi-Specialty Oncology',
               },
               {
@@ -1389,6 +1238,113 @@ export default function HomePage() {
           ))}
         </Grid>
       </SectionWrapper>
+
+      {/* THINGS MANAGECARE CAN DO — FAQ */}
+      <Box sx={{ background: '#044048', py: { xs: 10, md: 16 }, position: 'relative', overflow: 'hidden' }}>
+        <Box sx={{ position: 'absolute', inset: 0, pointerEvents: 'none', opacity: 0.03 }}>
+          <svg width="100%" height="100%"><defs><pattern id="faqGrid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="#F8FAFB" strokeWidth="0.5" /></pattern></defs><rect width="100%" height="100%" fill="url(#faqGrid)" /></svg>
+        </Box>
+        <Container maxWidth="md" sx={{ position: 'relative', zIndex: 1 }}>
+          <MotionBox
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            sx={{ textAlign: 'center', mb: 6 }}
+          >
+            <Typography variant="overline" sx={{ color: '#FCA47C', mb: 1, display: 'block', letterSpacing: '0.2em' }}>
+              What Can ManageCare Do?
+            </Typography>
+            <Typography
+              variant="h2"
+              sx={{
+                color: '#F8FAFB',
+                mb: 2,
+                fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
+              }}
+            >
+              The Platform That Thinks Like a Human
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'rgba(248,250,251,0.8)', maxWidth: 600, mx: 'auto' }}>
+              We do the hard work so you can relax and run your practice smoothly.
+            </Typography>
+          </MotionBox>
+
+          {[
+            {
+              q: 'Can ManageCare coordinate a surgery across multiple practices and scheduling systems?',
+              a: 'Yes. For a breast surgery case, the AI calls the radiology practice to book pre-surgery localization, calls the hospital OR to reserve the operating room and anesthesia team, and calls the plastic surgeon\'s office to book a reconstructive consult — sequencing everything correctly. The patient receives one consolidated prep guide covering all appointments at all locations.',
+            },
+            {
+              q: 'What happens when a physician has an emergency day off?',
+              a: 'ManageCare automatically detects the disruption and coordinates every schedule change — rebooking by clinical urgency, notifying patients via SMS, voice, and portal, reallocating resources across remaining providers, and adjusting downstream lab orders and imaging. Your staff doesn\'t lift a finger.',
+            },
+            {
+              q: 'Can the AI voice agent handle patient phone calls and schedule appointments?',
+              a: 'Yes. ManageCare\'s AI voice agent answers calls, identifies patients, pulls their full clinical context, and offers available slots conversationally. For simple requests it books end-to-end with no human. For complex cases like chemo rescheduling, it automatically escalates to your scheduling team with full context.',
+            },
+            {
+              q: 'Can it analyze historical data to find scheduling gaps and recommend changes?',
+              a: 'Yes. Our AI/ML analytics platform comes prebuilt with every KPI to track practice efficiency. Pre-trained models detect inefficiencies — underutilized slots, provider template mismatches, peak bottlenecks — and recommend specific changes including template adjustments, resource constraint alerts, and no-show prediction 48 hours in advance.',
+            },
+          ].map((faq, i) => (
+            <MotionBox
+              key={i}
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+            >
+              <Accordion
+                sx={{
+                  background: 'rgba(248,250,251,0.06)',
+                  border: '1px solid rgba(248,250,251,0.12)',
+                  borderRadius: '12px !important',
+                  mb: 2,
+                  '&:before': { display: 'none' },
+                  '&.Mui-expanded': {
+                    background: 'rgba(248,250,251,0.1)',
+                    border: '1px solid rgba(252,164,124,0.3)',
+                  },
+                }}
+                disableGutters
+              >
+                <AccordionSummary
+                  expandIcon={<ExpandMoreIcon sx={{ color: '#FCA47C' }} />}
+                  sx={{ px: 3, py: 1.5 }}
+                >
+                  <Typography sx={{ color: '#F8FAFB', fontWeight: 600, fontSize: '1.05rem', lineHeight: 1.5 }}>
+                    {faq.q}
+                  </Typography>
+                </AccordionSummary>
+                <AccordionDetails sx={{ px: 3, pb: 3 }}>
+                  <Typography sx={{ color: 'rgba(248,250,251,0.8)', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 500 }}>
+                    {faq.a}
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            </MotionBox>
+          ))}
+
+          <Box sx={{ textAlign: 'center', mt: 5 }}>
+            <Button
+              variant="outlined"
+              component={Link}
+              to="/what-we-can-do"
+              sx={{
+                borderColor: 'rgba(248,250,251,0.3)',
+                color: '#F8FAFB',
+                px: 4,
+                py: 1.2,
+                fontWeight: 600,
+                '&:hover': { borderColor: '#FCA47C', background: 'rgba(252,164,124,0.08)' },
+              }}
+            >
+              See Everything ManageCare Can Do →
+            </Button>
+          </Box>
+        </Container>
+      </Box>
 
       {/* SECURITY */}
       <Box sx={{ background: '#F8FAFB', py: { xs: 10, md: 16 }, position: 'relative', overflow: 'hidden' }}>
@@ -1646,7 +1602,8 @@ export default function HomePage() {
                 transition={{ duration: 0.6 }}
               >
                 <Typography
-                  variant="h1"
+                  variant="h2"
+                  component="h2"
                   sx={{
                     color: '#F8FAFB',
                     fontSize: { xs: '2.5rem', md: '3.5rem' },

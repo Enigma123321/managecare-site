@@ -21,6 +21,7 @@ const SpecialtyPage = lazy(() => import('./pages/SpecialtyPage'));
 const OutcomePage = lazy(() => import('./pages/OutcomePage'));
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'));
 const TermsPage = lazy(() => import('./pages/TermsPage'));
+const WhatWeCanDoPage = lazy(() => import('./pages/WhatWeCanDoPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 const Loading = () => (
@@ -51,6 +52,7 @@ export default function App() {
               <Route path="/privacy" element={<PrivacyPage />} />
               <Route path="/terms" element={<TermsPage />} />
               <Route path="/demo" element={<DemoPage />} />
+              <Route path="/what-we-can-do" element={<WhatWeCanDoPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>

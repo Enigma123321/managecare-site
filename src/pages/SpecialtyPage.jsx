@@ -27,7 +27,8 @@ export default function SpecialtyPage() {
     <Box>
       <SEO
         title={`${data.specialty} — AI Healthcare Solutions`}
-        description={data.tagline}
+        description={`${data.tagline} ManageCare automates scheduling, referrals, and care management for ${data.specialty.toLowerCase()} practices.`}
+        keywords={`${data.specialty.toLowerCase()} automation, ${data.specialty.toLowerCase()} AI, ${data.specialty.toLowerCase()} scheduling, ${data.specialty.toLowerCase()} practice management, healthcare AI ${data.specialty.toLowerCase()}`}
       />
       {/* Hero Section */}
       <Box
@@ -253,6 +254,42 @@ export default function SpecialtyPage() {
         </Grid>
       </SectionWrapper>
 
+      {/* Explore More Section — Internal Cross-Links */}
+      <SectionWrapper
+        overline="Explore More"
+        title="Discover How ManageCare Works"
+        subtitle="Learn more about the platform, AI employees, and measurable outcomes powering modern healthcare practices."
+      >
+        <Grid container spacing={3}>
+          {[
+            { label: 'Meet the AI Employees', desc: 'See the autonomous agents that handle scheduling, referrals, care management, and more.', to: '/agents' },
+            { label: 'Explore the Platform', desc: 'Understand the architecture, integrations, and security behind ManageCare.', to: '/platform' },
+            { label: 'View All Solutions', desc: 'Discover solutions for scheduling, waitlists, prior auth, patient outreach, and beyond.', to: '/solutions' },
+            { label: 'See Measurable Outcomes', desc: 'Explore how practices reduce scheduling delays, increase throughput, and cut referral leakage.', to: '/outcomes/reduce-scheduling-delays' },
+          ].map((item, i) => (
+            <Grid size={{ xs: 12, sm: 6 }} key={i}>
+              <GlowCard delay={i * 0.1}>
+                <Typography variant="h6" component="h3" sx={{ color: '#065A62', fontWeight: 700, mb: 0.5 }}>
+                  {item.label}
+                </Typography>
+                <Typography variant="body2" sx={{ color: '#065A62', lineHeight: 1.6, mb: 1.5 }}>
+                  {item.desc}
+                </Typography>
+                <Button
+                  component={Link}
+                  to={item.to}
+                  size="small"
+                  endIcon={<ArrowForwardIcon sx={{ fontSize: 16 }} />}
+                  sx={{ color: '#097C87', fontWeight: 600, textTransform: 'none', p: 0 }}
+                >
+                  Learn More
+                </Button>
+              </GlowCard>
+            </Grid>
+          ))}
+        </Grid>
+      </SectionWrapper>
+
       {/* CTA Section */}
       <Box
         sx={{
@@ -269,6 +306,7 @@ export default function SpecialtyPage() {
           >
             <Typography
               variant="h2"
+              component="h2"
               sx={{
                 color: '#F8FAFB',
                 mb: 2,

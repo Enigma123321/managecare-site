@@ -262,8 +262,21 @@ export default function SolutionsPage() {
   return (
     <Box>
       <SEO
-        title="Solutions"
-        description="Explore how ManageCare solves healthcare operations challenges — from intelligent scheduling to automated care management and referral coordination."
+        title="Healthcare Automation Solutions"
+        description="ManageCare solves healthcare operations challenges with AI-powered intelligent scheduling, automated care management, referral coordination, prior authorization, and patient engagement."
+        keywords="healthcare solutions, medical scheduling automation, care management software, referral coordination, prior authorization automation, patient engagement platform"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          "name": "ManageCare",
+          "applicationCategory": "HealthApplication",
+          "operatingSystem": "Web",
+          "description": "AI-powered healthcare automation platform for scheduling, referrals, care management, and practice operations.",
+          "offers": {
+            "@type": "Offer",
+            "category": "Enterprise Healthcare Software"
+          }
+        }}
       />
       {/* HERO */}
       <Box

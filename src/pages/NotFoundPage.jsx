@@ -48,7 +48,8 @@ export default function NotFoundPage() {
               404
             </Typography>
             <Typography
-              variant="h2"
+              variant="h1"
+              component="h1"
               sx={{
                 fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
                 fontWeight: 600,

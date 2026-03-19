@@ -106,19 +106,7 @@ export default function Navbar() {
                 gap: 1,
               }}
             >
-              <Logo size={46} light={!useDarkText} />
-              <Typography
-                sx={{
-                  fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
-                  fontWeight: 700,
-                  color: useDarkText ? '#065A62' : '#F8FAFB',
-                  fontSize: '2rem',
-                  letterSpacing: '0.02em',
-                  transition: 'color 0.4s ease',
-                }}
-              >
-                ManageCare
-              </Typography>
+              <Logo size={60} light={!useDarkText} />
             </Box>
 
             <Box sx={{ flexGrow: 1 }} />

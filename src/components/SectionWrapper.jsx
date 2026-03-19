@@ -45,7 +45,7 @@ export default function SectionWrapper({
               </Typography>
             )}
             {title && (
-              <Typography variant="h2" sx={{ mb: 2, color: '#065A62' }}>
+              <Typography variant="h2" component="h2" sx={{ mb: 2, color: '#065A62' }}>
                 {title}
               </Typography>
             )}

@@ -69,8 +69,9 @@ export default function PlatformPage() {
   return (
     <Box>
       <SEO
-        title="Platform"
-        description="See how ManageCare's AI-native platform integrates with your EMR, automates workflows, and orchestrates the entire patient journey with enterprise-grade security."
+        title="AI Healthcare Platform — EMR Integration & HIPAA Compliance"
+        description="ManageCare's HIPAA-compliant AI platform integrates with Epic, Cerner, Athena, and 50+ EMR systems via FHIR. Automate workflows and orchestrate the entire patient journey."
+        keywords="healthcare platform, EMR integration, FHIR integration, HIPAA compliant, healthcare AI architecture, Epic integration, Cerner integration, healthcare interoperability"
       />
       {/* Hero */}
       <Box sx={{ pt: { xs: 12, md: 16 }, pb: { xs: 6, md: 10 }, position: 'relative', overflow: 'hidden', background: '#097C87' }}>

@@ -55,17 +55,7 @@ export default function Footer() {
         <Grid container spacing={4}>
           <Grid size={{ xs: 12, md: 4 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2.5 }}>
-              <Logo size={32} light={false} />
-              <Typography
-                sx={{
-                  fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
-                  fontWeight: 400,
-                  color: '#F8FAFB',
-                  fontSize: '1.4rem',
-                }}
-              >
-                ManageCare
-              </Typography>
+              <Logo size={48} light={true} />
             </Box>
             <Typography variant="body2" sx={{ color: 'rgba(248,250,251,0.7)', maxWidth: 300, mb: 3, lineHeight: 1.7 }}>
               AI-native platform that orchestrates the entire patient journey. From referral to survivorship.

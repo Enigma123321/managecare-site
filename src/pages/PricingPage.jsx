@@ -50,8 +50,21 @@ export default function PricingPage() {
   return (
     <Box>
       <SEO
-        title="Pricing"
-        description="Simple, transparent pricing for ManageCare's AI-powered healthcare platform. Choose the plan that fits your practice size and needs."
+        title="Enterprise Healthcare AI Pricing"
+        description="Transparent pricing for ManageCare's AI-powered healthcare platform. Plans for solo practices, multi-specialty groups, and health systems. ROI-positive from month one."
+        keywords="healthcare AI pricing, medical practice automation cost, healthcare platform pricing, AI employee pricing, healthcare software plans"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": faqs.map(faq => ({
+            "@type": "Question",
+            "name": faq.q,
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": faq.a
+            }
+          }))
+        }}
       />
       {/* Hero */}
       <Box sx={{ pt: { xs: 12, md: 16 }, pb: { xs: 6, md: 10 }, background: 'linear-gradient(135deg, #065A62 0%, #097C87 50%, #044048 100%)' }}>

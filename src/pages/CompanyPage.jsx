@@ -86,8 +86,19 @@ export default function CompanyPage() {
   return (
     <Box>
       <SEO
-        title="About Us"
-        description="ManageCare is built by healthcare operators who understand the challenges of running a practice. 100+ years of combined healthcare experience."
+        title="About ManageCare — Healthcare AI Company"
+        description="ManageCare is built by healthcare operators with 100+ years of combined experience in EMR systems, interoperability, and AI. Transforming healthcare operations at scale."
+        keywords="ManageCare company, healthcare AI startup, healthcare technology company, healthcare operations experts, FHIR interoperability experts"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "ManageCare",
+          "url": "https://managecare-site.onrender.com",
+          "description": "AI-native platform that orchestrates the entire patient journey with autonomous AI employees for healthcare operations.",
+          "foundingDate": "2024",
+          "knowsAbout": ["Healthcare Operations", "Medical AI", "EMR Integration", "FHIR Interoperability", "HIPAA Compliance"],
+          "sameAs": []
+        }}
       />
       {/* HERO */}
       <Box sx={{ pt: { xs: 12, md: 16 }, pb: { xs: 8, md: 14 }, background: 'linear-gradient(135deg, #065A62 0%, #097C87 50%, #044048 100%)', position: 'relative', overflow: 'hidden' }}>
@@ -166,7 +177,7 @@ export default function CompanyPage() {
                   />
                   {i === 0 && (
                     /* Healthcare Operations — EMR/Hospital icon animation */
-                    <svg viewBox="0 0 320 120" width="100%" height="120" style={{ display: 'block' }}>
+                    <svg viewBox="0 0 320 120" width="100%" height="120" style={{ display: 'block' }} role="img" aria-label="Healthcare operations diagram showing EMR systems connected to a central hospital hub with workflow nodes">
                       <defs>
                         <style>{`
                           @keyframes pulse0 { 0%,100% { opacity: 0.6; } 50% { opacity: 1; } }
@@ -203,7 +214,7 @@ export default function CompanyPage() {
                   )}
                   {i === 1 && (
                     /* Interoperability — data flow / integration animation */
-                    <svg viewBox="0 0 320 120" width="100%" height="120" style={{ display: 'block' }}>
+                    <svg viewBox="0 0 320 120" width="100%" height="120" style={{ display: 'block' }} role="img" aria-label="Interoperability diagram showing Epic, Cerner, and Athena EMR systems connected through a central FHIR hub to scheduling, analytics, and outreach">
                       <defs>
                         <style>{`
                           @keyframes flowDots { 0% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: -30; } }
@@ -243,7 +254,7 @@ export default function CompanyPage() {
                   )}
                   {i === 2 && (
                     /* AI & Enterprise — neural network / brain animation */
-                    <svg viewBox="0 0 320 120" width="100%" height="120" style={{ display: 'block' }}>
+                    <svg viewBox="0 0 320 120" width="100%" height="120" style={{ display: 'block' }} role="img" aria-label="AI neural network diagram showing input, processing, and output layers representing enterprise AI architecture">
                       <defs>
                         <style>{`
                           @keyframes neuronFire { 0%,100% { opacity: 0.3; } 30% { opacity: 1; } }

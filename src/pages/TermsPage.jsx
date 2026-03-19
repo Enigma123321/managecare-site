@@ -1,5 +1,6 @@
-import { Box, Container, Typography, Divider } from '@mui/material';
+import { Box, Container, Typography, Divider, Button, Stack } from '@mui/material';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import SectionWrapper from '../components/SectionWrapper';
 import SEO from '../components/SEO';
 
@@ -302,6 +303,26 @@ export default function TermsPage() {
           ))}
         </Container>
       </SectionWrapper>
+
+      {/* Internal Links */}
+      <Box sx={{ py: 6, background: '#F8FAFB' }}>
+        <Container maxWidth="md" sx={{ textAlign: 'center' }}>
+          <Typography variant="body1" sx={{ color: '#065A62', mb: 3 }}>
+            Explore ManageCare's AI-powered healthcare platform and see how it works for your specialty.
+          </Typography>
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} justifyContent="center">
+            <Button component={Link} to="/privacy" variant="outlined" sx={{ borderColor: '#097C87', color: '#097C87' }}>
+              Privacy Policy
+            </Button>
+            <Button component={Link} to="/use-cases" variant="outlined" sx={{ borderColor: '#097C87', color: '#097C87' }}>
+              Browse Use Cases
+            </Button>
+            <Button component={Link} to="/demo" variant="contained" sx={{ background: '#097C87', '&:hover': { background: '#065A62' } }}>
+              Request a Demo
+            </Button>
+          </Stack>
+        </Container>
+      </Box>
     </>
   );
 }

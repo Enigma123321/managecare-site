@@ -27,8 +27,9 @@ export default function UseCasesPage() {
   return (
     <Box>
       <SEO
-        title="Use Cases by Specialty"
-        description="See how ManageCare transforms operations for 112+ medical specialties — from oncology to primary care, cardiology, orthopedics, and beyond."
+        title="AI Healthcare Solutions by Medical Specialty"
+        description="See how ManageCare's AI transforms operations for 112+ medical specialties — oncology, cardiology, orthopedics, primary care, multi-specialty groups, health systems, and beyond."
+        keywords="healthcare AI by specialty, oncology automation, cardiology practice management, orthopedics scheduling, multi-specialty healthcare AI, medical practice automation"
       />
       {/* Hero Section */}
       <Box sx={{ pt: { xs: 12, md: 14 }, pb: { xs: 6, md: 10 }, background: '#097C87', position: 'relative' }}>
