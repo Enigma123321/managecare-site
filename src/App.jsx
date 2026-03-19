@@ -13,6 +13,8 @@ import DemoPage from './pages/DemoPage';
 import CompanyPage from './pages/CompanyPage';
 import SpecialtyPage from './pages/SpecialtyPage';
 import OutcomePage from './pages/OutcomePage';
+import PrivacyPage from './pages/PrivacyPage';
+import TermsPage from './pages/TermsPage';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
@@ -33,6 +35,8 @@ export default function App() {
             <Route path="/outcomes/:slug" element={<OutcomePage />} />
             <Route path="/pricing" element={<PricingPage />} />
             <Route path="/company" element={<CompanyPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
             <Route path="/demo" element={<DemoPage />} />
           </Routes>
           <Footer />

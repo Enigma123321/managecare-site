@@ -31,13 +31,13 @@ const solutionsMenu = {
       ],
     },
     {
-      title: 'By Workflow',
+      title: 'AI Employees',
       items: [
-        { label: 'Patient Scheduling', path: '/solutions' },
-        { label: 'Referral Coordination', path: '/solutions' },
-        { label: 'Prior Authorization', path: '/solutions' },
-        { label: 'Treatment Pathway', path: '/solutions' },
-        { label: 'Care Navigation', path: '/solutions' },
+        { label: 'AI Scheduler', path: '/agents' },
+        { label: 'AI Care Manager', path: '/agents' },
+        { label: 'AI Prior Auth Agent', path: '/agents' },
+        { label: 'AI Referral Coordinator', path: '/agents' },
+        { label: 'Meet All AI Employees →', path: '/agents', highlight: true },
       ],
     },
     {

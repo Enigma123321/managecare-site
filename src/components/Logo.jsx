@@ -3,15 +3,14 @@ import { Box } from '@mui/material';
 const Logo = ({ size = 40, light = true }) => {
   const bg = light ? '#FFF8E8' : '#097C87';
   const primary = light ? '#097C87' : '#FFF8E8';
-  const accent = light ? '#065A62' : '#FCA47C';
-  const light2 = light ? '#065A62' : '#FFF8E8';
+  const accent = light ? '#FCA47C' : '#FCA47C';
 
   return (
     <Box
       sx={{
         width: size,
         height: size,
-        borderRadius: `${size * 0.2}px`,
+        borderRadius: `${size * 0.22}px`,
         background: bg,
         display: 'flex',
         alignItems: 'center',
@@ -23,40 +22,27 @@ const Logo = ({ size = 40, light = true }) => {
         viewBox="0 0 40 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        style={{ width: size * 0.72, height: size * 0.72 }}
+        style={{ width: size * 0.88, height: size * 0.88 }}
       >
-        {/* Patient journey path — flowing curve through waypoints */}
+        {/* Large bold heart */}
         <path
-          d="M4 32 Q10 32 12 26 Q14 20 20 20 Q26 20 28 14 Q30 8 36 8"
-          stroke={light2}
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          fill="none"
-          opacity="0.5"
+          d="M20 13 Q20 5 13 5 Q6 5 6 12 Q6 19 20 28 Q34 19 34 12 Q34 5 27 5 Q20 5 20 13Z"
+          fill={accent}
         />
 
-        {/* Journey waypoint nodes */}
-        <circle cx="4" cy="32" r="2.5" fill={accent} />
-        <circle cx="12" cy="26" r="2" fill={accent} opacity="0.7" />
-        <circle cx="20" cy="20" r="3" fill={primary} />
-        <circle cx="28" cy="14" r="2" fill={accent} opacity="0.7" />
-        <circle cx="36" cy="8" r="2.5" fill={accent} />
+        {/* Healthcare cross */}
+        <line x1="20" y1="11" x2="20" y2="21" stroke={bg} strokeWidth="2.8" strokeLinecap="round" />
+        <line x1="15" y1="16" x2="25" y2="16" stroke={bg} strokeWidth="2.8" strokeLinecap="round" />
 
-        {/* Central hub — healthcare cross on center node */}
-        <line x1="20" y1="16.5" x2="20" y2="23.5" stroke={bg} strokeWidth="2" strokeLinecap="round" />
-        <line x1="16.5" y1="20" x2="23.5" y2="20" stroke={bg} strokeWidth="2" strokeLinecap="round" />
-
-        {/* Branching connections from center — care coordination */}
-        <line x1="20" y1="20" x2="10" y2="12" stroke={primary} strokeWidth="1.2" strokeLinecap="round" opacity="0.35" />
-        <line x1="20" y1="20" x2="30" y2="28" stroke={primary} strokeWidth="1.2" strokeLinecap="round" opacity="0.35" />
-        <line x1="20" y1="20" x2="8" y2="22" stroke={primary} strokeWidth="1.2" strokeLinecap="round" opacity="0.25" />
-        <line x1="20" y1="20" x2="32" y2="18" stroke={primary} strokeWidth="1.2" strokeLinecap="round" opacity="0.25" />
-
-        {/* Small satellite nodes — connected services */}
-        <circle cx="10" cy="12" r="1.5" fill={light2} opacity="0.6" />
-        <circle cx="30" cy="28" r="1.5" fill={light2} opacity="0.6" />
-        <circle cx="8" cy="22" r="1.2" fill={light2} opacity="0.4" />
-        <circle cx="32" cy="18" r="1.2" fill={light2} opacity="0.4" />
+        {/* Bold EKG pulse line */}
+        <path
+          d="M1 33 L9 33 L12.5 28 L16 37 L19.5 31 L23 33 L39 33"
+          stroke={primary}
+          strokeWidth="2.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          fill="none"
+        />
       </svg>
     </Box>
   );

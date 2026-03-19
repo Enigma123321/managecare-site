@@ -1,39 +1,42 @@
 import { Box, Container, Typography, Grid, Button, Divider } from '@mui/material';
 import { Link } from 'react-router-dom';
+import Logo from './Logo';
 
 const footerSections = [
   {
     title: 'Platform',
     links: [
-      { label: 'AI Agents', path: '/agents' },
+      { label: 'AI Employees', path: '/agents' },
+      { label: 'How It Works', path: '/platform' },
       { label: 'Integrations', path: '/platform' },
-      { label: 'Security', path: '/platform' },
-      { label: 'Architecture', path: '/platform' },
+      { label: 'Pricing', path: '/pricing' },
     ],
   },
   {
     title: 'Solutions',
     links: [
-      { label: 'Scheduling', path: '/solutions' },
-      { label: 'Care Management', path: '/solutions' },
-      { label: 'Referral Management', path: '/solutions' },
-      { label: 'Value-Based Care', path: '/solutions' },
+      { label: 'Reduce Scheduling Delays', path: '/outcomes/reduce-scheduling-delays' },
+      { label: 'Increase Patient Throughput', path: '/outcomes/increase-patient-throughput' },
+      { label: 'Reduce Referral Leakage', path: '/outcomes/reduce-referral-leakage' },
+      { label: 'Automate Admin Tasks', path: '/outcomes/automate-admin-tasks' },
     ],
   },
   {
     title: 'Use Cases',
     links: [
-      { label: 'Oncology', path: '/use-cases' },
-      { label: 'Multi-Specialty', path: '/use-cases' },
-      { label: 'Primary Care', path: '/use-cases' },
+      { label: 'Oncology', path: '/use-cases/oncology' },
+      { label: 'Multi-Specialty', path: '/use-cases/multi-specialty' },
+      { label: 'Health Systems (ACO)', path: '/use-cases/aco' },
+      { label: 'All Specialties', path: '/use-cases' },
     ],
   },
   {
     title: 'Company',
     links: [
-      { label: 'About', path: '/about' },
-      { label: 'Careers', path: '/careers' },
-      { label: 'Contact', path: '/contact' },
+      { label: 'About Us', path: '/company' },
+      { label: 'Privacy Policy', path: '/privacy' },
+      { label: 'Terms of Service', path: '/terms' },
+      { label: 'Contact', path: '/demo' },
     ],
   },
 ];
@@ -52,23 +55,7 @@ export default function Footer() {
         <Grid container spacing={4}>
           <Grid size={{ xs: 12, md: 4 }}>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 2.5 }}>
-              <Box
-                sx={{
-                  width: 32,
-                  height: 32,
-                  borderRadius: '6px',
-                  background: '#FFF8E8',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  fontWeight: 600,
-                  fontSize: '0.9rem',
-                  color: '#065A62',
-                  fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
-                }}
-              >
-                M
-              </Box>
+              <Logo size={32} light={false} />
               <Typography
                 sx={{
                   fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
@@ -143,11 +130,16 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} ManageCare. All rights reserved.
           </Typography>
           <Box sx={{ display: 'flex', gap: 3 }}>
-            {['Privacy Policy', 'Terms of Service', 'HIPAA', 'SOC 2'].map((item) => (
+            {[
+              { label: 'Privacy Policy', path: '/privacy' },
+              { label: 'Terms of Service', path: '/terms' },
+              { label: 'HIPAA Compliance', path: '/platform' },
+              { label: 'SOC 2', path: '/platform' },
+            ].map((item) => (
               <Typography
-                key={item}
-                component="a"
-                href="#"
+                key={item.label}
+                component={Link}
+                to={item.path}
                 sx={{
                   color: 'rgba(255,248,232,0.5)',
                   textDecoration: 'none',
@@ -156,7 +148,7 @@ export default function Footer() {
                   '&:hover': { color: 'rgba(255,248,232,0.6)' },
                 }}
               >
-                {item}
+                {item.label}
               </Typography>
             ))}
           </Box>
