@@ -1,14 +1,28 @@
+import { useState, useMemo } from 'react';
 import {
-  Box, Container, Typography, Chip, Button,
+  Box, Container, Typography, Chip, Button, TextField, InputAdornment,
 } from '@mui/material';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import SearchIcon from '@mui/icons-material/Search';
 import specialties from '../data/specialties';
 
 const MotionBox = motion.create(Box);
 
 export default function UseCasesPage() {
+  const [search, setSearch] = useState('');
+
+  const filtered = useMemo(() => {
+    if (!search.trim()) return specialties;
+    const q = search.toLowerCase().trim();
+    return specialties.filter(
+      (uc) =>
+        uc.specialty.toLowerCase().includes(q) ||
+        uc.tagline.toLowerCase().includes(q),
+    );
+  }, [search]);
+
   return (
     <Box>
       {/* Hero Section */}
@@ -27,9 +41,42 @@ export default function UseCasesPage() {
                 Specialty
               </Box>
             </Typography>
-            <Typography variant="body1" sx={{ fontSize: '1.1rem', maxWidth: 700, mx: 'auto', color: 'rgba(255,248,232,0.8)' }}>
+            <Typography variant="body1" sx={{ fontSize: '1.1rem', maxWidth: 700, mx: 'auto', color: 'rgba(255,248,232,0.8)', mb: 4 }}>
               ManageCare adapts to the unique workflows, protocols, and challenges of your specialty. See how practices like yours are transforming their operations.
             </Typography>
+
+            {/* Search Bar */}
+            <Box sx={{ maxWidth: 520, mx: 'auto' }}>
+              <TextField
+                fullWidth
+                placeholder="Search specialties..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                slotProps={{
+                  input: {
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <SearchIcon sx={{ color: 'rgba(6,90,98,0.4)' }} />
+                      </InputAdornment>
+                    ),
+                  },
+                }}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    background: '#FFF8E8',
+                    borderRadius: '14px',
+                    fontSize: '1rem',
+                    '& fieldset': { border: 'none' },
+                    '&:hover fieldset': { border: 'none' },
+                    '&.Mui-focused fieldset': { border: '2px solid #FCA47C' },
+                    '& input::placeholder': {
+                      color: 'rgba(6,90,98,0.45)',
+                      opacity: 1,
+                    },
+                  },
+                }}
+              />
+            </Box>
           </MotionBox>
         </Container>
       </Box>
@@ -37,13 +84,80 @@ export default function UseCasesPage() {
       {/* Specialties List */}
       <Box sx={{ py: { xs: 6, md: 10 } }}>
         <Container maxWidth="lg">
-          {specialties.map((uc, i) => (
+          {filtered.length === 0 && (
+            <Box sx={{ textAlign: 'center', py: 8, maxWidth: 600, mx: 'auto' }}>
+              <Typography
+                variant="h2"
+                sx={{
+                  fontFamily: '"Cormorant Garamond Variable", Georgia, serif',
+                  fontWeight: 600,
+                  fontSize: { xs: '1.8rem', md: '2.2rem' },
+                  color: '#065A62',
+                  mb: 2,
+                }}
+              >
+                Don't See Your Specialty?
+              </Typography>
+              <Typography sx={{ color: '#065A62', fontSize: '1rem', lineHeight: 1.7, mb: 3 }}>
+                ManageCare's platform is specialty-agnostic at its core. We can configure AI agents for any practice workflow. Let's talk about yours.
+              </Typography>
+              <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Button
+                  variant="contained"
+                  component={Link}
+                  to="/demo"
+                  endIcon={<ArrowForwardIcon />}
+                  sx={{
+                    py: 1.5,
+                    px: 4,
+                    fontSize: '0.95rem',
+                    background: '#097C87',
+                    color: '#FFF8E8',
+                    '&:hover': { background: '#065A62' },
+                  }}
+                >
+                  Book a Demo
+                </Button>
+                <Button
+                  variant="outlined"
+                  onClick={() => setSearch('')}
+                  sx={{
+                    py: 1.5,
+                    px: 4,
+                    fontSize: '0.95rem',
+                    borderColor: '#097C87',
+                    color: '#097C87',
+                    '&:hover': { borderColor: '#065A62', background: 'rgba(9,124,135,0.04)' },
+                  }}
+                >
+                  Clear Search
+                </Button>
+              </Box>
+            </Box>
+          )}
+
+          {filtered.length > 0 && (
+            <Typography
+              sx={{
+                color: 'rgba(6,90,98,0.5)',
+                fontSize: '0.85rem',
+                fontWeight: 500,
+                mb: 3,
+                letterSpacing: '0.05em',
+              }}
+            >
+              {filtered.length} {filtered.length === 1 ? 'specialty' : 'specialties'}{search.trim() ? ` matching "${search.trim()}"` : ''}
+            </Typography>
+          )}
+
+          {filtered.map((uc, i) => (
             <MotionBox
               key={uc.slug}
               initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-30px' }}
-              transition={{ duration: 0.4, delay: i * 0.03 }}
+              animate={search.trim() ? { opacity: 1, y: 0 } : undefined}
+              whileInView={!search.trim() ? { opacity: 1, y: 0 } : undefined}
+              viewport={{ once: true, margin: '0px' }}
+              transition={{ duration: 0.3, delay: Math.min(i * 0.03, 0.3) }}
               component={Link}
               to={`/use-cases/${uc.slug}`}
               sx={{
