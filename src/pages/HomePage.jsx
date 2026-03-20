@@ -211,7 +211,7 @@ export default function HomePage() {
                 textShadow: '0 2px 30px rgba(0,0,0,0.3)',
               }}
             >
-              One Platform to Orchestrate Every Step of the Patient Journey
+              One Platform To Orchestrate Every Step Of The Patient Journey
             </Typography>
             <Typography
               variant="body1"
